@@ -823,22 +823,22 @@ class Navbar extends Component {
                             show: this.state.authState,
                           })}
                         >
-                          <Link to="/pages-login" className="dropdown-item">
+                          <Link to="/login" className="dropdown-item">
                             {this.props.t("Login")}
                           </Link>
-                          <Link to="/pages-login-2" className="dropdown-item">
+                          <Link to="/login-2" className="dropdown-item">
                             {this.props.t("Login 2")}
                           </Link>
-                          <Link to="/pages-register" className="dropdown-item">
+                          <Link to="/register" className="dropdown-item">
                             {this.props.t("Register")}
                           </Link>
-                          <Link to="/pages-register-2" className="dropdown-item">
+                          <Link to="/register-2" className="dropdown-item">
                             {this.props.t("Register 2")}
                           </Link>
-                          <Link to="/page-recoverpw" className="dropdown-item">
+                          <Link to="/recover-password" className="dropdown-item">
                             {this.props.t("Recover Password")}
                           </Link>
-                          <Link to="/pages-recoverpw-2" className="dropdown-item">
+                          <Link to="/recover-password-2" className="dropdown-item">
                             {this.props.t("Recover Password 2")}
                           </Link>
                           <Link to="/auth-lock-screen" className="dropdown-item">
@@ -851,13 +851,13 @@ class Navbar extends Component {
                             {this.props.t("Lock Screen 2")}
                           </Link>
                           <Link
-                            to="/page-confirm-mail"
+                            to="/confirm-mail"
                             className="dropdown-item"
                           >
                             {this.props.t("Confirm Mail")}
                           </Link>
                           <Link
-                            to="/page-confirm-mail-2"
+                            to="/confirm-mail-2"
                             className="dropdown-item"
                           >
                             {this.props.t("Confirm Mail 2")}

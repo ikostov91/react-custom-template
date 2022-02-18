@@ -211,7 +211,7 @@ class Register extends Component {
                 <div className="mt-5 text-center">
                   <p>
                     Already have an account ?
-                    <Link to="/pages-login" className="fw-medium text-primary">
+                    <Link to="/login" className="fw-medium text-primary">
                       Login
                     </Link>
                   </p>

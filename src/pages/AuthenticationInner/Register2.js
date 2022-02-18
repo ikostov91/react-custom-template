@@ -208,7 +208,7 @@ export default class Register2 extends Component {
                             <p>
                               Already have an account ?{" "}
                               <Link
-                                to="pages-login-2"
+                                to="login-2"
                                 className="fw-medium text-primary"
                               >
                                 {" "}

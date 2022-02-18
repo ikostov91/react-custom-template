@@ -129,7 +129,7 @@ class Recoverpw extends Component {
                 <div className="mt-5 text-center">
                   <p>
                     Remember It ?{" "}
-                    <Link to="pages-login" className="fw-medium text-primary">
+                    <Link to="login" className="fw-medium text-primary">
                       {" "}
                       Sign In here
                     </Link>{" "}

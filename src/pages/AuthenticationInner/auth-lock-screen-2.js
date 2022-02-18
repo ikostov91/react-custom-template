@@ -127,7 +127,7 @@ export default class LockScreen2 extends Component {
                             <p>
                               Not you ? return{" "}
                               <Link
-                                to="pages-login-2"
+                                to="login-2"
                                 className="fw-medium text-primary"
                               >
                                 {" "}

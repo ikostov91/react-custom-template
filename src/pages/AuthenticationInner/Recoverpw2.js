@@ -120,7 +120,7 @@ export default class Recoverpw2 extends Component {
                             <p>
                               Remember It ?{" "}
                               <Link
-                                to="pages-login-2"
+                                to="login-2"
                                 className="fw-medium text-primary"
                               >
                                 {" "}

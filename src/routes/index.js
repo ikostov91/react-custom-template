@@ -331,22 +331,22 @@ const publicRoutes = [
   { path: "/crypto-ico-landing", component: CryptoIcoLanding },
 
   // Authentication Inner
-  { path: "/pages-login", component: Login1 },
-  { path: "/pages-login-2", component: Login2 },
+  { path: "/login", component: Login1 },
+  { path: "/login-2", component: Login2 },
 
-  { path: "/pages-register", component: Register1 },
-  { path: "/pages-register-2", component: Register2 },
+  { path: "/register", component: Register1 },
+  { path: "/register-2", component: Register2 },
 
-  { path: "/page-recoverpw", component: Recoverpw },
-  { path: "/pages-recoverpw-2", component: Recoverpw2 },
+  { path: "/recover-password", component: Recoverpw },
+  { path: "/recover-password-2", component: Recoverpw2 },
 
   { path: "/pages-forgot-pwd", component: ForgetPwd1 },
   { path: "/pages-forgot-pwd-2", component: ForgetPwd2 },
 
   { path: "/auth-lock-screen", component: LockScreen },
   { path: "/auth-lock-screen-2", component: LockScreen2 },
-  { path: "/page-confirm-mail", component: ConfirmMail },
-  { path: "/page-confirm-mail-2", component: ConfirmMail2 },
+  { path: "/confirm-mail", component: ConfirmMail },
+  { path: "/confirm-mail-2", component: ConfirmMail2 },
   { path: "/auth-email-verification", component: EmailVerification },
   { path: "/auth-email-verification-2", component: EmailVerification2 },
   { path: "/auth-two-step-verification", component: TwostepVerification },

@@ -121,7 +121,7 @@ class ForgetPasswordPage extends Component {
                 <div className="mt-5 text-center">
                   <p>
                     Go back to{" "}
-                    <Link to="pages-login" className="fw-medium text-primary">
+                    <Link to="login" className="fw-medium text-primary">
                       Login
                     </Link>{" "}
                   </p>

@@ -217,7 +217,7 @@ class Login extends Component {
                   <p>
                     Don&apos;t have an account ?{" "}
                     <Link
-                      to="pages-register"
+                      to="register"
                       className="fw-medium text-primary"
                     >
                       {" "}

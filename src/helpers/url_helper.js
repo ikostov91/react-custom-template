@@ -1,12 +1,18 @@
 //REGISTER
 export const POST_FAKE_REGISTER = "/post-fake-register"
 
-//LOGIN
-export const POST_FAKE_LOGIN = "/post-fake-login"
-export const POST_FAKE_JWT_LOGIN = "/post-jwt-login"
-export const POST_FAKE_PASSWORD_FORGET = "/fake-forget-pwd"
-export const POST_FAKE_JWT_PASSWORD_FORGET = "/jwt-forget-pwd"
-export const SOCIAL_LOGIN = "/social-login"
+// AUTHENTICATION
+export const POST_LOGIN = "/post-fake-login";
+export const POST_FAKE_JWT_LOGIN = "/post-jwt-login";
+export const POST_FAKE_PASSWORD_FORGET = "/fake-forget-pwd";
+export const POST_FAKE_JWT_PASSWORD_FORGET = "/jwt-forget-pwd";
+
+export const SOCIAL_LOGIN = "/social-login";
+export const LOGIN_ROUTE = '/session/login';
+export const ACTIVATE_ACCOUNT_ROUTE = '/session/activate-account';
+export const CONFIRM_MAIL_ROUTE = '/session/confirm-mail';
+export const FORGOT_PASS_ROUTE = '/session/forgot-password';
+export const RESET_PASS_ROUTE = '/session/reset-password';
 
 //PROFILE
 export const POST_EDIT_JWT_PROFILE = "/post-jwt-profile"

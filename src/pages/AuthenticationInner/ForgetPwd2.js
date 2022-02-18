@@ -123,7 +123,7 @@ class ForgetPwd2 extends Component {
                             <p>
                               Remember It ?{" "}
                               <a
-                                href="pages-login-2"
+                                href="login-2"
                                 className="fw-medium text-primary"
                               >
                                 {" "}

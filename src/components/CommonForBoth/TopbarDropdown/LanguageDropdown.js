@@ -8,7 +8,7 @@ import {
 import { map } from "lodash";
 
 //i18n
-import i18n from "../../../i18n";
+import i18n from "../../../i18n/i18n";
 import { withTranslation } from "react-i18next";
 
 import languages from "../../../common/languages";

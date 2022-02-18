@@ -197,7 +197,7 @@ class Login2 extends Component {
                             <p>
                               Don&apos;t have an account ?{" "}
                               <a
-                                href="pages-register-2"
+                                href="register-2"
                                 className="fw-medium text-primary"
                               >
                                 {" "}
