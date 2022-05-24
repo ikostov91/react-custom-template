@@ -1,0 +1,33 @@
+.language-selector {
+  font-size: 0.8em;
+  margin-left: auto;
+}
+
+.language-selector.dropdown .dropdown-toggle {
+  padding: 0 0.4em;
+  font-size: 1.2em;
+}
+
+.language-selector.dropdown .dropdown-toggle .flag-icon {
+  vertical-align: middle;
+}
+
+.language-selector.dropdown .dropdown-menu {
+  min-width: 6rem;
+  padding-top: 0.2em;
+  padding-bottom: 0.2em;
+  font-size: inherit;
+}
+
+.language-selector.dropdown .dropdown-item .flag-icon {
+  margin-right: 1em;
+}
+
+.language-selector.dropdown .dropdown-item:hover,
+.language-selector.dropdown .dropdown-item:active {
+  background-color: rgb(233, 233, 233);
+}
+
+.flag-icon {
+  box-shadow: 1em black;
+}

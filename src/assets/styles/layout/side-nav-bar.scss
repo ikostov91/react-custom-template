@@ -1,0 +1,22 @@
+.side-nav-bar {
+  background-color: #707a8e;
+  position: absolute;
+  height: 100%;
+  width: var(--side-menu-width);
+}
+
+.side-nav-bar ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.side-nav-bar ul li {
+  display: block;
+  cursor: pointer;
+  color: white;
+  padding: 0.4em 1em;
+}
+
+.side-nav-bar ul li:hover {
+  background-color: #282c34;
+}

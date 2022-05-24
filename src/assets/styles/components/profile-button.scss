@@ -1,0 +1,38 @@
+.profile-button {
+  font-size: 0.8em;
+  margin-left: 1em;
+}
+
+.profile-button.dropdown .dropdown-toggle {
+	padding: 0 0.2em;
+  font-size: 1.2em;
+  font-weight: 600;
+}
+
+.profile-button.dropdown .dropdown-toggle::after {
+  content: none;
+}
+
+.profile-button.dropdown .dropdown-toggle:focus {
+  box-shadow: none;
+}
+
+.profile-button.dropdown .dropdown-menu {
+  min-width: 12rem;
+  padding-top: 0;
+  font-size: inherit;
+}
+
+.profile-button.dropdown .dropdown-item:hover,
+.profile-button.dropdown .dropdown-item:active {
+  background-color: rgb(233, 233, 233);
+}
+
+.profile-button.dropdown .dropdown-menu .user-details {
+  text-align: left;
+  padding-top: 1em;
+  padding-bottom: 1em;
+  padding-left: 1em;
+  background-color: #707a8e;
+  color: white;
+}

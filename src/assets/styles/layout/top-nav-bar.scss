@@ -1,0 +1,13 @@
+.top-nav-bar {
+  display: flex;
+  min-height: 0.8em;
+  padding-top: 0.7em;
+  padding-bottom: 0.7em;
+  padding-right: 1em;
+  padding-left: 1em;
+  background-color: #a5b2cd;
+}
+
+.user-details div + div {
+  margin-top: 1em;
+}

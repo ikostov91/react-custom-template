@@ -1,3 +1,10 @@
+@import './variables.scss';
+@import './layout/top-nav-bar.scss';
+@import './layout/main-content.scss';
+@import './layout/side-nav-bar.scss';
+@import './components/profile-button.scss';
+@import './components/language-selector.scss';
+
 html {
   font-size: calc(0.2em + 1vw);
   box-sizing: border-box;
@@ -17,77 +24,6 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-}
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
-}
-
-/* Layout */
-.top-nav-bar {
-  display: flex;
-  min-height: 0.8em;
-  padding-top: 0.7em;
-  padding-bottom: 0.7em;
-  padding-right: 1em;
-  padding-left: 1em;
-  background-color: #a5b2cd;
-}
-
-.main-content {
-  padding-left: var(--side-menu-width);
-}
-
-.side-nav-bar {
-  background-color: #707a8e;
-  position: absolute;
-  height: 100%;
-  width: var(--side-menu-width);
-}
-
-.side-nav-bar ul {
-  list-style-type: none;
-  padding: 0;
-}
-
-.side-nav-bar ul li {
-  display: block;
-  cursor: pointer;
-  color: white;
-  padding: 0.4em 1em;
-}
-
-.side-nav-bar ul li:hover {
-  background-color: #282c34;
-}
-
-/* User profile */
-.profile-button {
-  font-size: 0.8em;
-  margin-left: auto;
-}
-
-.profile-button.dropdown .dropdown-toggle {
-	padding: 0 0.2em;
-}
-
-.profile-button.dropdown .dropdown-toggle::after {
-  content: none;
-}
-
-.profile-button.dropdown .dropdown-menu {
-  min-width: 12rem;
-  padding-top: 0;
-  font-size: inherit;
-}
-
-.profile-button.dropdown .dropdown-menu .user-details {
-  text-align: left;
-  padding-top: 1em;
-  padding-bottom: 1em;
-  padding-left: 1em;
-  background-color: #707a8e;
-  color: white;
 }
 
 .App {
