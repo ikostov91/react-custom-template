@@ -1,5 +1,13 @@
 html {
   font-size: calc(0.5em + 1vw);
+  box-sizing: border-box;
+  --side-menu-width: 8em;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
 }
 
 body {
@@ -12,8 +20,7 @@ body {
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
 }
 
 .top-nav-bar {
@@ -21,13 +28,40 @@ code {
   min-height: 0.8em;
   padding-top: 0.7em;
   padding-bottom: 0.7em;
-  margin-right: 1em;
-  margin-left: 1em;
+  padding-right: 1em;
+  padding-left: 1em;
+  background-color: #a5b2cd;
 }
 
 .logout-button {
   font-size: 0.8em;
   margin-left: auto;
+}
+
+.main-content {
+  padding-left: var(--side-menu-width);
+}
+
+.side-nav-bar {
+  background-color: #707a8e;
+  position: absolute;
+  height: 100%;
+  width: var(--side-menu-width);
+}
+
+.side-nav-bar ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.side-nav-bar ul li {
+  display: block;
+  color: white;
+  padding: 0.4em 1em;
+}
+
+.side-nav-bar ul li:hover {
+  background-color: #282c34;
 }
 
 .App {
