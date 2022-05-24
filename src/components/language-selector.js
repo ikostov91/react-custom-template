@@ -26,6 +26,9 @@ const LanguageSelector = () => {
       </Dropdown.Toggle>
 
       <Dropdown.Menu>
+        <div className='languages-label'>
+          Languages
+        </div>
         {languages.map(lang => (
           <Dropdown.Item key={lang.code} onClick={() => setLanguage(lang)}>
             <img

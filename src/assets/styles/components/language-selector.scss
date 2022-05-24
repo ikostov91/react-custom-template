@@ -14,7 +14,7 @@
 
 .language-selector.dropdown .dropdown-menu {
   min-width: 6rem;
-  padding-top: 0.2em;
+  padding-top: 0;
   padding-bottom: 0.2em;
   font-size: inherit;
 }
@@ -30,4 +30,10 @@
 
 .flag-icon {
   box-shadow: 1em black;
+}
+
+div.languages-label {
+  color: white;
+  background-color: #707a8e;
+  padding: 1em 1em;
 }
