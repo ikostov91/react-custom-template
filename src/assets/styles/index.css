@@ -1,5 +1,5 @@
 html {
-  font-size: calc(0.5em + 1vw);
+  font-size: calc(0.2em + 1vw);
   box-sizing: border-box;
   --side-menu-width: 8em;
 }
@@ -23,6 +23,7 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
 }
 
+/* Layout */
 .top-nav-bar {
   display: flex;
   min-height: 0.8em;
@@ -31,11 +32,6 @@ code {
   padding-right: 1em;
   padding-left: 1em;
   background-color: #a5b2cd;
-}
-
-.logout-button {
-  font-size: 0.8em;
-  margin-left: auto;
 }
 
 .main-content {
@@ -56,12 +52,41 @@ code {
 
 .side-nav-bar ul li {
   display: block;
+  cursor: pointer;
   color: white;
   padding: 0.4em 1em;
 }
 
 .side-nav-bar ul li:hover {
   background-color: #282c34;
+}
+
+/* User profile */
+.profile-button {
+  font-size: 0.8em;
+  margin-left: auto;
+}
+
+.profile-button.dropdown .dropdown-toggle {
+	padding: 0 0.2em;
+}
+
+.profile-button.dropdown .dropdown-toggle::after {
+  content: none;
+}
+
+.profile-button.dropdown .dropdown-menu {
+  min-width: 12rem;
+  padding-top: 0;
+}
+
+.profile-button.dropdown .dropdown-menu .user-details {
+  text-align: left;
+  padding-top: 1em;
+  padding-bottom: 1em;
+  padding-left: 1em;
+  background-color: #707a8e;
+  color: white;
 }
 
 .App {
@@ -81,7 +106,7 @@ code {
 
 .App-header {
   background-color: #282c34;
-  min-height: 100vh;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;

@@ -5,8 +5,9 @@ const SideNavBar = () => {
     <div className='side-nav-bar'>
       <ul>
         <li>Dashboard</li>
-        <li>My Vehicles</li>
-        <li>Menu 3</li>
+        <li>Vehicles</li>
+        <li>Budget</li>
+        <li>About</li>
       </ul>
     </div>
   );

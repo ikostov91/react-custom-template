@@ -1,9 +1,10 @@
 import React from 'react';
+import UserProfile from '../../components/user-profile';
 
 const TopNavBar = () => {
   return (
     <div className='top-nav-bar'>
-      <button className="logout-button">Profile</button>
+      <UserProfile />
     </div>
   )
 };
