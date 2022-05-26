@@ -1,13 +1,12 @@
 import React from 'react';
+import history from '../../history';
 
 const SideNavBar = () => {
   return (
     <div className='side-nav-bar'>
       <ul>
-        <li>Dashboard</li>
-        <li>Vehicles</li>
-        <li>Budget</li>
-        <li>About</li>
+        <li onClick={() => history.push('/dashboard')}>Dashboard</li>
+        <li onClick={() => history.push('/about')}>About</li>
       </ul>
     </div>
   );

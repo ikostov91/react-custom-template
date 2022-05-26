@@ -10,7 +10,7 @@ const Layout = () => {
       <SideNavBar />
       <MainContent />
     </>
-  )
+  );
 };
 
 export default Layout;

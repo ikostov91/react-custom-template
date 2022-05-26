@@ -4,6 +4,8 @@
 @import './layout/side-nav-bar.scss';
 @import './components/profile-button.scss';
 @import './components/language-selector.scss';
+@import './components/card-container.scss';
+@import './components/row.scss';
 
 html {
   font-size: calc(0.2em + 1vw);
@@ -41,26 +43,11 @@ body {
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
+// .App-header {
+//   height: 100vh;
+//   display: flex;
+//   flex-direction: column;
+//   align-items: center;
+//   justify-content: center;
+//   color: white;
+// }
