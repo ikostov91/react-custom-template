@@ -1,5 +1,6 @@
 import React from 'react';
 import Dropdown from 'react-bootstrap/Dropdown';
+import Translate from './translate';
 
 const UserProfile = () => {
   const userName = "Ivaylo Kostov";
@@ -14,12 +15,16 @@ const UserProfile = () => {
         </Dropdown.Toggle>
         <Dropdown.Menu>
           <div className='user-details'>
-            <div>Name: {userName}</div>
-            <div>Email: {userEmail}</div>
-            <div>Role: {userRole}</div>  
+            <div><Translate id="user.profile.dropdown.name.label" name={userName} /></div>
+            <div><Translate id="user.profile.dropdown.email.label" email={userEmail} /></div>
+            <div><Translate id="user.profile.dropdown.role.label" role={userRole} /></div>
           </div>
-          <Dropdown.Item href="#/action-2">Settings</Dropdown.Item>
-          <Dropdown.Item href="#/action-3">Logout</Dropdown.Item>
+          <Dropdown.Item href="#/action-2">
+            <Translate id="user.profile.dropdown.settings.label" />
+            </Dropdown.Item>
+          <Dropdown.Item href="#/action-3">
+            <Translate id="user.profile.dropdown.logout.label" />
+            </Dropdown.Item>
         </Dropdown.Menu>
       </Dropdown>
     </>
