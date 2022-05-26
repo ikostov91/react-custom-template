@@ -2,6 +2,7 @@ import React from 'react';
 import CardContainer from '../../components/card-container';
 import CustomRow from '../../components/custom-row';
 import CustomColumn from '../../components/custom-column';
+import Translate from '../../components/translate';
 
 const About = () => {
   return (
@@ -10,7 +11,7 @@ const About = () => {
         <CustomColumn width={12}>
           <CardContainer>
             <div className="text-center">
-              This is a custom <strong>React</strong> template project.
+              <Translate id="pages.about.description.text" />
             </div>
           </CardContainer>
         </CustomColumn>
