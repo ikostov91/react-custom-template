@@ -72,3 +72,6 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 
 react-bootstrap
 https://react-bootstrap.github.io/
+
+history
+https://github.com/remix-run/history/tree/3e9dab413f4eda8d6bce565388c5ddb7aeff9f7e
