@@ -75,3 +75,6 @@ https://react-bootstrap.github.io/
 
 history
 https://github.com/remix-run/history/tree/3e9dab413f4eda8d6bce565388c5ddb7aeff9f7e
+
+react-i18next
+https://react.i18next.com/
