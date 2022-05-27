@@ -10,6 +10,7 @@
   "language.selector.dropdown.bg.label": "Български",
 
   "navigation.menu.dashboard.label": "Дашборд",
+  "navigation.menu.custom.grid.label": "Персонализиран Грид",
   "navigation.menu.about.label": "За нас",
 
   "pages.about.description.text": "Това е персонализиран шаблонен проект на React"

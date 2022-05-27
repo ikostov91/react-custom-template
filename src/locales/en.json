@@ -10,6 +10,7 @@
   "language.selector.dropdown.bg.label": "Bulgarian",
 
   "navigation.menu.dashboard.label": "Dashboard",
+  "navigation.menu.custom.grid.label": "Custom Grid",
   "navigation.menu.about.label": "About",
   
   "pages.about.description.text": "This is a custom React template project."

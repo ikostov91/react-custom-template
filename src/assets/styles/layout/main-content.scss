@@ -1,6 +1,8 @@
 @import '../variables.scss';
 
 .main-content {
+  position: relative;
+  z-index: $main-content-z-index;
   display: flex;
   flex-flow: column;
   padding-left: var(--side-menu-width);

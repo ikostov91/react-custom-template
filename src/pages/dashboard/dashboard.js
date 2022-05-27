@@ -1,9 +1,20 @@
 import React from 'react';
 import logo from '../../assets/images/logo.svg';
+import CustomRow from '../../components/custom-row';
+import CustomColumn from '../../components/custom-column';
+import PageTitle from '../../components/page-title';
 
 const Dashboard = () => {
   return (
     <>
+      <CustomRow>
+        <CustomColumn width={12}>
+          <PageTitle
+            title="Dashboard"
+            breadcrumbs={['Home', 'Dashboard']}
+          />
+        </CustomColumn>
+      </CustomRow>
       <div className="App">
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />

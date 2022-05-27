@@ -1,5 +1,11 @@
 @import './variables.scss';
 
+// Extra small < 576px
+// Small ≥576px - 36em
+// Medium ≥768px - 48em
+// Large ≥992px - 62em
+// Extra large ≥ 1200px - 75em 
+
 div.custom-row {
   display: flex;
   flex-wrap: wrap;
@@ -17,55 +23,148 @@ div.custom-row::after {
 }
 
 [class*="custom-column-"] {
-  float: left;
+  max-width: 100%;
+  flex: 0 0 100%;
   padding-left: $column-side-padding;
   padding-right: $column-side-padding;
 }
 
-.custom-column-1 {
-  width: 8.3333%;
-}
+.custom-column-1 { max-width: 8.3333% }
+.custom-column-2 { max-width: 16.6667% }
+.custom-column-3 { max-width: 25% }
+.custom-column-4 { max-width: 33.3333% }
+.custom-column-5 { max-width: 41.6667% }
+.custom-column-6 { max-width: 50% }
+.custom-column-7 { max-width: 58.3333% }
+.custom-column-8 { max-width: 66.6667% }
+.custom-column-9 { max-width: 75% }
+.custom-column-10 { max-width: 83.3333% }
+.custom-column-11 { max-width: 91.6667% }
+.custom-column-12 { max-width: 100% }
 
-.custom-column-2 {
-  width: 16.6667%;
-}
+// .custom-column-xs-1,
+// .custom-column-xs-2,
+// .custom-column-xs-3,
+// .custom-column-xs-4,
+// .custom-column-xs-5,
+// .custom-column-xs-6,
+// .custom-column-xs-7,
+// .custom-column-xs-8,
+// .custom-column-xs-9,
+// .custom-column-xs-10,
+// .custom-column-xs-11,
+// .custom-column-xs-12,
+// .custom-column-sm-1,
+// .custom-column-sm-2,
+// .custom-column-sm-3,
+// .custom-column-sm-4,
+// .custom-column-sm-5,
+// .custom-column-sm-6,
+// .custom-column-sm-7,
+// .custom-column-sm-8,
+// .custom-column-sm-9,
+// .custom-column-sm-11
+// .custom-column-sm-12,
+// .custom-column-md-1,
+// .custom-column-md-2,
+// .custom-column-md-3,
+// .custom-column-md-4,
+// .custom-column-md-5,
+// .custom-column-md-6,
+// .custom-column-md-7,
+// .custom-column-md-8,
+// .custom-column-md-9,
+// .custom-column-md-10
+// .custom-column-md-11,
+// .custom-column-md-12,
+// .custom-column-lg-1,
+// .custom-column-lg-2,
+// .custom-column-lg-3,
+// .custom-column-lg-4,
+// .custom-column-lg-5,
+// .custom-column-lg-6,
+// .custom-column-lg-7,
+// .custom-column-lg-8,
+// .custom-column-lg-9,
+// .custom-column-lg-10
+// .custom-column-lg-11,
+// .custom-column-lg-12,
+// .custom-column-xl-1,
+// .custom-column-xl-2,
+// .custom-column-xl-3,
+// .custom-column-xl-4,
+// .custom-column-xl-5,
+// .custom-column-xl-6,
+// .custom-column-xl-7,
+// .custom-column-xl-8,
+// .custom-column-xl-9,
+// .custom-column-xl-10,
+// .custom-column-xl-11,
+// .custom-column-xl-12 {
+//   max-width: 100%;
+//   flex: 0 0 100%;
+// }
 
-.custom-column-3 {
-  width: 25%;
-}
+// @media (min-width: 36em) {
+//   .custom-column-xs-1,
+//   .custom-column-sm-1 {
+//     max-width: 8.3333%;
+//     flex: 0 0 8.333%;
+//   }
+  
+//   .custom-column-xs-2,
+//   .custom-column-sm-2 {
+//     max-width: 16.6667%;
+//   }
+  
+//   .custom-column-xs-3,
+//   .custom-column-sm-3 {
+//     max-width: 25%;
+//   }
+  
+//   .custom-column-xs-4
+//   .custom-column-sm-4 {
+//     max-width: 33.3333%;
+//   }
+  
+//   .custom-column-xs-5,
+//   .custom-column-sm-5 {
+//     max-width: 41.6667%;
+//   }
+  
+//   .custom-column-xs-6
+//   .custom-column-sm-6 {
+//     max-width: 50%;
+//     flex: 0 0 50%;
+//   }
+  
+//   .custom-column-xs-7
+//   .custom-column-sm-7 {
+//     max-width: 58.3333%;
+//   }
+  
+//   .custom-column-xs-8
+//   .custom-column-sm-8 {
+//     max-width: 66.6667%;
+//   }
+  
+//   .custom-column-xs-9
+//   .custom-column-sm-9 {
+//     max-width: 75%;
+//   }
+  
+//   .custom-column-xs-10
+//   .custom-column-sm-10 {
+//     max-width: 83.3333%;
+//   }
 
-.custom-column-4 {
-  width: 33.3333%;
-}
+//   .custom-column-xs-11,
+//   .custom-column-sm-11 {
+//     max-width: 91.6667%
+//   }
 
-.custom-column-5 {
-  width: 41.6667%;
-}
-
-.custom-column-6 {
-  width: 50%;
-}
-
-.custom-column-7 {
-  width: 58.3333%;
-}
-
-.custom-column-8 {
-  width: 66.6667%;
-}
-
-.custom-column-9 {
-  width: 75%;
-}
-
-.custom-column-10 {
-  width: 83.3333%;
-}
-
-.custom-column-11 {
-  width: 91.6667%
-}
-
-.custom-column-12 {
-  width: 100%;
-}
+//   .custom-column-xs-12
+//   .custom-column-sm-12 {
+//     max-width: 100%;
+//   }
+// }

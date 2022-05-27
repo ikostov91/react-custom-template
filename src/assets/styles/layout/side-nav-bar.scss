@@ -3,6 +3,7 @@
 .side-nav-bar {
   background-color: #707a8e;
   position: absolute;
+  z-index: $side-nav-bar-z-index;
   height: 100%;
   width: var(--side-menu-width);
 }

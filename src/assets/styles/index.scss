@@ -7,9 +7,10 @@
 @import './components/card-container.scss';
 @import './custom-grid-system.scss';
 @import './components/page-title.scss';
+@import './components/site-logo.scss';
 
-html {
-  font-size: calc(0.2em + 1vw);
+:root {
+  font-size: calc(1vw + 0.3em);
   box-sizing: border-box;
   --side-menu-width: 12em;
 }

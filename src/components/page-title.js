@@ -8,7 +8,7 @@ const PageTitle = ({ title, breadcrumbs = [] }) => {
         {breadcrumbs.join(" / ")}
       </span>
     </div>
-  )
+  );
 };
 
 export default PageTitle;

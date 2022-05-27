@@ -1,9 +1,11 @@
 @import '../variables.scss';
 
 div.card-container {
-  padding: 1em;
+  padding: 0.5em;
   background-color: white;
   border-radius: 0.5em;
   box-shadow: $box-shadow;
-  overflow: auto;
+  word-wrap: break-word;
+  height: 100%;
+  // overflow: auto;
 }

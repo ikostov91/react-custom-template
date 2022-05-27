@@ -1,6 +1,8 @@
 @import '../variables.scss';
 
 .top-nav-bar {
+  position: relative;
+  z-index: $top-nav-bar-z-index;
   display: flex;
   padding: 0.7em 1em;
   background-color: $color-white;

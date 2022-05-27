@@ -12,7 +12,7 @@ const About = () => {
         <CustomColumn width={12}>
           <PageTitle
             title="About page"
-            breadcrumbs={['home', 'about']}
+            breadcrumbs={['Home', 'About']}
           />
         </CustomColumn>
       </CustomRow>
@@ -21,22 +21,6 @@ const About = () => {
           <CardContainer>
             <div className="text-center">
               <Translate id="pages.about.description.text" />
-            </div>
-          </CardContainer>
-        </CustomColumn>
-      </CustomRow>
-      <CustomRow>
-        <CustomColumn width={6}>
-          <CardContainer>
-            <div className="text-center">
-              First Card
-            </div>
-          </CardContainer>
-        </CustomColumn>
-        <CustomColumn width={6}>
-          <CardContainer>
-            <div className="text-center">
-              Second CARD
             </div>
           </CardContainer>
         </CustomColumn>
