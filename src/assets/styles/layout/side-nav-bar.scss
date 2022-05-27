@@ -1,7 +1,9 @@
+@import '../variables.scss';
+
 .side-nav-bar {
   background-color: #707a8e;
   position: absolute;
-  height: 100vh;
+  height: 100%;
   width: var(--side-menu-width);
 }
 

@@ -6,8 +6,8 @@ import MainContent from './components/main-content';
 const Layout = () => {
   return (
     <>
-      <TopNavBar />
       <SideNavBar />
+      {/* <TopNavBar /> */}
       <MainContent />
     </>
   );

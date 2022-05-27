@@ -1,5 +1,13 @@
+@import '../variables.scss';
+
 .main-content {
+  display: flex;
+  flex-flow: column;
   padding-left: var(--side-menu-width);
   height: 100vh;
-  background-color: #51596a;
+  background-color: $main-content-background-color;
+}
+
+.main-content .page-content {
+  overflow: auto;
 }

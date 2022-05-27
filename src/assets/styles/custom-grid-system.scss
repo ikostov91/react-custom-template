@@ -1,0 +1,57 @@
+div.custom-row::after {
+  content: " ";
+  display: block;
+  clear: both;
+}
+
+[class*="custom-column-"] {
+  float: left;
+}
+
+.custom-column-1 {
+  width: 8.3333%;
+}
+
+.custom-column-2 {
+  width: 16.6667%;
+}
+
+.custom-column-3 {
+  width: 25%;
+}
+
+.custom-column-4 {
+  width: 33.3333%;
+}
+
+.custom-column-5 {
+  width: 41.6667%;
+}
+
+.custom-column-6 {
+  width: 50%;
+}
+
+.custom-column-7 {
+  width: 58.3333%;
+}
+
+.custom-column-8 {
+  width: 66.6667%;
+}
+
+.custom-column-9 {
+  width: 75%;
+}
+
+.custom-column-10 {
+  width: 83.3333%;
+}
+
+.custom-column-11 {
+  width: 91.6667%
+}
+
+.custom-column-12 {
+  width: 100%;
+}

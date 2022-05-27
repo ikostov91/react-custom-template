@@ -30,16 +30,18 @@ const LanguageSelector = ({ t }) => {
         </div>
         {Object.keys(languages).map(key => (
           <Dropdown.Item key={key} onClick={() => changeLanguage(key)}>
-            <img
-              src={require(`../assets/flag-icons/${key}.svg`)}
-              alt={key}
-              width="26"
-              className='flag-icon'
-            />
-            <Translate
-              id={`language.selector.dropdown.${key}.label`}
-              defaultMessage={languages[key].label}
-            />
+            <div>
+              <img
+                src={require(`../assets/flag-icons/${key}.svg`)}
+                alt={key}
+                width="26"
+                className='flag-icon'
+              />
+              <Translate
+                id={`language.selector.dropdown.${key}.label`}
+                defaultMessage={languages[key].label}
+              />
+            </div>
           </Dropdown.Item>
         ))}
       </Dropdown.Menu>
