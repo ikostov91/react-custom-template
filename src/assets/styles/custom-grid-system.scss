@@ -1,3 +1,15 @@
+@import './variables.scss';
+
+div.custom-row {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0 0.3em;
+}
+
+div.custom-row + div.custom-row {
+  margin-top: 1em;
+}
+
 div.custom-row::after {
   content: " ";
   display: block;
@@ -6,6 +18,8 @@ div.custom-row::after {
 
 [class*="custom-column-"] {
   float: left;
+  padding-left: $column-side-padding;
+  padding-right: $column-side-padding;
 }
 
 .custom-column-1 {

@@ -1,9 +1,9 @@
 @import '../variables.scss';
 
 div.card-container {
-  margin: 0.5em;
   padding: 1em;
   background-color: white;
   border-radius: 0.5em;
   box-shadow: $box-shadow;
+  overflow: auto;
 }
