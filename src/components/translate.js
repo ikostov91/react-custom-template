@@ -1,13 +1,10 @@
-import { FormattedMessage } from 'react-intl'
+import { withTranslation } from 'react-i18next';
 
-const Translate = ({ id, defaultMessage = '', ...values }) => {
+const Translate = ({ t, id, stringValues = {}, defaultMessage = '' }) => {
+  console.log(stringValues);
   return (
-    <FormattedMessage
-      id={id}
-      defaultMessage={defaultMessage}
-      values={values}
-    />
+    t(id, { ...stringValues, defaultMessage })
   );
 };
 
-export default Translate;
+export default withTranslation()(Translate);

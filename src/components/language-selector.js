@@ -1,46 +1,50 @@
 import React, { useState } from 'react';
 import Dropdown from 'react-bootstrap/Dropdown';
-import eventBus from '../event-bus/event-bus';
-import { LANGUAGE_CHANGED_EVENT } from '../event-bus/events';
-import appLocale from '../intl';
+import languages from '../common/languages';
+import i18n from '../i18n';
+import { withTranslation } from "react-i18next";
+import Translate from './translate';
 
-const LanguageSelector = () => {
-  const [language, setLanguage] = useState(appLocale[0]);
+const LanguageSelector = ({ t }) => {
+  const [language, setLanguage] = useState('en');
 
-  const changeLanguage = (language) => {
-    setLanguage(language);
-    eventBus.dispatch(LANGUAGE_CHANGED_EVENT, { locale: language.locale });
+  const changeLanguage = (langKey) => {
+    setLanguage(langKey);
+    i18n.changeLanguage(langKey);
   };
 
   return (
     <Dropdown className='language-selector'>
       <Dropdown.Toggle variant="secondary" id="dropdown-basic">
         <img
-          src={require(`../assets/flag-icons/${language.locale}.svg`)}
+          src={require(`../assets/flag-icons/${language}.svg`)}
+          alt={language}
           width="26"
-          alt="lang-icon"
           className='flag-icon mr-2'
         />
       </Dropdown.Toggle>
 
       <Dropdown.Menu>
         <div className='languages-label'>
-          Languages
+          <Translate id="language.selector.dropdown.title" />
         </div>
-        {appLocale.map(lang => (
-          <Dropdown.Item key={lang.locale} onClick={() => changeLanguage(lang)}>
+        {Object.keys(languages).map(key => (
+          <Dropdown.Item key={key} onClick={() => changeLanguage(key)}>
             <img
-              src={require(`../assets/flag-icons/${lang.locale}.svg`)}
+              src={require(`../assets/flag-icons/${key}.svg`)}
+              alt={key}
               width="26"
-              alt="lang-icon"
               className='flag-icon'
             />
-            <span>{lang.name}</span>
+            <Translate
+              id={`language.selector.dropdown.${key}.label`}
+              defaultMessage={languages[key].label}
+            />
           </Dropdown.Item>
         ))}
       </Dropdown.Menu>
     </Dropdown>
-  )
+  );
 };
 
-export default LanguageSelector;
+export default withTranslation()(LanguageSelector);
