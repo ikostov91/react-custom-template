@@ -14,12 +14,16 @@
 }
 
 .side-nav-bar ul li {
-  display: block;
+  display: flex;
   cursor: pointer;
   color: white;
-  padding: 0.4em 1em;
+  padding: 0.4em 0.5em 0.4em 1em;
+}
+
+.side-nav-bar ul li .nav-icon {
+  margin-right: 0.5em;
 }
 
 .side-nav-bar ul li:hover {
-  background-color: #282c34;
+  background-color: #555e6f;
 }

@@ -19,7 +19,7 @@ const About = () => {
       <CustomRow>
         <CustomColumn width={12}>
           <CardContainer>
-            <div className="text-center">
+            <div className="text-center pt-5 pb-5">
               <Translate id="pages.about.description.text" />
             </div>
           </CardContainer>

@@ -3,8 +3,8 @@ import history from '../history';
 
 const SiteLogo = () => {
   return (
-    <div className='site-logo'>
-      <span className='site-title' onClick={() => history.push('/')}>RCT</span>
+    <div className='logo-container'>
+      <span className='site-logo' onClick={() => history.push('/')}>RCT</span>
     </div>
   );
 };

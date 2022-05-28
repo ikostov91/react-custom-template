@@ -1,8 +1,9 @@
 import React from 'react';
+import classNames from 'classnames';
 
-const CardContainer = ({ children }) => {
+const CardContainer = ({ children, className = '' }) => {
   return (
-    <div className='card-container'>
+    <div className={classNames('card-container', className)}>
       {children}
     </div>
   )
