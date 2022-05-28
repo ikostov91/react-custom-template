@@ -3,7 +3,7 @@ import Layout from './layout/layout';
 import { Route, Routes } from 'react-router-dom';
 import history from './history';
 import NotFound from './pages/not-found/not-found';
-import CustomRouter from './routes/custom-router';
+import CustomRouter from './routing/custom-router';
 
 function App() {
   return ( 
