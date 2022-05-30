@@ -12,7 +12,7 @@ const CustomGridDemo = () => {
         <CustomColumn width={12}>
           <PageTitle
             title="Custom Grid"
-            breadcrumbs={['Home', 'Custom grid']}
+            breadcrumbs={[{ label: 'Home', path: '/' }, { label: 'Custom grid', path: '/custom-grid', active: true }]}
           />
         </CustomColumn>
       </CustomRow>

@@ -11,7 +11,7 @@ const Dashboard = () => {
         <CustomColumn width={12}>
           <PageTitle
             title="Dashboard"
-            breadcrumbs={['Home', 'Dashboard']}
+            breadcrumbs={[{ label: 'Home', path: '/' }, { label: 'Dashboard', path: '/dashboard', active: true }]}
           />
         </CustomColumn>
       </CustomRow>

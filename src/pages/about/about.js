@@ -12,7 +12,7 @@ const About = () => {
         <CustomColumn width={12}>
           <PageTitle
             title="About page"
-            breadcrumbs={['Home', 'About']}
+            breadcrumbs={[{ label: 'Home', path: '/' }, { label: 'About', path: '/about', active: true }]}
           />
         </CustomColumn>
       </CustomRow>
