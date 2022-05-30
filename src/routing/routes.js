@@ -7,14 +7,17 @@ const routes = [{
 }, {
   name: 'navigation.menu.custom.grid.label',
   path: '/custom-grid-demo',
-  icon: FaTh,
+  icon: FaTh
+}, {
+  name: 'Empty Parent',
+  icon: FaSistrix,
   children: [{
-    name: 'Test 1',
-    path: '/test1',
+    name: 'Nested 1',
+    path: '/nested1',
     icon: FaSistrix
   }, {
-    name: 'Test 2',
-    path: '/test2',
+    name: 'Nested 2',
+    path: '/nested2',
     icon: FaSistrix
   }]
 }, {
