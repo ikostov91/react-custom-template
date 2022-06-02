@@ -1,14 +1,17 @@
 .auth-wrapper {
-  position: absolute;
+  background-color: #707a8e;
+  position: fixed;
   width: 100%;
   height: 100%;
-  background-color: #707a8e;
+  overflow-y: auto;
+  overflow-x: hidden;
 }
 
 .auth-wrapper .inner-wrapper {
+  transform: translate3d(0%, 40%, 0);
   padding: 2em 1em;
   max-width: 30em;
-  margin: 100px auto;
+  margin: auto;
   background-color: white;
   border-radius: 1em;
 }
