@@ -1,4 +1,4 @@
-.auth-wrapper {
+.auth-pages-wrapper {
   background-color: #707a8e;
   position: fixed;
   width: 100%;
@@ -7,11 +7,16 @@
   overflow-x: hidden;
 }
 
-.auth-wrapper .inner-wrapper {
-  transform: translate3d(0%, 40%, 0);
+.auth-pages-wrapper .inner-wrapper {
+  font-size: 0.8em;
+  transform: translate3d(0%, 10%, 0);
   padding: 2em 1em;
-  max-width: 30em;
+  max-width: 25em;
   margin: auto;
   background-color: white;
   border-radius: 1em;
+}
+
+.forgot-password-link {
+  text-decoration: none;
 }

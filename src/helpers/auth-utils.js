@@ -1,7 +1,17 @@
+let user = null;
+
 export const isUserAuthenticated = () => {
-  return false;
+  return !!user;
 };
 
 export const getLoggedInUser = () => {
-  return {};
-}
+  return user;
+};
+
+export const authenticateUser = () => {
+  user = {};
+};
+
+export const logoutUser = () => {
+  user = null;
+};

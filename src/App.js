@@ -4,7 +4,7 @@ import { Route, Routes } from 'react-router-dom';
 import history from './history';
 import NotFound from './pages/not-found/not-found';
 import CustomRouter from './routing/custom-router';
-import Login from './pages/login/login';
+import Login from './pages/authentication/login/index';
 
 function App() {
   return ( 

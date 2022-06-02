@@ -1,11 +1,18 @@
 import React from 'react';
 import Dropdown from 'react-bootstrap/Dropdown';
+import { logoutUser } from '../helpers/auth-utils';
+import history from '../history';
 import Translate from './translate';
 
 const UserProfile = () => {
   const userName = "Ivaylo Kostov";
   const userEmail = "i.kostov91@gmail.com";
   const userRole = "User";
+
+  const logout = () => {
+    logoutUser();
+    history.push('/login');
+  };
 
   return (
     <>
@@ -28,9 +35,9 @@ const UserProfile = () => {
           <Dropdown.Item href="#/action-2">
             <Translate id="user.profile.dropdown.settings.label" />
             </Dropdown.Item>
-          <Dropdown.Item href="#/action-3">
+          <Dropdown.Item href="#/action-3" onClick={() => logout()}>
             <Translate id="user.profile.dropdown.logout.label" />
-            </Dropdown.Item>
+          </Dropdown.Item>
         </Dropdown.Menu>
       </Dropdown>
     </>
