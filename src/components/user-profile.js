@@ -32,11 +32,15 @@ const UserProfile = () => {
               <Translate id="user.profile.dropdown.role.label" stringValues={{ role: userRole }} />
             </div>
           </div>
-          <Dropdown.Item href="#/action-2">
-            <Translate id="user.profile.dropdown.settings.label" />
-            </Dropdown.Item>
-          <Dropdown.Item href="#/action-3" onClick={() => logout()}>
-            <Translate id="user.profile.dropdown.logout.label" />
+          <Dropdown.Item onClick={() => history.push('/user-settings')}>
+            <div>
+              <Translate id="user.profile.dropdown.settings.label" />
+            </div>
+          </Dropdown.Item>
+          <Dropdown.Item onClick={() => logout()}>
+            <div>
+              <Translate id="user.profile.dropdown.logout.label" />
+            </div>
           </Dropdown.Item>
         </Dropdown.Menu>
       </Dropdown>

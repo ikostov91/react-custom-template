@@ -2,13 +2,14 @@ import React from "react";
 import { isUserAuthenticated, authenticateUser } from "../../../helpers/auth-utils";
 import { Navigate } from "react-router-dom";
 import Logo from "../../../components/logo";
-import { useForm } from "react-hook-form";
+import { useForm, Controller  } from "react-hook-form";
 import Button from 'react-bootstrap/Button';
 import { Link } from "react-router-dom";
 import history from "../../../history";
+import Form from "react-bootstrap/Form";
 
 const Login = () => {
-  const { register, handleSubmit, formState: { errors } } = useForm();
+  const { control, handleSubmit, formState: { errors } } = useForm();
   const onSubmit = data => {
     if (data.email === 'test' && data.password === 'test') {
       authenticateUser();
@@ -35,10 +36,13 @@ const Login = () => {
           <div className="login-form mb-3">
             <form className="form" onSubmit={handleSubmit(onSubmit)}>
               <div className="mb-2">
-                <label className="required">
-                  Email
-                </label>
-                <input className="form-input" {...register("email", { required: true, maxLength: 20 })} />
+                <Form.Label className="required">Email address</Form.Label>
+                <Controller
+                  name="email"
+                  control={control}
+                  rules={{ required: true, maxLength: 20 }}
+                  render={({ field }) => <Form.Control size="sm" className="mb-1" { ...field } />}
+                />
                 {errors.email?.type === 'required' && (
                   <div className="validation-error">
                     This field is required
@@ -49,10 +53,13 @@ const Login = () => {
                 )}
               </div>
               <div className="mb-3">
-                <label className="required">
-                  Password
-                </label>
-                <input className="form-input" {...register("password", { required: true })} />
+                <Form.Label className="required">Password</Form.Label>
+                <Controller
+                  name="password"
+                  control={control}
+                  rules={{ required: true }}
+                  render={({ field }) => <Form.Control size="sm" className="mb-1" { ...field } />}
+                />
                 {errors.password?.type === 'required' && (
                   <div className="validation-error">
                     This field is required

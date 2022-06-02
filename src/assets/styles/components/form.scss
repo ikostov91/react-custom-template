@@ -6,7 +6,7 @@
   display: block;
 }
 
-.form label.required::after {
+label.form-label.required::after {
   content: "*";
   margin-left: 0.2em;
   color: red;
