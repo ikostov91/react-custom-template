@@ -6,6 +6,7 @@ import About from '../../pages/about/about';
 import NotFound from '../../pages/not-found/not-found';
 import TopNavBar from './top-nav-bar';
 import CustomGridDemo from '../../pages/custom-grid-demo/custom-grid-demo';
+import PrivateRoute from '../../routing/private-route';
 
 const MainContent = () => {
   return (
@@ -18,10 +19,10 @@ const MainContent = () => {
               path="/"
               element={<Navigate to="dashboard" replace />}
             />
-            <Route path="dashboard" element={<Dashboard />} />
-            <Route path="custom-grid-demo" element={<CustomGridDemo />} />
-            <Route path="about" element={<About />} />
-            <Route path="*" element={<NotFound />} />
+            <Route path="dashboard" element={<PrivateRoute><Dashboard /></PrivateRoute>} />
+            <Route path="custom-grid-demo" element={<PrivateRoute><CustomGridDemo /></PrivateRoute>} />
+            <Route path="about" element={<PrivateRoute><About /></PrivateRoute>} />
+            <Route path="*" element={<PrivateRoute><NotFound /></PrivateRoute>} />
           </Routes>
         </div>
       </div>      

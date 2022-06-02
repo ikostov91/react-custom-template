@@ -4,11 +4,13 @@ import { Route, Routes } from 'react-router-dom';
 import history from './history';
 import NotFound from './pages/not-found/not-found';
 import CustomRouter from './routing/custom-router';
+import Login from './pages/login/login';
 
 function App() {
   return ( 
     <CustomRouter history={history}>
       <Routes>
+        <Route path="/login" element={<Login />} />
         <Route path="/*" element={<Layout />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
