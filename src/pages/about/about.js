@@ -4,6 +4,7 @@ import CustomRow from '../../components/custom-row';
 import CustomColumn from '../../components/custom-column';
 import Translate from '../../components/translate';
 import PageTitle from '../../components/page-title';
+import Logo from '../../components/logo';
 
 const About = () => {
   return (
@@ -11,7 +12,7 @@ const About = () => {
       <CustomRow>
         <CustomColumn width={12}>
           <PageTitle
-            title="About page"
+            title="About"
             breadcrumbs={[{ label: 'Home', path: '/' }, { label: 'About', path: '/about', active: true }]}
           />
         </CustomColumn>
@@ -20,7 +21,8 @@ const About = () => {
         <CustomColumn width={12}>
           <CardContainer>
             <div className="text-center pt-5 pb-5">
-              <Translate id="pages.about.description.text" />
+              <div><Logo /></div>
+              <div><Translate id="pages.about.description.text" /></div>
             </div>
           </CardContainer>
         </CustomColumn>

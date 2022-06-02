@@ -1,10 +1,13 @@
 import React from 'react';
 import history from '../../history';
+import Logo from '../logo';
 
 const SiteLogo = () => {
   return (
     <div className='logo-container'>
-      <span className='site-logo' onClick={() => history.push('/')}>RCT</span>
+      <span className='pointer-cursor' onClick={() => history.push('/')}>
+        <Logo />
+      </span>
     </div>
   );
 };

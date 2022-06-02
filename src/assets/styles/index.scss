@@ -2,12 +2,8 @@
 @import './layout/top-nav-bar.scss';
 @import './layout/main-content.scss';
 @import './layout/side-nav-bar.scss';
-@import './components/profile-button.scss';
-@import './components/language-selector.scss';
-@import './components/card-container.scss';
 @import './custom-grid-system.scss';
-@import './components/page-title.scss';
-@import './components/site-logo.scss';
+@import './components.scss';
 
 :root {
   font-size: calc(1vw + 0.3em);
