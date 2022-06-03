@@ -78,3 +78,6 @@ https://github.com/remix-run/history/tree/3e9dab413f4eda8d6bce565388c5ddb7aeff9f
 
 react-i18next
 https://react.i18next.com/
+
+forms - react hook form
+https://react-hook-form.com/
