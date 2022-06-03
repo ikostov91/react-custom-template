@@ -7,6 +7,7 @@ import Button from 'react-bootstrap/Button';
 import { Link } from "react-router-dom";
 import history from "../../../history";
 import Form from "react-bootstrap/Form";
+import { NotificationManager } from "react-notifications";
 
 const Login = () => {
   const { control, handleSubmit, formState: { errors } } = useForm();
@@ -14,8 +15,9 @@ const Login = () => {
     if (data.email === 'test' && data.password === 'test') {
       authenticateUser();
       history.push('/');
+      NotificationManager.success('Successfully logged in!', null, 3000);
     } else {
-      alert('Wrong email or password');
+      NotificationManager.error('Wrong username and/or password!', null, 3000);
     }
   };
 

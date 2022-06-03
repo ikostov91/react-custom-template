@@ -7,6 +7,9 @@ import CustomRouter from './routing/custom-router';
 import Login from './pages/authentication/login/index';
 import { Provider } from 'react-redux';
 import store from './store/index';
+import { NotificationContainer } from 'react-notifications';
+
+import 'react-notifications/lib/notifications.css';
 
 function App() {
   return (
@@ -18,6 +21,7 @@ function App() {
           <Route path="*" element={<NotFound />} />
         </Routes>
       </CustomRouter>
+      <NotificationContainer />
     </Provider>
   );
 }
