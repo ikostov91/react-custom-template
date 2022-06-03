@@ -43,7 +43,7 @@ const Login = () => {
                   name="email"
                   control={control}
                   rules={{ required: true, maxLength: 20 }}
-                  render={({ field }) => <Form.Control size="sm" className="mb-1" { ...field } />}
+                  render={({ field }) => <Form.Control isInvalid={errors.email} size="sm" className="mb-1" { ...field } />}
                 />
                 {errors.email?.type === 'required' && (
                   <div className="validation-error">
@@ -60,7 +60,7 @@ const Login = () => {
                   name="password"
                   control={control}
                   rules={{ required: true }}
-                  render={({ field }) => <Form.Control size="sm" className="mb-1" { ...field } />}
+                  render={({ field }) => <Form.Control isInvalid={errors.password} size="sm" className="mb-1" { ...field } />}
                 />
                 {errors.password?.type === 'required' && (
                   <div className="validation-error">
