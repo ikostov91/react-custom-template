@@ -16,3 +16,7 @@ label.form-label.required::after {
   color: red;
   font-size: 0.8em;
 }
+
+.form .field-row + .field-row {
+  margin-top: 1em;
+}
