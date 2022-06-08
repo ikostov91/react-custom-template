@@ -1,7 +1,7 @@
-import counterReducer from './counter-reducer';
+import authenticationReducer from './authentication-reducer';
 
 const reducers = {
-  counter: counterReducer
+  authentication: authenticationReducer
 };
 
 export default reducers;

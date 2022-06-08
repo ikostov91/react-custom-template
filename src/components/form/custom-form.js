@@ -24,7 +24,6 @@ const CustomForm = ({ fields = [], renderSubmitChildren = <></>, onSubmit = () =
               control={control}
             />
             <FieldErrors
-              key={id}
               fieldKey={type}
               errors={errors}
             />

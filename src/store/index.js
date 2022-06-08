@@ -2,33 +2,27 @@ import { compose } from 'redux';
 import createSagaMiddleware from "redux-saga";
 import reducer from "../store/reducers/index";
 import rootSaga from "../store/sagas/index";
-import { configureStore } from '@reduxjs/toolkit';
+import { configureStore, applyMiddleware } from '@reduxjs/toolkit';
 
 export function configureAppStore(initialState = {}) {
   const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
   const sagaMiddleware = createSagaMiddleware();
 
+  // const middlewareEnhancer = applyMiddleware(sagaMiddleware)
+  // const composedEnhancers = composeEnhancers(middlewareEnhancer)
+
   const store = configureStore({
     reducer,
     middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(sagaMiddleware),
     preloadedState: initialState,
-    enhancers: composeEnhancers
+    // enhancers: composedEnhancers
   });
 
   sagaMiddleware.run(rootSaga);
-
-  // if (module.hot) {
-  //   // Enable Webpack hot module replacement for reducers
-  //   module.hot.accept('../store/reducers/index', () => {
-  //       const nextRootReducer = require('../store/reducers/index');
-  //       store.replaceReducer(nextRootReducer);
-  //   });
-  // }
-
   return store;
 }
- 
-const store = configureAppStore({});
+
+const store = configureAppStore();
 
 export default store;

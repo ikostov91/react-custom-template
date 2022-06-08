@@ -47,8 +47,8 @@ export const removeUserToken = () => {
   cookies.remove(USER_COOKIE_NAME);
 };
 
-export const authenticateUser = () => {
-  user = {};
+export const authenticateUser = (userDetails) => {
+  user = userDetails;
 };
 
 export const logoutUser = () => {

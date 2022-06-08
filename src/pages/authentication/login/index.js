@@ -1,4 +1,5 @@
 import React from "react";
+import { connect } from "react-redux";
 import { isUserAuthenticated, authenticateUser } from "../../../helpers/auth-utils";
 import { Navigate } from "react-router-dom";
 import Logo from "../../../components/logo";
@@ -8,16 +9,12 @@ import history from "../../../history";
 import CustomForm from "../../../components/form/custom-form";
 import { NotificationManager } from "react-notifications";
 import { FIELD_TYPES } from "../../../components/form/types";
+import { loginUser } from '../../../store/actions/authentication-actions';
 
-const Login = () => {
+const Login = ({ loginUser }) => {
   const processLoginData = data => {
-    if (data.email === 'test@abv.bg' && data.password === 'test') {
-      authenticateUser();
-      history.push('/');
-      NotificationManager.success('Successfully logged in!', null, 3000);
-    } else {
-      NotificationManager.error('Wrong username and/or password!', null, 3000);
-    }
+    const { email, password } = data;
+    loginUser(email, password);
   };
 
   if (isUserAuthenticated()) {
@@ -92,4 +89,12 @@ const Login = () => {
   );
 };
 
-export default Login;
+const mapStateToProps = (state) => ({
+  ...state
+});
+
+const mapDispatchToProps = {
+  loginUser
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Login);
