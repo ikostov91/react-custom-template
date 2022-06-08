@@ -3,11 +3,11 @@ import Dropdown from 'react-bootstrap/Dropdown';
 import { logoutUser } from '../helpers/auth-utils';
 import history from '../history';
 import Translate from './translate';
+import { connect } from 'react-redux';
 
-const UserProfile = () => {
-  const userName = "Ivaylo Kostov";
-  const userEmail = "i.kostov91@gmail.com";
-  const userRole = "User";
+const UserProfile = ({ userDetails }) => {
+  const { firstName, lastName, role, email } = userDetails;
+  const userName = `${firstName} ${lastName}`;
 
   const logout = () => {
     logoutUser();
@@ -26,10 +26,10 @@ const UserProfile = () => {
               <Translate id="user.profile.dropdown.name.label" stringValues={{ name: userName }} />
             </div>
             <div>
-              <Translate id="user.profile.dropdown.email.label" stringValues={{ email: userEmail }} />
+              <Translate id="user.profile.dropdown.email.label" stringValues={{ email }} />
             </div>
             <div>
-              <Translate id="user.profile.dropdown.role.label" stringValues={{ role: userRole }} />
+              <Translate id="user.profile.dropdown.role.label" stringValues={{ role }} />
             </div>
           </div>
           <Dropdown.Item onClick={() => history.push('/user-settings')}>
@@ -48,4 +48,8 @@ const UserProfile = () => {
   );
 };
 
-export default UserProfile;
+const mapStateToProps = (state) => ({
+  userDetails: state.authentication.userDetails
+});
+
+export default connect(mapStateToProps, null)(UserProfile);

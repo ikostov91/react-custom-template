@@ -1,15 +1,13 @@
 import React from "react";
 import { connect } from "react-redux";
-import { isUserAuthenticated, authenticateUser } from "../../../helpers/auth-utils";
+import { isUserAuthenticated } from "../../../helpers/auth-utils";
 import { Navigate } from "react-router-dom";
 import Logo from "../../../components/logo";
 import Button from 'react-bootstrap/Button';
 import { Link } from "react-router-dom";
-import history from "../../../history";
 import CustomForm from "../../../components/form/custom-form";
-import { NotificationManager } from "react-notifications";
-import { FIELD_TYPES } from "../../../components/form/types";
 import { loginUser } from '../../../store/actions/authentication-actions';
+import { loginFormDefinition } from "../utils";
 
 const Login = ({ loginUser }) => {
   const processLoginData = data => {
@@ -20,45 +18,6 @@ const Login = ({ loginUser }) => {
   if (isUserAuthenticated()) {
     return <Navigate to="/" />
   }
-
-  const fieldsTest = [{
-    id: 'loginFormRow',
-    type: FIELD_TYPES.ROW,
-    children: [{
-      id: 'loginFormColumn',
-      type: FIELD_TYPES.COLUMN,
-      md: 12,
-      children: [{
-        id: 'emailAddress',
-        label: 'Email Address',
-        type: FIELD_TYPES.EMAIL,
-        validations: {
-          required: {
-            value: true,
-            message: 'Email address is required'
-          },
-          maxLength: {
-            value: 35,
-            message: 'Email addres cannot be longer than 35 characters'
-          },
-          pattern: {
-            value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
-            message: "Email address is invalid"
-          }
-        }
-      }, {
-        id: 'password',
-        label: 'Password',
-        type: FIELD_TYPES.PASSWORD,
-        validations: {
-          required: {
-            value: true,
-            message: 'Password is required'
-          },
-        }
-      }]
-    }]
-  }];
 
   return (
     <div className="auth-pages-wrapper">
@@ -72,7 +31,7 @@ const Login = ({ loginUser }) => {
           </div>
           <div className="mb-3">
             <CustomForm
-              fields={fieldsTest}
+              fields={loginFormDefinition}
               onSubmit={(data) => processLoginData(data)}
               renderSubmitChildren={(
                 <div className="text-center mt-3">

@@ -34,6 +34,7 @@ const SideNavBar = () => {
         {routes.map((route, index) => (
           <>
             <li
+              id={route.id}
               className={index === menuOpen ? 'item-opened' : ''}
               onClick={() => onMenuItemClicked(route, index)}
             >
@@ -50,7 +51,7 @@ const SideNavBar = () => {
               <Collapse in={index === menuOpen}>
                 <ul>
                   {route.children.map((childRoute) => (
-                    <li className='nested' onClick={() => history.push(childRoute.path)}>
+                    <li id={childRoute.id} className='nested' onClick={() => history.push(childRoute.path)}>
                       {childRoute.icon && (
                         <span className='nav-icon'>
                           <childRoute.icon />

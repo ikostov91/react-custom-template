@@ -5,16 +5,16 @@ import FieldErrors from "./field-errors";
 import GeneralInputField from "./field-types/general-input-field";
 import { FIELD_TYPES } from "./types";
 
-const CustomForm = ({ fields = [], renderSubmitChildren = <></>, onSubmit = () => {} }) => {
+const CustomForm = ({ fields = [], renderSubmitChildren = null, onSubmit = () => {} }) => {
   const { control, handleSubmit, formState: { errors } } = useForm();
 
   const renderFields = (fields = []) => (
-    fields.map((field) => {
+    fields.map((field, index) => {
       const { id, type, label, children = [], validations = {}, className = '', ...props } = field;
 
       if (type === FIELD_TYPES.EMAIL || type === FIELD_TYPES.PASSWORD) {
         return (
-          <div className="field-element">
+          <div key={index} className="field-element">
             <GeneralInputField
               key={id}
               label={label}
@@ -47,14 +47,14 @@ const CustomForm = ({ fields = [], renderSubmitChildren = <></>, onSubmit = () =
         )
       }
 
-      return <></>;
+      return null;
     })
   );
 
   return (
     <form className="custom-form" onSubmit={handleSubmit((data) => onSubmit(data))}>
       {renderFields(fields)}
-      {renderSubmitChildren}
+      {renderSubmitChildren && renderSubmitChildren}
     </form>
   );
 };
