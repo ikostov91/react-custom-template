@@ -1,3 +1,5 @@
+@import '../variables.scss';
+
 .profile-button {
   font-size: 0.8em;
   margin-left: 1em;
@@ -32,5 +34,5 @@
   text-align: left;
   padding: 1em 1em 1em;
   background-color: #707a8e;
-  color: white;
+  color: $color-white;
 }

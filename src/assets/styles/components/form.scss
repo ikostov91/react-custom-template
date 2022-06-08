@@ -1,22 +1,24 @@
-.form .form-input {
+@import '../variables.scss';
+
+form.custom-form .form-input {
   width: 100%;
 }
 
-.form label {
+form.custom-form label {
   display: block;
 }
 
 label.form-label.required::after {
   content: "*";
   margin-left: 0.2em;
-  color: red;
+  color: $color-red;
 }
 
-.form .validation-error {
-  color: red;
+form.custom-form .validation-error {
+  color: $color-red;
   font-size: 0.8em;
 }
 
-.form .field-row + .field-row {
+form.custom-form .field-element + .field-element {
   margin-top: 1em;
 }

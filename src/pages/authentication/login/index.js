@@ -7,9 +7,10 @@ import { Link } from "react-router-dom";
 import history from "../../../history";
 import CustomForm from "../../../components/form/custom-form";
 import { NotificationManager } from "react-notifications";
+import { FIELD_TYPES } from "../../../components/form/types";
 
 const Login = () => {
-  const onSubmit = data => {
+  const processLoginData = data => {
     if (data.email === 'test@abv.bg' && data.password === 'test') {
       authenticateUser();
       history.push('/');
@@ -23,33 +24,44 @@ const Login = () => {
     return <Navigate to="/" />
   }
 
-  const fields = [{
-    label: 'Email Address',
-    type: 'email',
-    validations: {
-      required: {
-        value: true,
-        message: 'Email address is required'
-      },
-      maxLength: {
-        value: 35,
-        message: 'Email addres cannot be longer than 35 characters'
-      },
-      pattern: {
-        value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
-        message: "Email address is invalid"
-      }
-    }
-  }, {
-    label: 'Password',
-    type: 'password',
-    validations: {
-      required: {
-        value: true,
-        message: 'Password is required'
-      },
-    }
-  }]
+  const fieldsTest = [{
+    id: 'loginFormRow',
+    type: FIELD_TYPES.ROW,
+    children: [{
+      id: 'loginFormColumn',
+      type: FIELD_TYPES.COLUMN,
+      md: 12,
+      children: [{
+        id: 'emailAddress',
+        label: 'Email Address',
+        type: FIELD_TYPES.EMAIL,
+        validations: {
+          required: {
+            value: true,
+            message: 'Email address is required'
+          },
+          maxLength: {
+            value: 35,
+            message: 'Email addres cannot be longer than 35 characters'
+          },
+          pattern: {
+            value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
+            message: "Email address is invalid"
+          }
+        }
+      }, {
+        id: 'password',
+        label: 'Password',
+        type: FIELD_TYPES.PASSWORD,
+        validations: {
+          required: {
+            value: true,
+            message: 'Password is required'
+          },
+        }
+      }]
+    }]
+  }];
 
   return (
     <div className="auth-pages-wrapper">
@@ -63,8 +75,8 @@ const Login = () => {
           </div>
           <div className="mb-3">
             <CustomForm
-              fields={fields}
-              onSubmit={(data) => onSubmit(data)}
+              fields={fieldsTest}
+              onSubmit={(data) => processLoginData(data)}
               renderSubmitChildren={(
                 <div className="text-center mt-3">
                   <Button size="sm" type="submit">Login</Button>

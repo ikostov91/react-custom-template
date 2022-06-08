@@ -2,10 +2,9 @@
 
 div.card-container {
   padding: 0.5em;
-  background-color: white;
+  background-color: $color-white;
   border-radius: 0.5em;
   box-shadow: $box-shadow;
   word-wrap: break-word;
   height: 100%;
-  // overflow: auto;
 }
