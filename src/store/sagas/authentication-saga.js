@@ -4,7 +4,7 @@ import * as Actions from '../actions/authentication-actions';
 import history from "../../history";
 import NotificationManager from "react-notifications/lib/NotificationManager";
 import { getLoggedInUser, authenticateUser } from "../../helpers/auth-utils";
-import withErrorHandler from '../saga-error-handler';
+import withErrorHandler from '../with-error-handler';
 import AppError from "../../common/error";
 
 function* handleLogin({ email, password }) {
