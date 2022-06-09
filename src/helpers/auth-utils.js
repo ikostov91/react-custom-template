@@ -54,3 +54,9 @@ export const authenticateUser = (userDetails) => {
 export const logoutUser = () => {
   user = null;
 };
+
+export const getResetPasswordUrl = () => {
+  const url = window.location.origin;
+  return `${url}/reset-password`;
+}
+

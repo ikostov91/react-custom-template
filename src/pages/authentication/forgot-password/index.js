@@ -6,10 +6,10 @@ import Logo from "../../../components/logo";
 import Button from 'react-bootstrap/Button';
 import { Link } from "react-router-dom";
 import CustomForm from "../../../components/form/custom-form";
-import { loginUser } from '../../../store/actions/authentication-actions';
-import { loginFormDefinition } from "../utils";
+import { forgotPasswordFormDefinition } from "../utils";
+import { requestPasswordResetLink } from "../../../store/actions/authentication-actions";
 
-const Login = ({ loginUser }) => {
+const ForgotPassword = ({ requestPasswordResetLink }) => {
   if (isUserAuthenticated()) {
     return <Navigate to="/" />
   }
@@ -21,37 +21,32 @@ const Login = ({ loginUser }) => {
             <Logo />
           </div>
           <div className="text-center mb-3">
-            <h5>Login</h5>
-            <div>Email: test@abv.bg, Password: test</div>
+            <h5>Forgot password</h5>
           </div>
           <div className="mb-3">
             <CustomForm
-              fields={loginFormDefinition}
+              fields={forgotPasswordFormDefinition}
               onSubmit={(data) => {
-                const { emailAddress, password } = data;
-                loginUser(emailAddress, password);
+                const { email } = data;
+                requestPasswordResetLink(email);
               }}
               renderSubmitChildren={(
                 <div className="text-center mt-3">
-                  <Button size="sm" type="submit">Login</Button>
+                  <Button size="sm" type="submit">Link for new password</Button>
                 </div>
               )}
             />
           </div>
           <div className="text-center">
-            <Link to="/forgot-password" className="forgot-password-link">Forgot password?</Link>
+            <Link to="/login" className="forgot-password-link">Back to Login</Link>
           </div>
       </div>
     </div>
   );
 };
 
-const mapStateToProps = (state) => ({
-  ...state
-});
-
 const mapDispatchToProps = {
-  loginUser
+  requestPasswordResetLink
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(Login);
+export default connect(null, mapDispatchToProps)(ForgotPassword);

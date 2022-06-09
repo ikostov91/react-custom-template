@@ -6,11 +6,11 @@ import GeneralInputField from "./field-types/general-input-field";
 import { FIELD_TYPES } from "./types";
 
 const CustomForm = ({ fields = [], renderSubmitChildren = null, onSubmit = () => {} }) => {
-  const { control, handleSubmit, formState: { errors } } = useForm();
+  const { control, handleSubmit, formState: { errors }, getValues } = useForm();
 
   const renderFields = (fields = []) => (
     fields.map((field, index) => {
-      const { id, type, label, children = [], validations = {}, className = '', ...props } = field;
+      const { id, type, label, children = [], validations = null, className = '', ...props } = field;
 
       if (type === FIELD_TYPES.EMAIL || type === FIELD_TYPES.PASSWORD) {
         return (
@@ -18,13 +18,14 @@ const CustomForm = ({ fields = [], renderSubmitChildren = null, onSubmit = () =>
             <GeneralInputField
               key={id}
               label={label}
+              id={id}
               type={type}
-              validations={validations}
-              isInvalid={!!errors[type]}
+              validations={validations instanceof Function ? validations(getValues) : validations}
+              isInvalid={!!errors[id]}
               control={control}
             />
             <FieldErrors
-              fieldKey={type}
+              fieldKey={id}
               errors={errors}
             />
           </div>
