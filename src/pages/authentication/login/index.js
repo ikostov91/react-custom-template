@@ -22,7 +22,7 @@ const Login = ({ loginUser }) => {
           </div>
           <div className="text-center mb-3">
             <h5>Login</h5>
-            <div>Email: test@abv.bg, Password: test</div>
+            <div><b>Email</b>: test@abv.bg, <b>Password</b>: test</div>
           </div>
           <div className="mb-3">
             <CustomForm
