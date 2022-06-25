@@ -6,6 +6,7 @@ import NotificationManager from "react-notifications/lib/NotificationManager";
 import { getLoggedInUser, authenticateUser, getResetPasswordUrl } from "../../helpers/auth-utils";
 import withErrorHandler from '../with-error-handler';
 import AppError from "../../common/error";
+import { translate } from "../../helpers/utils";
 
 function* handleLogin({ email, password }) {
   if (email === 'test@abv.bg' && password === 'test') {
@@ -18,7 +19,7 @@ function* handleLogin({ email, password }) {
     authenticateUser(userDetails);
     yield put(Actions.loginUserSuccess(getLoggedInUser()));
     history.push('/');
-    NotificationManager.success('Successfully logged in!', null, 3000);
+    NotificationManager.success(translate('notifications.successfully.logged.in'), null, 3000);
   } else {
     throw new AppError(400, 'Wrong username and/or password.');
   }
@@ -29,7 +30,7 @@ function* handleRequestPasswordResetLink({ email }) {
     email
   };
   history.push('/login');
-  NotificationManager.info('Password link will be sent to your email.', null, 6000);
+  NotificationManager.info(translate('notifications.password.link.sent.to.mail'), null, 6000);
 };
 
 function* handleResetPassword({ email, token, newPassword, confirmPassword }) {
@@ -41,7 +42,7 @@ function* handleResetPassword({ email, token, newPassword, confirmPassword }) {
   };
   console.log(payload);
   history.push('/login');
-  NotificationManager.success('Password is reset successfully.', null, 3000);
+  NotificationManager.success(translate('notifications.password.reset.successfully'), null, 3000);
 };
 
 export default function* authenticationSaga() {

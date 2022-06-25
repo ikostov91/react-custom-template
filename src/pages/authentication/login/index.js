@@ -38,8 +38,9 @@ const Login = ({ loginUser }) => {
               )}
             />
           </div>
-          <div className="text-center">
-            <Link to="/forgot-password" className="forgot-password-link">Forgot password?</Link>
+          <div className="additional-auth-links">
+            <Link to="/register">Register</Link>
+            <Link to="/forgot-password">Forgot password?</Link>
           </div>
       </div>
     </div>

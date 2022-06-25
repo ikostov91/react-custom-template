@@ -12,7 +12,18 @@
   "navigation.menu.dashboard.label": "Dashboard",
   "navigation.menu.custom.grid.label": "Custom Grid",
   "navigation.menu.about.label": "About",
+
+  "pages.dashboard.title.text": "Dashboard",
+
+  "pages.custom.grid.title.text": "Custom Grid",
   
-  "pages.about.description.text": "This is a custom React template project."
+  "pages.about.title.text": "About",
+  "pages.about.description.text": "This is a custom React template project.",
+
+  "pages.error.not.found": "404 - Not Found",
+
+  "notifications.successfully.logged.in": "Successfully logged in!",
+  "notifications.password.link.sent.to.mail": "Password link will be sent to your email.",
+  "notifications.password.reset.successfully": "Password is reset successfully."
 }
 

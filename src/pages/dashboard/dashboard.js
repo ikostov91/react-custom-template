@@ -3,6 +3,7 @@ import logo from '../../assets/images/logo.svg';
 import CustomRow from '../../components/custom-row';
 import CustomColumn from '../../components/custom-column';
 import PageTitle from '../../components/page-title';
+import Translate from '../../components/translate';
 
 const Dashboard = () => {
   return (
@@ -10,7 +11,7 @@ const Dashboard = () => {
       <CustomRow>
         <CustomColumn width={12}>
           <PageTitle
-            title="Dashboard"
+            title={<Translate id="pages.dashboard.title.text" />}
             breadcrumbs={[{ label: 'Home', path: '/' }, { label: 'Dashboard', path: '/dashboard', active: true }]}
           />
         </CustomColumn>

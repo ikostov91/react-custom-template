@@ -6,7 +6,7 @@ import Translate from './translate';
 import { connect } from 'react-redux';
 
 const UserProfile = ({ userDetails }) => {
-  const { firstName, lastName, role, email } = userDetails;
+  const { firstName = '', lastName = '', role = '', email = '' } = userDetails;
   const userName = `${firstName} ${lastName}`;
 
   const logout = () => {

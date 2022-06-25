@@ -17,6 +17,11 @@
   border-radius: 1em;
 }
 
-.forgot-password-link {
+.additional-auth-links {
+  display: flex;
+  justify-content: space-around;
+}
+
+.additional-auth-links a {
   text-decoration: none;
 }

@@ -1,3 +1,5 @@
+import i18n from "../i18n";
+
 // From: https://www.w3resource.com/javascript-exercises/javascript-math-exercise-23.php
 export const create_UUID = () => {
   let dt = new Date().getTime();
@@ -8,3 +10,7 @@ export const create_UUID = () => {
   });
   return uuid;
 };
+
+export const translate = (id) => (
+  i18n.t(id)
+);

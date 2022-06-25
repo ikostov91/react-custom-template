@@ -4,9 +4,10 @@ import languages from '../common/languages';
 import i18n from '../i18n';
 import { withTranslation } from "react-i18next";
 import Translate from './translate';
+import { DEFAULT_LANG } from '../i18n';
 
 const LanguageSelector = ({ t }) => {
-  const [language, setLanguage] = useState('en');
+  const [language, setLanguage] = useState(DEFAULT_LANG);
 
   const changeLanguage = (langKey) => {
     setLanguage(langKey);

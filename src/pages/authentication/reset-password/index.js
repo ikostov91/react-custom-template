@@ -42,7 +42,7 @@ const ResetPassword = ({ resetPassword }) => {
               )}
             />
           </div>
-          <div className="text-center">
+          <div className="additional-auth-links">
             <Link to="/login" className="forgot-password-link">Back to Login</Link>
           </div>
       </div>

@@ -37,8 +37,8 @@ const ForgotPassword = ({ requestPasswordResetLink }) => {
               )}
             />
           </div>
-          <div className="text-center">
-            <Link to="/login" className="forgot-password-link">Back to Login</Link>
+          <div className="additional-auth-links">
+            <Link to="/login">Back to Login</Link>
           </div>
       </div>
     </div>

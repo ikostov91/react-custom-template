@@ -13,5 +13,16 @@
   "navigation.menu.custom.grid.label": "Персонализиран Грид",
   "navigation.menu.about.label": "За нас",
 
-  "pages.about.description.text": "Това е персонализиран шаблонен проект на React"
+  "pages.dashboard.title.text": "Дашборд",
+
+  "pages.custom.grid.title.text": "Персонализиран грид",
+
+  "pages.about.title.text": "За нас",
+  "pages.about.description.text": "Това е персонализиран шаблонен проект на React",
+
+  "pages.error.not.found": "404 - Не е намерена страницата",
+
+  "notifications.successfully.logged.in": "Успешно вписване!",
+  "notifications.password.link.sent.to.mail": "Линк за паролата ще ви бъде изпратен по имейл.",
+  "notifications.password.reset.successfully": "Паролата е променена успешно!"
 }
