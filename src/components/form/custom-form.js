@@ -5,8 +5,8 @@ import FieldErrors from "./field-errors";
 import GeneralInputField from "./field-types/general-input-field";
 import { FIELD_TYPES } from "./types";
 
-const CustomForm = ({ fields = [], renderSubmitChildren = null, onSubmit = () => {} }) => {
-  const { control, handleSubmit, formState: { errors }, getValues } = useForm();
+const CustomForm = ({ fields = [], data = {}, renderSubmitChildren = null, onSubmit = () => {} }) => {
+  const { control, handleSubmit, formState: { errors }, getValues } = useForm({ defaultValues: data });
 
   const renderFields = (fields = []) => (
     fields.map((field, index) => {

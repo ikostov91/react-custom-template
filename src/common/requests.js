@@ -1,15 +1,16 @@
-import axios from 'axios';
 import { getAuthorizationHeaders } from '../helpers/auth-utils';
 import axiosInstance from './axios-instance';
 
 export const apiUrl = 'http://test.com';
+
+export const resultLambda = (res) => res?.data ?? {};
 
 export const login = (body) => (
   axiosInstance.post(`${apiUrl}/account/login`, body, {
     headers: {
       Accept: 'application/json',
     }
-  })
+  }).then(resultLambda)
 );
 
 export const register = (body) => (
@@ -17,7 +18,7 @@ export const register = (body) => (
     headers: {
       Accept: 'application/json',
     }
-  })
+  }).then(resultLambda)
 );
 
 export const forgotPassword = (body) => (
@@ -25,7 +26,7 @@ export const forgotPassword = (body) => (
     headers: {
       Accept: 'application/json',
     }
-  })
+  }).then(resultLambda)
 );
 
 export const resetPassword = (body) => (
@@ -33,5 +34,5 @@ export const resetPassword = (body) => (
     headers: {
       Accept: 'application/json',
     }
-  })
+  }).then(resultLambda)
 );

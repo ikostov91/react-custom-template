@@ -4,6 +4,11 @@ import {
   USER_COOKIE_NAME,
 } from './constants';
 
+export const testUserLogin = {
+  email: 'test@abv.bg',
+  password: 'test'
+}
+
 let user = null;
 
 export const isUserAuthenticated = () => {
