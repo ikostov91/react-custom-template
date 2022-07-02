@@ -58,5 +58,13 @@ export const logoutUser = () => {
 export const getResetPasswordUrl = () => {
   const url = window.location.origin;
   return `${url}/reset-password`;
-}
+};
+
+export const getAuthorizationHeaders = () => ({
+  "Authorization" : `Bearer ${getUserToken()}`
+});
+
+export const getContentTypeHeaders = (body) => (
+  body instanceof FormData ? {} : { 'Content-Type': 'application/json' }
+);
 

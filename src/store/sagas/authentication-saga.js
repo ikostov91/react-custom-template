@@ -10,22 +10,33 @@ import { getLoggedInUser, authenticateUser, getResetPasswordUrl } from "../../he
 import withErrorHandler from '../with-error-handler';
 import AppError from "../../common/error";
 import { translate } from "../../helpers/utils";
+import { login } from "../../common/requests";
 
 function* handleLogin({ email, password }) {
-  if (email === 'test@abv.bg' && password === 'test') {
-    const userDetails = {
-      firstName: 'Ivaylo',
-      lastName: 'Kostov',
-      role: 'User',
-      email
-    };
-    authenticateUser(userDetails);
-    yield put(Actions.loginUserSuccess(getLoggedInUser()));
-    history.push('/');
-    NotificationManager.success(translate('notifications.successfully.logged.in'), null, 3000);
-  } else {
-    throw new AppError(400, 'Wrong username and/or password.');
-  }
+  debugger;
+  const body = {
+    email,
+    password
+  };
+  const userDetails = yield login(body);
+  debugger;
+  console.log(userDetails);
+  yield put(Actions.loginUserSuccess(getLoggedInUser()));
+  history.push('/');
+  // if (email === 'test@abv.bg' && password === 'test') {
+  //   const userDetails = {
+  //     firstName: 'Ivaylo',
+  //     lastName: 'Kostov',
+  //     role: 'User',
+  //     email
+  //   };
+  //   authenticateUser(userDetails);
+  //   yield put(Actions.loginUserSuccess(getLoggedInUser()));
+  //   history.push('/');
+  //   NotificationManager.success(translate('notifications.successfully.logged.in'), null, 3000);
+  // } else {
+  //   throw new AppError(400, 'Wrong username and/or password.');
+  // }
 };
 
 function* handleRegisterUser({ firstName, lastName, emailAddress, password }) {
