@@ -1,4 +1,7 @@
-import { LOGIN_USER, REQUEST_PASSWORD_RESET_LINK, RESET_PASSWORD } from "../types/authentication-types";
+import {
+  LOGIN_USER, REQUEST_PASSWORD_RESET_LINK,
+  RESET_PASSWORD, REGISTER_USER
+} from "../types/authentication-types";
 import { put, takeLatest } from 'redux-saga/effects';
 import * as Actions from '../actions/authentication-actions';
 import history from "../../history";
@@ -25,6 +28,11 @@ function* handleLogin({ email, password }) {
   }
 };
 
+function* handleRegisterUser({ firstName, lastName, emailAddress, password }) {
+  alert('REGISTER');
+  console.log({ firstName, lastName, emailAddress, password });
+};
+
 function* handleRequestPasswordResetLink({ email }) {
   const payload = {
     email
@@ -40,13 +48,13 @@ function* handleResetPassword({ email, token, newPassword, confirmPassword }) {
     newPassword,
     confirmPassword
   };
-  console.log(payload);
   history.push('/login');
   NotificationManager.success(translate('notifications.password.reset.successfully'), null, 3000);
 };
 
 export default function* authenticationSaga() {
   yield takeLatest(LOGIN_USER, withErrorHandler(handleLogin));
+  yield takeLatest(REGISTER_USER, withErrorHandler(handleRegisterUser));
   yield takeLatest(REQUEST_PASSWORD_RESET_LINK, withErrorHandler(handleRequestPasswordResetLink));
   yield takeLatest(RESET_PASSWORD, withErrorHandler(handleResetPassword));
 };

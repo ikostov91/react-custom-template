@@ -13,6 +13,7 @@ import 'react-notifications/lib/notifications.css';
 import Login from './pages/authentication/login/index';
 import ForgotPassword from './pages/authentication/forgot-password';
 import ResetPassword from './pages/authentication/reset-password';
+import Register from './pages/authentication/register/register';
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
       <CustomRouter history={history}>
         <Routes>
           <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
           <Route path="/forgot-password" element={<ForgotPassword />} />
           <Route path="/reset-password" element={<ResetPassword />} />
           <Route path="/*" element={<Layout />} />

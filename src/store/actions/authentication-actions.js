@@ -1,6 +1,7 @@
 import {
   LOGIN_USER,
   LOGIN_USER_SUCCESS,
+  REGISTER_USER,
   REQUEST_PASSWORD_RESET_LINK,
   RESET_PASSWORD
 } from "../types/authentication-types";
@@ -16,6 +17,14 @@ export const loginUserSuccess = (payload) => ({
   payload
 });
 
+export const registerUser = (firstName, lastName, emailAddress, password) => ({
+  type: REGISTER_USER,
+  firstName,
+  lastName,
+  emailAddress,
+  password
+});
+
 export const requestPasswordResetLink = (email) => ({
   type: REQUEST_PASSWORD_RESET_LINK,
   email
@@ -27,4 +36,12 @@ export const resetPassword = (email, token, newPassword, confirmPassword) => ({
   token,
   newPassword,
   confirmPassword
+});
+
+export const registerPassword = (firstName, lastName, emailAddress, password) => ({
+  type: RESET_PASSWORD,
+  firstName,
+  lastName,
+  emailAddress,
+  password
 });

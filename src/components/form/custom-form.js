@@ -7,12 +7,13 @@ import { FIELD_TYPES } from "./types";
 
 const CustomForm = ({ fields = [], renderSubmitChildren = null, onSubmit = () => {} }) => {
   const { control, handleSubmit, formState: { errors }, getValues } = useForm();
+  console.log(fields);
 
   const renderFields = (fields = []) => (
     fields.map((field, index) => {
       const { id, type, label, children = [], validations = null, className = '', ...props } = field;
 
-      if (type === FIELD_TYPES.EMAIL || type === FIELD_TYPES.PASSWORD) {
+      if (type === FIELD_TYPES.EMAIL || type === FIELD_TYPES.PASSWORD || type === FIELD_TYPES.TEXT) {
         return (
           <div key={index} className="field-element">
             <GeneralInputField
