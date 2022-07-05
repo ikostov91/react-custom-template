@@ -1,4 +1,6 @@
 import {
+  CURRENT_USER_INFO,
+  CURRENT_USER_INFO_SUCCESS,
   LOGIN_USER,
   LOGIN_USER_SUCCESS,
   REGISTER_USER,
@@ -44,4 +46,13 @@ export const registerPassword = (firstName, lastName, emailAddress, password) =>
   lastName,
   emailAddress,
   password
+});
+
+export const requestCurrentUserInfo = () => ({
+  type: CURRENT_USER_INFO
+});
+
+export const requestCurrentUserInfoSuccess = (payload) => ({
+  type: CURRENT_USER_INFO_SUCCESS,
+  payload
 });

@@ -1,9 +1,11 @@
 import {
+  CURRENT_USER_INFO_SUCCESS,
 	LOGIN_USER_SUCCESS,
 } from '../types/authentication-types';
 
 const DEFAULT_STATE = {
   userDetails: {},
+  currentUserInfo: {}
 };
 
 const authenticationReducer = (state = DEFAULT_STATE, action) => {
@@ -14,6 +16,12 @@ const authenticationReducer = (state = DEFAULT_STATE, action) => {
         userDetails: {
           ...action.payload
         }
+      };
+    case CURRENT_USER_INFO_SUCCESS:
+      debugger;
+      return {
+        ...state,
+        currentUserInfo: action.payload
       };
     default: return { ...state };
   }

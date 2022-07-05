@@ -1,15 +1,19 @@
 import {
   LOGIN_USER, REQUEST_PASSWORD_RESET_LINK,
-  RESET_PASSWORD, REGISTER_USER
+  RESET_PASSWORD, REGISTER_USER, CURRENT_USER_INFO
 } from "../types/authentication-types";
 import { put, takeLatest, call } from 'redux-saga/effects';
 import * as Actions from '../actions/authentication-actions';
 import history from "../../history";
 import NotificationManager from "react-notifications/lib/NotificationManager";
-import { getLoggedInUser, authenticateUser, getResetPasswordUrl } from "../../helpers/auth-utils";
+import {
+  getLoggedInUser,
+  authenticateUser,
+  getResetPasswordUrl
+} from "../../helpers/auth-utils";
 import withErrorHandler from '../with-error-handler';
 import { translate } from "../../helpers/utils";
-import { login, register } from "../../common/requests";
+import { login, register, currentUserInfo } from "../../common/requests";
 
 function* handleLogin({ email, password }) {
   const body = {
@@ -18,7 +22,6 @@ function* handleLogin({ email, password }) {
   };
   const userDetails = yield call(login, body);
   authenticateUser(userDetails);
-  console.log(userDetails);
   yield put(Actions.loginUserSuccess(getLoggedInUser()));
   history.push('/');
   NotificationManager.success(translate('notifications.successfully.logged.in'), null, 3000);
@@ -55,9 +58,17 @@ function* handleResetPassword({ email, token, newPassword, confirmPassword }) {
   NotificationManager.success(translate('notifications.password.reset.successfully'), null, 3000);
 };
 
+function* handleRequestCurrentUserInfo() {
+  debugger;
+  const result = yield call(currentUserInfo);
+  yield put(Actions.requestCurrentUserInfoSuccess(result));
+  console.log(result);
+};
+
 export default function* authenticationSaga() {
   yield takeLatest(LOGIN_USER, withErrorHandler(handleLogin));
   yield takeLatest(REGISTER_USER, withErrorHandler(handleRegisterUser));
   yield takeLatest(REQUEST_PASSWORD_RESET_LINK, withErrorHandler(handleRequestPasswordResetLink));
   yield takeLatest(RESET_PASSWORD, withErrorHandler(handleResetPassword));
+  yield takeLatest(CURRENT_USER_INFO, withErrorHandler(handleRequestCurrentUserInfo));
 };

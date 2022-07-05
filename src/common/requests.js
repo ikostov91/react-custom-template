@@ -36,3 +36,11 @@ export const resetPassword = (body) => (
     }
   }).then(resultLambda)
 );
+
+export const currentUserInfo = () => (
+  axiosInstance.get(`${apiUrl}/account/current-user-info`, {
+    headers: {
+      Accept: 'application/json',
+    }
+  }).then(resultLambda)
+);
