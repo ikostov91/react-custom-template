@@ -9,7 +9,8 @@ import NotificationManager from "react-notifications/lib/NotificationManager";
 import {
   getLoggedInUser,
   authenticateUser,
-  getResetPasswordUrl
+  getResetPasswordUrl,
+  setLoggedInUser
 } from "../../helpers/auth-utils";
 import withErrorHandler from '../with-error-handler';
 import { translate } from "../../helpers/utils";
@@ -20,9 +21,9 @@ function* handleLogin({ email, password }) {
     email,
     password
   };
-  const userDetails = yield call(login, body);
-  authenticateUser(userDetails);
-  yield put(Actions.loginUserSuccess(getLoggedInUser()));
+  const userAuthResult = yield call(login, body);
+  setLoggedInUser(userAuthResult);
+  yield put(Actions.loginUserSuccess(userAuthResult));
   history.push('/');
   NotificationManager.success(translate('notifications.successfully.logged.in'), null, 3000);
 };
@@ -59,10 +60,8 @@ function* handleResetPassword({ email, token, newPassword, confirmPassword }) {
 };
 
 function* handleRequestCurrentUserInfo() {
-  debugger;
   const result = yield call(currentUserInfo);
   yield put(Actions.requestCurrentUserInfoSuccess(result));
-  console.log(result);
 };
 
 export default function* authenticationSaga() {

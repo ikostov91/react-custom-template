@@ -18,7 +18,6 @@ const authenticationReducer = (state = DEFAULT_STATE, action) => {
         }
       };
     case CURRENT_USER_INFO_SUCCESS:
-      debugger;
       return {
         ...state,
         currentUserInfo: action.payload

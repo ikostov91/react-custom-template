@@ -6,13 +6,12 @@ import Translate from './translate';
 import { connect } from 'react-redux';
 import { requestCurrentUserInfo } from '../store/actions/authentication-actions';
 
-const UserProfile = ({ userDetails, requestCurrentUserInfo }) => {
+const UserProfile = ({ currentUserInfo, requestCurrentUserInfo }) => {
   useEffect(() => {
-    debugger;
     requestCurrentUserInfo();
   }, []);
 
-  const { firstName = '', lastName = '', role = '', email = '' } = userDetails;
+  const { firstName = '', lastName = '', role = '', email = '' } = currentUserInfo;
   const userName = `${firstName} ${lastName}`;
 
   const logout = () => {
@@ -55,7 +54,7 @@ const UserProfile = ({ userDetails, requestCurrentUserInfo }) => {
 };
 
 const mapStateToProps = (state) => ({
-  userDetails: state.authentication.userDetails
+  currentUserInfo: state.authentication.currentUserInfo
 });
 
 const mapDispatchToProps = {

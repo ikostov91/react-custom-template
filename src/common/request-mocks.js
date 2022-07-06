@@ -11,19 +11,13 @@ axiosMockAdapterInstance.onPost(`${apiUrl}/account/login`).reply(config => {
   const { data } = config;
   const { email, password } = JSON.parse(data);
   if (email === testUserLogin.email && password === testUserLogin.password) {
-    const result = {
+    const tokenData = {
+      exp: Date.now() + 300000
+    };
+    const response = {
       userId: uuidv4(),
       role: 'User',
-      token: jwtEncode({
-        exp: Date.UTC() + 300000
-      }, jwtTokenSecret)
-    };
-    console.log(result);
-    const response = {
-      firstName: 'Ivaylo',
-      lastName: 'Kostov',
-      role: 'User',
-      email: email
+      token: jwtEncode(tokenData, jwtTokenSecret)
     };
     return [200, response];
   } else {
