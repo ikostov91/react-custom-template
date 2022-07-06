@@ -1,12 +1,17 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Dropdown from 'react-bootstrap/Dropdown';
 import { logoutUser } from '../helpers/auth-utils';
 import history from '../history';
 import Translate from './translate';
 import { connect } from 'react-redux';
+import { requestCurrentUserInfo } from '../store/actions/authentication-actions';
 
-const UserProfile = ({ userDetails }) => {
-  const { firstName = '', lastName = '', role = '', email = '' } = userDetails;
+const UserProfile = ({ currentUserInfo, requestCurrentUserInfo }) => {
+  useEffect(() => {
+    requestCurrentUserInfo();
+  }, []);
+
+  const { firstName = '', lastName = '', role = '', email = '' } = currentUserInfo;
   const userName = `${firstName} ${lastName}`;
 
   const logout = () => {
@@ -49,7 +54,11 @@ const UserProfile = ({ userDetails }) => {
 };
 
 const mapStateToProps = (state) => ({
-  userDetails: state.authentication.userDetails
+  currentUserInfo: state.authentication.currentUserInfo
 });
 
-export default connect(mapStateToProps, null)(UserProfile);
+const mapDispatchToProps = {
+  requestCurrentUserInfo
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(UserProfile);

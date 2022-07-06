@@ -10,7 +10,16 @@ const GeneralInputField = ({ id, label = '', type = '', validations = {}, isInva
         name={id}
         control={control}
         rules={validations}
-        render={({ field }) => <Form.Control type={type} isInvalid={isInvalid} size="sm" className="mb-1" { ...field } />}
+        render={({ field }) => 
+          <Form.Control
+            { ...field }
+            value={field.value ?? ''}
+            type={type}
+            isInvalid={isInvalid}
+            size="sm"
+            className="mb-1"
+          />
+        }
       />
     </>
   );
