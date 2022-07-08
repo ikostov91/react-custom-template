@@ -3,7 +3,7 @@ import axiosInstance from './axios-instance';
 
 export const apiUrl = 'http://test.com';
 
-export const resultLambda = (res) => res?.data ?? {};
+const resultLambda = (res) => res?.data ?? {};
 
 export const login = (body) => (
   axiosInstance.post(`${apiUrl}/account/login`, body, {

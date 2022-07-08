@@ -12,7 +12,7 @@ axiosMockAdapterInstance.onPost(`${apiUrl}/account/login`).reply(config => {
   const { email, password } = JSON.parse(data);
   if (email === testUserLogin.email && password === testUserLogin.password) {
     const tokenData = {
-      exp: Date.now() + 300000
+      exp: (Date.now() + 3600000) / 1000 // 1 hour
     };
     const response = {
       userId: uuidv4(),
@@ -25,9 +25,10 @@ axiosMockAdapterInstance.onPost(`${apiUrl}/account/login`).reply(config => {
   }  
 });
 
-axiosMockAdapterInstance.onPost(`${apiUrl}/account/register`).reply(config => {
+axiosMockAdapterInstance.onPost(`${apiUrl}/account/register`).reply((config) => {
   const { data } = config;
   const { firstName, lastName, emailAddress, password } = JSON.parse(data);
+  console.log({ firstName, lastName, emailAddress, password});
   return [200, {}]; 
 });
 
@@ -39,4 +40,18 @@ axiosMockAdapterInstance.onGet(`${apiUrl}/account/current-user-info`).reply(() =
     email: 'test@abv.bg'
   };
   return [200, result]; 
+});
+
+axiosMockAdapterInstance.onPut(`${apiUrl}/account/forgot-password`).reply((config) => {
+  const { data } = config;
+  const { email } = JSON.parse(data);
+  console.log(email);
+  return [200, {}];
+});
+
+axiosMockAdapterInstance.onPut(`${apiUrl}/account/reset-password`).reply((config) => {
+  const { data } = config;
+  const { email, token, newPassword, confirmPassword } = JSON.parse(data);
+  console.log({ email, token, newPassword, confirmPassword });
+  return [200, {}]; 
 });

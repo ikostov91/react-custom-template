@@ -23,7 +23,7 @@
   "pages.error.not.found": "404 - Not Found",
 
   "notifications.successfully.logged.in": "Successfully logged in!",
-  "notifications.successfully.registered": "Successfully registered!",
+  "notifications.successfully.registered": "Successfully registered! You can now login.",
   "notifications.password.link.sent.to.mail": "Password link will be sent to your email.",
   "notifications.password.reset.successfully": "Password is reset successfully."
 }

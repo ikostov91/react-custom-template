@@ -27,6 +27,7 @@ const ResetPassword = ({ resetPassword }) => {
           </div>
           <div className="text-center mb-3">
             <h5>Reset password</h5>
+            <div>Email: {email}, Token: {token}</div>
           </div>
           <div className="mb-3">
             <CustomForm

@@ -27,8 +27,8 @@ const ForgotPassword = ({ requestPasswordResetLink }) => {
             <CustomForm
               fields={forgotPasswordFormDefinition}
               onSubmit={(data) => {
-                const { email } = data;
-                requestPasswordResetLink(email);
+                const { emailAddress } = data;
+                requestPasswordResetLink(emailAddress);
               }}
               renderSubmitChildren={(
                 <div className="text-center mt-3">

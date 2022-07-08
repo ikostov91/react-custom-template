@@ -14,7 +14,12 @@ import {
 } from "../../helpers/auth-utils";
 import withErrorHandler from '../with-error-handler';
 import { translate } from "../../helpers/utils";
-import { login, register, currentUserInfo } from "../../common/requests";
+import {
+  login, register,
+  currentUserInfo,
+  forgotPassword,
+  resetPassword
+} from "../../common/requests";
 
 function* handleLogin({ email, password }) {
   const body = {
@@ -44,6 +49,7 @@ function* handleRequestPasswordResetLink({ email }) {
   const payload = {
     email
   };
+  yield call(forgotPassword, payload);
   history.push('/login');
   NotificationManager.info(translate('notifications.password.link.sent.to.mail'), null, 6000);
 };
@@ -55,6 +61,7 @@ function* handleResetPassword({ email, token, newPassword, confirmPassword }) {
     newPassword,
     confirmPassword
   };
+  yield call(resetPassword, payload);
   history.push('/login');
   NotificationManager.success(translate('notifications.password.reset.successfully'), null, 3000);
 };
