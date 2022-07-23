@@ -7,6 +7,7 @@ import NotFound from '../../pages/not-found/not-found';
 import TopNavBar from './top-nav-bar';
 import CustomGridDemo from '../../pages/custom-grid-demo/custom-grid-demo';
 import PrivateRoute from '../../routing/private-route';
+import TabsExample from '../../pages/tabs-example/tabs-example';
 
 const MainContent = () => {
   return (
@@ -22,6 +23,8 @@ const MainContent = () => {
             <Route path="dashboard" element={<PrivateRoute><Dashboard /></PrivateRoute>} />
             <Route path="custom-grid-demo" element={<PrivateRoute><CustomGridDemo /></PrivateRoute>} />
             <Route path="about" element={<PrivateRoute><About /></PrivateRoute>} />
+            <Route path="tabs/*" element={<PrivateRoute><TabsExample /></PrivateRoute>} />
+            <Route path="tabs" element={<PrivateRoute><TabsExample /></PrivateRoute>} />
             <Route path="*" element={<PrivateRoute><NotFound /></PrivateRoute>} />
           </Routes>
         </div>

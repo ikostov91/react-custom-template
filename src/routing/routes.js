@@ -12,12 +12,12 @@ const routes = [{
   icon: FaTh
 }, {
   id: 'nested-menu',
-  name: 'Empty Parent',
+  name: 'Examples',
   icon: FaSistrix,
   children: [{
-    id: 'child1',
-    name: 'Nested 1',
-    path: '/nested1',
+    id: 'tabsExample',
+    name: 'Tabs',
+    path: '/tabs',
     icon: FaSistrix
   }, {
     id: 'child2',

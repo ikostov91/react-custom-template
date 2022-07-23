@@ -14,10 +14,13 @@
   "navigation.menu.about.label": "За нас",
 
   "pages.dashboard.title.text": "Дашборд",
-
   "pages.custom.grid.title.text": "Персонализиран грид",
-
   "pages.about.title.text": "За нас",
+  "pages.tabs.example.title.text": "Табове",
+  "pages.tabs.first.tab.title": "Първи таб",
+  "pages.tabs.second.tab.title": "Втори таб",
+  "pages.tabs.third.tab.title": "Трети таб",
+
   "pages.about.description.text": "Това е персонализиран шаблонен проект на React",
 
   "pages.error.not.found": "404 - Не е намерена страницата",
@@ -30,5 +33,6 @@
   "breadcrumbs.home": "Начална страница",
   "breadcrumbs.about": "За нас",
   "breadcrumbs.dashboard": "Дашборд",
-  "breadcrumbs.custom.grid": "Персонализиран Грид"
+  "breadcrumbs.custom.grid": "Персонализиран Грид",
+  "breadcrumbs.tabs": "Табове"
 }
