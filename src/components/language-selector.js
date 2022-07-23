@@ -16,7 +16,7 @@ const LanguageSelector = ({ t }) => {
 
   return (
     <Dropdown className='language-selector'>
-      <Dropdown.Toggle variant="secondary" id="dropdown-basic">
+      <Dropdown.Toggle variant="link" id="dropdown-basic">
         <img
           src={require(`../assets/flag-icons/${language}.svg`)}
           alt={language}

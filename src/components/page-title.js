@@ -1,6 +1,7 @@
 import React from 'react';
 import { Breadcrumb } from 'react-bootstrap';
 import history from '../history';
+import Translate from './translate';
 
 const PageTitle = ({ title, breadcrumbs = [] }) => {
   return (
@@ -13,7 +14,7 @@ const PageTitle = ({ title, breadcrumbs = [] }) => {
               onClick={() => history.push(item.path)}
               {...(item.active ? { active: true } : {})}
             >
-              {item.label}
+              <Translate id={item.label} />
             </Breadcrumb.Item>
           ))}
         </Breadcrumb>

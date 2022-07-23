@@ -25,5 +25,10 @@
   "notifications.successfully.logged.in": "Успешно вписване!",
   "notifications.successfully.registered": "Успешно регистриране! Можете вече да се впишете.",
   "notifications.password.link.sent.to.mail": "Линк за паролата ще ви бъде изпратен по имейл.",
-  "notifications.password.reset.successfully": "Паролата е променена успешно!"
+  "notifications.password.reset.successfully": "Паролата е променена успешно!",
+
+  "breadcrumbs.home": "Начална страница",
+  "breadcrumbs.about": "За нас",
+  "breadcrumbs.dashboard": "Дашборд",
+  "breadcrumbs.custom.grid": "Персонализиран Грид"
 }

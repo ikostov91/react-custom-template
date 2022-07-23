@@ -25,6 +25,18 @@
   "notifications.successfully.logged.in": "Successfully logged in!",
   "notifications.successfully.registered": "Successfully registered! You can now login.",
   "notifications.password.link.sent.to.mail": "Password link will be sent to your email.",
-  "notifications.password.reset.successfully": "Password is reset successfully."
+  "notifications.password.reset.successfully": "Password is reset successfully.",
+
+  "breadcrumbs.home": "Home",
+  "breadcrumbs.about": "About",
+  "breadcrumbs.dashboard": "Dashboard",
+  "breadcrumbs.custom.grid": "Custom Grid",
+
+  "buttons.login": "Login",
+  "buttons.reset.password": "Reset password",
+  "buttons.link.for.new.password": "Link for new password",
+  "buttons.back.to.login": "Back to Login",
+  "buttons.register": "Register",
+  "buttons.forgot.password": "Forgot password?"
 }
 

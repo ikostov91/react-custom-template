@@ -4,20 +4,27 @@
 }
 
 .language-selector.dropdown .dropdown-toggle {
-  padding: 0 0.4em;
+  padding: 0.1em 0.4em;
   font-size: 1.2em;
+}
+
+.language-selector.dropdown .dropdown-toggle.btn {
+  background-color: $color-white;
+  box-shadow: var(--flag-icon-box-shadow);
+}
+
+.language-selector.dropdown .dropdown-toggle .flag-icon {
+  padding: 0em 0;
+  box-shadow: var(--flag-icon-box-shadow);
 }
 
 .language-selector.dropdown .dropdown-toggle::after {
   vertical-align: 0.1em;
-}
-
-.language-selector.dropdown .dropdown-toggle .flag-icon {
-  padding: 0.4em 0;
+  color: $color-black;
 }
 
 .language-selector.dropdown .dropdown-menu {
-  min-width: 6rem;
+  min-width: 6em;
   padding: 0;
   font-size: inherit;
 }
@@ -29,20 +36,17 @@
 
 .language-selector.dropdown .dropdown-item div {
   padding: 1em;
-  background-color: white;
+  background-color: $color-white;
   border-radius: 0.1em;
 }
 
 .language-selector.dropdown .dropdown-item .flag-icon {
   margin-right: 1em;
-}
-
-.flag-icon {
-  box-shadow: 1em black;
+  box-shadow: var(--flag-icon-box-shadow);
 }
 
 div.languages-label {
-  color: white;
+  color: $color-white;
   background-color: #707a8e;
   padding: 1em 1em;
 }

@@ -1,5 +1,7 @@
+@import '../variables.scss';
+
 .auth-pages-wrapper {
-  background-color: #707a8e;
+  background-color: $site-secondary-color;
   position: fixed;
   width: 100%;
   height: 100%;
@@ -13,7 +15,7 @@
   padding: 2em 1em;
   max-width: 25em;
   margin: auto;
-  background-color: white;
+  background-color: $color-white;
   border-radius: 1em;
 }
 

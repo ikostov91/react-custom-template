@@ -5,7 +5,6 @@ import CustomColumn from '../../components/custom-column';
 import Translate from '../../components/translate';
 import PageTitle from '../../components/page-title';
 import Logo from '../../components/logo';
-import { Trans } from 'react-i18next';
 
 const About = () => {
   return (
@@ -14,7 +13,11 @@ const About = () => {
         <CustomColumn width={12}>
           <PageTitle
             title={<Translate id="pages.about.title.text" />}
-            breadcrumbs={[{ label: 'Home', path: '/' }, { label: 'About', path: '/about', active: true }]}
+            breadcrumbs={[{
+              label: 'breadcrumbs.home', path: '/'
+            }, {
+              label: 'breadcrumbs.about', path: '/about', active: true
+            }]}
           />
         </CustomColumn>
       </CustomRow>
