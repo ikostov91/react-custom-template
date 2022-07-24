@@ -11,6 +11,7 @@
 
   "navigation.menu.dashboard.label": "Dashboard",
   "navigation.menu.custom.grid.label": "Custom Grid",
+  "navigation.menu.users.label": "Users",
   "navigation.menu.about.label": "About",
 
   "pages.dashboard.title.text": "Dashboard",
