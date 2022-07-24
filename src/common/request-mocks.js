@@ -55,3 +55,12 @@ axiosMockAdapterInstance.onPut(`${apiUrl}/account/reset-password`).reply((config
   console.log({ email, token, newPassword, confirmPassword });
   return [200, {}]; 
 });
+
+axiosMockAdapterInstance.onGet(`${apiUrl}/users`).reply((config) => {
+  const response = [
+    { id: 1, firstName: 'Ivaylo', lastName: 'Kostov', age: 32, email: 'test@abv.bg', role: 'User' },
+    { id: 2, firstName: 'Stamat', lastName: 'Gerasimov', age: 33, email: 'some-address@gmail.com', role: 'Administrator' },
+    { id: 3, firstName: 'Mitko', lastName: 'Mitkov', age: 31, email: 'email@abv.bg', role: 'User' }
+  ];
+  return [200, response]; 
+});

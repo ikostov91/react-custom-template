@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { connect } from 'react-redux';
 import { Table, Column, Cell, HeaderCell } from 'rsuite-table';
 import CustomColumn from '../../components/custom-column';
 import CustomRow from '../../components/custom-row';
@@ -7,13 +8,12 @@ import Translate from '../../components/translate';
 import { FiEdit } from 'react-icons/fi';
 import { MdDelete } from 'react-icons/md';
 import history from '../../history';
+import { requestUsers } from '../../store/actions/users-actions';
 
-const Users = () => {
-  const users = [
-    { id: 1, firstName: 'Ivaylo', lastName: 'Kostov', age: 32, email: 'test@abv.bg', role: 'User' },
-    { id: 2, firstName: 'Stamat', lastName: 'Gerasimov', age: 33, email: 'some-address@gmail.com', role: 'Administrator' },
-    { id: 3, firstName: 'Mitko', lastName: 'Mitkov', age: 31, email: 'email@abv.bg', role: 'User' }
-  ];
+const Users = ({ usersList, requestUsers }) => {
+  useEffect(() => {
+    requestUsers();
+  }, []);
 
   return (
     <>
@@ -34,7 +34,8 @@ const Users = () => {
           <Table
             autoHeight
             cellBordered
-            data={users}
+            data={usersList}
+            loading={usersList.length === 0}
           >
             <Column width={80} sortable fixed>
               <HeaderCell>ID</HeaderCell>
@@ -84,4 +85,12 @@ const Users = () => {
   )
 };
 
-export default Users;
+const mapStateToProps = (state) => ({
+  usersList: state.users.usersList
+});
+
+const mapDispatchToProps = {
+  requestUsers
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Users);

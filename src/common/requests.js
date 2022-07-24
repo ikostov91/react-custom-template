@@ -44,3 +44,11 @@ export const currentUserInfo = () => (
     }
   }).then(resultLambda)
 );
+
+export const requestUsers = () => (
+  axiosInstance.get(`${apiUrl}/users`, {
+    headers: {
+      Accept: 'application/json',
+    }
+  }).then(resultLambda)
+);
