@@ -21,6 +21,7 @@
   "pages.tabs.first.tab.title": "Първи таб",
   "pages.tabs.second.tab.title": "Втори таб",
   "pages.tabs.third.tab.title": "Трети таб",
+  "pages.users.title.text": "Потребители",
 
   "pages.about.description.text": "Това е персонализиран шаблонен проект на React",
 
@@ -35,5 +36,7 @@
   "breadcrumbs.about": "За нас",
   "breadcrumbs.dashboard": "Дашборд",
   "breadcrumbs.custom.grid": "Персонализиран Грид",
-  "breadcrumbs.tabs": "Табове"
+  "breadcrumbs.tabs": "Табове",
+  "breadcrumbs.users": "Потребители",
+  "breadcrumbs.user.details": "Детайли на потребителя"
 }

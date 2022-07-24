@@ -9,6 +9,7 @@ import store from './store/index';
 import { NotificationContainer } from 'react-notifications';
 
 import 'react-notifications/lib/notifications.css';
+import 'rsuite-table/dist/css/rsuite-table.min.css';
 
 import Login from './pages/authentication/login/index';
 import ForgotPassword from './pages/authentication/forgot-password';
