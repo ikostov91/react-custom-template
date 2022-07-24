@@ -14,10 +14,13 @@
   "navigation.menu.about.label": "About",
 
   "pages.dashboard.title.text": "Dashboard",
-
   "pages.custom.grid.title.text": "Custom Grid",
-  
   "pages.about.title.text": "About",
+  "pages.tabs.example.title.text": "Tabs",
+  "pages.tabs.first.tab.title": "First tab",
+  "pages.tabs.second.tab.title": "Second tab",
+  "pages.tabs.third.tab.title": "First tab",
+
   "pages.about.description.text": "This is a custom React template project.",
 
   "pages.error.not.found": "404 - Not Found",
@@ -31,12 +34,6 @@
   "breadcrumbs.about": "About",
   "breadcrumbs.dashboard": "Dashboard",
   "breadcrumbs.custom.grid": "Custom Grid",
-
-  "buttons.login": "Login",
-  "buttons.reset.password": "Reset password",
-  "buttons.link.for.new.password": "Link for new password",
-  "buttons.back.to.login": "Back to Login",
-  "buttons.register": "Register",
-  "buttons.forgot.password": "Forgot password?"
+  "breadcrumbs.tabs": "Tabs"
 }
 

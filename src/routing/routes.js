@@ -1,4 +1,6 @@
 import { FaChartBar, FaQuestionCircle, FaTh, FaSistrix } from "react-icons/fa";
+import { TiTabsOutline } from "react-icons/ti";
+import { RiPagesFill } from 'react-icons/ri'
 
 const routes = [{
   id: 'dashboard',
@@ -11,18 +13,18 @@ const routes = [{
   path: '/custom-grid-demo',
   icon: FaTh
 }, {
-  id: 'nested-menu',
-  name: 'Empty Parent',
-  icon: FaSistrix,
+  id: 'example-pages',
+  name: 'Examples',
+  icon: RiPagesFill,
   children: [{
-    id: 'child1',
-    name: 'Nested 1',
-    path: '/nested1',
-    icon: FaSistrix
+    id: 'tabsExample',
+    name: 'Tabs',
+    path: '/tabs',
+    icon: TiTabsOutline
   }, {
-    id: 'child2',
-    name: 'Nested 2',
-    path: '/nested2',
+    id: 'empty-menu-item',
+    name: 'Empty',
+    path: '/empty',
     icon: FaSistrix
   }]
 }, {

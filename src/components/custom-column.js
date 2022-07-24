@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
 
-const CustomColumn = ({ width = null, xs = null, sm = '', md = '', lg = '', xl = '', children }) => {
+const CustomColumn = ({ width = null, xs = null, sm = '', md = '', lg = '', xl = '', className = '', children = null }) => {
   const baseWidth = width ? `custom-column-${width}` : 'custom-column-';
   // const xsWidth = xs ? `custom-column-xs-${xs}` : '';
   // const smWidth = sm ? `custom-column-sm-${sm}` : '';
@@ -11,7 +11,7 @@ const CustomColumn = ({ width = null, xs = null, sm = '', md = '', lg = '', xl =
   // const xlWidth = xl ? `custom-column-xl-${xl}` : '';
 
   return (
-    <div className={classnames(baseWidth)}>
+    <div className={classnames(baseWidth, className)}>
       {children}
     </div>
   )
