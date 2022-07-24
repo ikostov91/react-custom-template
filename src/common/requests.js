@@ -52,3 +52,11 @@ export const requestUsers = () => (
     }
   }).then(resultLambda)
 );
+
+export const deleteUser = (id) => (
+  axiosInstance.delete(`${apiUrl}/users`, {
+    headers: {
+      Accept: 'application/json',
+    }
+  }).then(resultLambda)
+);

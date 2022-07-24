@@ -1,6 +1,7 @@
 import {
   REQUEST_USERS,
-  REQUEST_USERS_SUCCESS
+  REQUEST_USERS_SUCCESS,
+  DELETE_USER
 } from "../types/users-types";
 
 export const requestUsers = () => ({
@@ -10,4 +11,9 @@ export const requestUsers = () => ({
 export const requestUsersSuccess = (payload) => ({
   type: REQUEST_USERS_SUCCESS,
   payload
+});
+
+export const deleteUser = (id) => ({
+  type: DELETE_USER,
+  id
 });

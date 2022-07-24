@@ -56,11 +56,17 @@ axiosMockAdapterInstance.onPut(`${apiUrl}/account/reset-password`).reply((config
   return [200, {}]; 
 });
 
+let usersList = [
+  { id: 1, firstName: 'Ivaylo', lastName: 'Kostov', age: 32, email: 'test@abv.bg', role: 'User' },
+  { id: 2, firstName: 'Stamat', lastName: 'Gerasimov', age: 33, email: 'some-address@gmail.com', role: 'Administrator' },
+  { id: 3, firstName: 'Mitko', lastName: 'Mitkov', age: 31, email: 'email@abv.bg', role: 'User' },
+  { id: 4, firstName: 'Plamen', lastName: 'Plamenov', age: 28, email: 'paco@abv.bg', role: 'User' }
+];
 axiosMockAdapterInstance.onGet(`${apiUrl}/users`).reply((config) => {
-  const response = [
-    { id: 1, firstName: 'Ivaylo', lastName: 'Kostov', age: 32, email: 'test@abv.bg', role: 'User' },
-    { id: 2, firstName: 'Stamat', lastName: 'Gerasimov', age: 33, email: 'some-address@gmail.com', role: 'Administrator' },
-    { id: 3, firstName: 'Mitko', lastName: 'Mitkov', age: 31, email: 'email@abv.bg', role: 'User' }
-  ];
-  return [200, response]; 
+  return [200, usersList]; 
+});
+
+axiosMockAdapterInstance.onDelete(`${apiUrl}/users`).reply((config) => {
+  usersList = usersList.filter(x => x.id !== 2);
+  return [200, {}]; 
 });

@@ -6,5 +6,9 @@ import { isDevelopment } from '../helpers/environment';
 const axiosMockInstance = axios.create();
 const axiosLiveInstance = axios.create();
 
-export const axiosMockAdapterInstance= new AxiosMockAdapter(axiosMockInstance, { delayResponse: 0 });
+const routeParams = {
+  ":userId": "[0-9]{1,8}",
+};
+
+export const axiosMockAdapterInstance = new AxiosMockAdapter(axiosMockInstance, { delayResponse: 0 }, routeParams);
 export default isDevelopment() ? axiosMockInstance : axiosLiveInstance;

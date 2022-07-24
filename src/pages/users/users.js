@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { connect } from 'react-redux';
 import { Table, Column, Cell, HeaderCell } from 'rsuite-table';
 import CustomColumn from '../../components/custom-column';
@@ -8,12 +8,32 @@ import Translate from '../../components/translate';
 import { FiEdit } from 'react-icons/fi';
 import { MdDelete } from 'react-icons/md';
 import history from '../../history';
-import { requestUsers } from '../../store/actions/users-actions';
+import { requestUsers, deleteUser } from '../../store/actions/users-actions';
+import DeleteConfirmationModal from './components/delete-confirmation-modal';
 
-const Users = ({ usersList, requestUsers }) => {
+const Users = ({ usersList, requestUsers, deleteUser }) => {
   useEffect(() => {
     requestUsers();
   }, []);
+
+  const [deleteId, setDeleteId] = useState(null);
+  const [deleteMessage, setDeleteMessage] = useState('');
+  const [showDeleteModal, setShowDeleteModal] = useState(false);
+
+  const showDeleteConfirmationModal = (rowData) => {
+    setDeleteId(rowData.id);
+    setDeleteMessage(`Are you sure you want to delete user ${`${rowData.firstName} ${rowData.lastName}`}?`);
+    setShowDeleteModal(true);
+  };
+
+  const hideDeleteModal = () => {
+    setShowDeleteModal(false);
+  };
+
+  const confirmDelete = (id) => {
+    deleteUser(id);
+    setShowDeleteModal(false);
+  };
 
   return (
     <>
@@ -73,7 +93,7 @@ const Users = ({ usersList, requestUsers }) => {
                 {(rowData) => (
                   <>
                     <FiEdit className='pointer-cursor' onClick={() => history.push(`/users/${rowData.id}`)} />
-                    <MdDelete className='pointer-cursor' onClick={() => alert('DELETED')} />
+                    <MdDelete className='pointer-cursor' onClick={() => showDeleteConfirmationModal(rowData)} />
                   </>
                 )}
               </Cell>
@@ -81,6 +101,13 @@ const Users = ({ usersList, requestUsers }) => {
           </Table>
         </CustomColumn>
       </CustomRow>
+      <DeleteConfirmationModal
+        showModal={showDeleteModal}
+        hideModal={hideDeleteModal}
+        confirmModal={confirmDelete}
+        message={deleteMessage}
+        id={deleteId}
+      />
     </>
   )
 };
@@ -90,7 +117,8 @@ const mapStateToProps = (state) => ({
 });
 
 const mapDispatchToProps = {
-  requestUsers
+  requestUsers,
+  deleteUser
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Users);
