@@ -12,7 +12,11 @@ const Dashboard = () => {
         <CustomColumn width={12}>
           <PageTitle
             title={<Translate id="pages.dashboard.title.text" />}
-            breadcrumbs={[{ label: 'Home', path: '/' }, { label: 'Dashboard', path: '/dashboard', active: true }]}
+            breadcrumbs={[{
+              label: 'breadcrumbs.home', path: '/'
+            }, {
+              label: 'breadcrumbs.dashboard', path: '/dashboard', active: true
+            }]}
           />
         </CustomColumn>
       </CustomRow>

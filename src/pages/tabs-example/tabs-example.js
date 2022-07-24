@@ -49,7 +49,7 @@ const TabsExample = () => {
       </CustomRow>
       <CustomRow>
         <CustomColumn width={12}>
-          <Nav variant="tabs">
+          <Nav variant="tabs" className='page-navs'>
             {tabs.map(tab => (
               <Nav.Item key={tab.id}>
                 <Nav.Link
