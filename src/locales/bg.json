@@ -31,6 +31,7 @@
   "notifications.successfully.registered": "Успешно регистриране! Можете вече да се впишете.",
   "notifications.password.link.sent.to.mail": "Линк за паролата ще ви бъде изпратен по имейл.",
   "notifications.password.reset.successfully": "Паролата е променена успешно!",
+  "notifications.user.deleted.successfully": "Потребителят е изтрит успешно!",
 
   "breadcrumbs.home": "Начална страница",
   "breadcrumbs.about": "За нас",
@@ -38,5 +39,11 @@
   "breadcrumbs.custom.grid": "Персонализиран Грид",
   "breadcrumbs.tabs": "Табове",
   "breadcrumbs.users": "Потребители",
-  "breadcrumbs.user.details": "Детайли на потребителя"
+  "breadcrumbs.user.details": "Детайли на потребителя",
+
+  "delete.confirmation.modal.header": "Потвърждаване на изтриването",
+  "delete.confirmation.modal.body": "Сигурни ли сте, че искате да изтриете {{message}}?",
+
+  "buttons.delete.label": "Изтрий",
+  "buttons.cancel.label": "Отказ"
 }

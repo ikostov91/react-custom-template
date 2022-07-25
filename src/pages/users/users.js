@@ -9,7 +9,7 @@ import { FiEdit } from 'react-icons/fi';
 import { MdDelete } from 'react-icons/md';
 import history from '../../history';
 import { requestUsers, deleteUser } from '../../store/actions/users-actions';
-import DeleteConfirmationModal from './components/delete-confirmation-modal';
+import DeleteConfirmationModal from '../../components/delete-confirmation-modal';
 
 const Users = ({ usersList, requestUsers, deleteUser }) => {
   useEffect(() => {
@@ -22,7 +22,7 @@ const Users = ({ usersList, requestUsers, deleteUser }) => {
 
   const showDeleteConfirmationModal = (rowData) => {
     setDeleteId(rowData.id);
-    setDeleteMessage(`Are you sure you want to delete user ${`${rowData.firstName} ${rowData.lastName}`}?`);
+    setDeleteMessage(`${rowData.firstName} ${rowData.lastName}`);
     setShowDeleteModal(true);
   };
 

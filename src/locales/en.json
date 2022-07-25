@@ -31,6 +31,7 @@
   "notifications.successfully.registered": "Successfully registered! You can now login.",
   "notifications.password.link.sent.to.mail": "Password link will be sent to your email.",
   "notifications.password.reset.successfully": "Password is reset successfully.",
+  "notifications.user.deleted.successfully": "User is deleted successfully!",
 
   "breadcrumbs.home": "Home",
   "breadcrumbs.about": "About",
@@ -38,6 +39,12 @@
   "breadcrumbs.custom.grid": "Custom Grid",
   "breadcrumbs.tabs": "Tabs",
   "breadcrumbs.users": "Users",
-  "breadcrumbs.user.details": "User Details"
+  "breadcrumbs.user.details": "User Details",
+
+  "delete.confirmation.modal.header": "Delete confirmation",
+  "delete.confirmation.modal.body": "Are you sure you want to delete {{message}}?",
+
+  "buttons.delete.label": "Delete",
+  "buttons.cancel.label": "Cancel"
 }
 

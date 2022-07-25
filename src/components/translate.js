@@ -1,8 +1,8 @@
 import { withTranslation } from 'react-i18next';
 
-const Translate = ({ t, id, stringValues = {}, defaultMessage = '' }) => {
+const Translate = ({ t, id, defaultMessage = '', ...values }) => {
   return (
-    t(id, { ...stringValues, defaultMessage })
+    t(id, { ...values, defaultMessage })
   );
 };
 

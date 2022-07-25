@@ -1,23 +1,24 @@
 import React from 'react';
 import { Modal, Button } from "react-bootstrap";
+import Translate from './translate';
 
 const DeleteConfirmationModal = ({ showModal, hideModal, confirmModal, message, id }) => {
   return (
     <Modal show={showModal} onHide={hideModal}>
       <Modal.Header closeButton>
-        <Modal.Title>Delete Confirmation</Modal.Title>
+        <Translate id="delete.confirmation.modal.header" />
       </Modal.Header>
       <Modal.Body>
         <div className="alert alert-danger">
-          {message}
+          <Translate id="delete.confirmation.modal.body" message={message} />
         </div>
       </Modal.Body>
       <Modal.Footer>
         <Button variant="danger" onClick={() => confirmModal(id)}>
-          Delete
+          <Translate id="buttons.delete.label" />
         </Button>
         <Button variant="default" onClick={hideModal}>
-          Cancel
+          <Translate id="buttons.cancel.label" />
         </Button>
       </Modal.Footer>
     </Modal>
