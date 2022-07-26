@@ -13,9 +13,7 @@ import {
 } from "../../common/requests";
 
 function* handleRequestUsers() {
-  debugger;
   const result = yield call(requestUsers);
-  debugger;
   yield put(Actions.requestUsersSuccess(result));
 };
 

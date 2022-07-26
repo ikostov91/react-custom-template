@@ -66,7 +66,9 @@ axiosMockAdapterInstance.onGet(`${apiUrl}/users`).reply((config) => {
   return [200, usersList]; 
 });
 
-axiosMockAdapterInstance.onDelete(`${apiUrl}/users`).reply((config) => {
-  usersList = usersList.filter(x => x.id !== 2);
+const deletePathRegex = new RegExp(`${apiUrl}\/users\/[0-9]{1,50}`);
+axiosMockAdapterInstance.onDelete(deletePathRegex).reply((config) => {
+  const id = config.url.split('/').at(-1);
+  usersList = usersList.filter(x => x.id != id);
   return [200, {}]; 
 });

@@ -55,34 +55,33 @@ const Users = ({ usersList, requestUsers, deleteUser }) => {
             autoHeight
             cellBordered
             data={usersList}
-            loading={usersList.length === 0}
           >
             <Column width={80} sortable fixed>
               <HeaderCell>ID</HeaderCell>
               <Cell dataKey="id" />
             </Column>
 
-            <Column width={150} sortable>
+            <Column width={150} flexGrow={1} sortable>
               <HeaderCell>First Name</HeaderCell>
               <Cell dataKey="firstName" />
             </Column>
 
-            <Column width={150} sortable>
+            <Column width={150} flexGrow={1} sortable>
               <HeaderCell>Last Name</HeaderCell>
               <Cell dataKey="lastName" />
             </Column>
 
-            <Column width={100} sortable>
+            <Column width={100} flexGrow={1} sortable>
               <HeaderCell>Age</HeaderCell>
               <Cell dataKey="age" />
             </Column>
 
-            <Column width={300} sortable>
+            <Column width={300} flexGrow={1} sortable>
               <HeaderCell>Email</HeaderCell>
               <Cell dataKey="email" />
             </Column>
 
-            <Column width={200} sortable>
+            <Column width={200} flexGrow={1} sortable>
               <HeaderCell>Role</HeaderCell>
               <Cell dataKey="role" />
             </Column>

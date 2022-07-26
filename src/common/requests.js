@@ -54,7 +54,7 @@ export const requestUsers = () => (
 );
 
 export const deleteUser = (id) => (
-  axiosInstance.delete(`${apiUrl}/users`, {
+  axiosInstance.delete(`${apiUrl}/users/${id}`, {
     headers: {
       Accept: 'application/json',
     }
