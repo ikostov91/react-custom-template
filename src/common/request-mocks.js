@@ -4,6 +4,7 @@ import { testUserLogin } from '../helpers/auth-utils';
 import AppError from './error';
 import jwtEncode from 'jwt-encode';
 import { v4 as uuidv4 } from 'uuid';
+import { createRandomUser } from "../helpers/faker-utils";
 
 const jwtTokenSecret = 'JWT_TOKEN_MOCK_SECRET';
 
@@ -56,12 +57,12 @@ axiosMockAdapterInstance.onPut(`${apiUrl}/account/reset-password`).reply((config
   return [200, {}]; 
 });
 
-let usersList = [
-  { id: 1, firstName: 'Ivaylo', lastName: 'Kostov', age: 32, email: 'test@abv.bg', role: 'User' },
-  { id: 2, firstName: 'Stamat', lastName: 'Gerasimov', age: 33, email: 'some-address@gmail.com', role: 'Administrator' },
-  { id: 3, firstName: 'Mitko', lastName: 'Mitkov', age: 31, email: 'email@abv.bg', role: 'User' },
-  { id: 4, firstName: 'Plamen', lastName: 'Plamenov', age: 28, email: 'paco@abv.bg', role: 'User' }
-];
+
+
+let usersList = [];
+for (let index = 1; index <= 30; index++) {
+  usersList.push(createRandomUser(index))
+}
 axiosMockAdapterInstance.onGet(`${apiUrl}/users`).reply((config) => {
   return [200, usersList]; 
 });

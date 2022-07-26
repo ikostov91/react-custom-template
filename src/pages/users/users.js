@@ -10,6 +10,7 @@ import { MdDelete } from 'react-icons/md';
 import history from '../../history';
 import { requestUsers, deleteUser } from '../../store/actions/users-actions';
 import DeleteConfirmationModal from '../../components/delete-confirmation-modal';
+import TablePagination from '../../components/table-pagination';
 
 const Users = ({ usersList, requestUsers, deleteUser }) => {
   useEffect(() => {
@@ -51,53 +52,60 @@ const Users = ({ usersList, requestUsers, deleteUser }) => {
       </CustomRow>
       <CustomRow>
         <CustomColumn width={12}>
-          <Table
-            autoHeight
-            cellBordered
-            data={usersList}
-          >
-            <Column width={80} sortable fixed>
-              <HeaderCell>ID</HeaderCell>
-              <Cell dataKey="id" />
-            </Column>
+          <div>
+            <Table
+              autoHeight
+              cellBordered
+              data={usersList}
+              rowHeight={60}
+              headerHeight={60}
+            >
+              <Column width={80} sortable fixed>
+                <HeaderCell>ID</HeaderCell>
+                <Cell dataKey="id" />
+              </Column>
 
-            <Column width={150} flexGrow={1} sortable>
-              <HeaderCell>First Name</HeaderCell>
-              <Cell dataKey="firstName" />
-            </Column>
+              <Column minWidth={150} flexGrow={1} sortable>
+                <HeaderCell>First Name</HeaderCell>
+                <Cell dataKey="firstName" />
+              </Column>
 
-            <Column width={150} flexGrow={1} sortable>
-              <HeaderCell>Last Name</HeaderCell>
-              <Cell dataKey="lastName" />
-            </Column>
+              <Column width={150} flexGrow={1} sortable>
+                <HeaderCell>Last Name</HeaderCell>
+                <Cell dataKey="lastName" />
+              </Column>
 
-            <Column width={100} flexGrow={1} sortable>
-              <HeaderCell>Age</HeaderCell>
-              <Cell dataKey="age" />
-            </Column>
+              <Column width={100} sortable>
+                <HeaderCell>Age</HeaderCell>
+                <Cell dataKey="age" />
+              </Column>
 
-            <Column width={300} flexGrow={1} sortable>
-              <HeaderCell>Email</HeaderCell>
-              <Cell dataKey="email" />
-            </Column>
+              <Column minWidth={300} flexGrow={2} sortable>
+                <HeaderCell>Email</HeaderCell>
+                <Cell dataKey="email" />
+              </Column>
 
-            <Column width={200} flexGrow={1} sortable>
-              <HeaderCell>Role</HeaderCell>
-              <Cell dataKey="role" />
-            </Column>
-            
-            <Column width={100}>
-              <HeaderCell>Action</HeaderCell>
-              <Cell>
-                {(rowData) => (
-                  <>
-                    <FiEdit className='pointer-cursor' onClick={() => history.push(`/users/${rowData.id}`)} />
-                    <MdDelete className='pointer-cursor' onClick={() => showDeleteConfirmationModal(rowData)} />
-                  </>
-                )}
-              </Cell>
-            </Column>
-          </Table>
+              <Column width={100} sortable>
+                <HeaderCell>Role</HeaderCell>
+                <Cell dataKey="role" />
+              </Column>
+              
+              <Column width={100}>
+                <HeaderCell>Action</HeaderCell>
+                <Cell>
+                  {(rowData) => (
+                    <>
+                      <FiEdit className='pointer-cursor' onClick={() => history.push(`/users/${rowData.id}`)} />
+                      <MdDelete className='pointer-cursor' onClick={() => showDeleteConfirmationModal(rowData)} />
+                    </>
+                  )}
+                </Cell>
+              </Column>
+            </Table>
+          </div>
+          <div className='mt-2'>
+            <TablePagination />
+          </div>
         </CustomColumn>
       </CustomRow>
       <DeleteConfirmationModal
