@@ -36,7 +36,7 @@ const Users = ({ usersList, requestUsers, deleteUser, pageParameters }) => {
     setShowDeleteModal(false);
   };
 
-  const { page, itemsPerPage, searchText, order, sortBy } = pageParameters;
+  const { order, sortBy } = pageParameters;
 
   return (
     <>
@@ -61,7 +61,7 @@ const Users = ({ usersList, requestUsers, deleteUser, pageParameters }) => {
               data={usersList}
               rowHeight={60}
               headerHeight={60}
-              sortColumn={sortBy.toLowerCase()}
+              sortColumn={sortBy}
               sortType={order}
               onSortColumn={(dataKey, sortType) => requestUsers({ ...pageParameters, sortBy: dataKey, order: sortType })}
             >
@@ -109,7 +109,10 @@ const Users = ({ usersList, requestUsers, deleteUser, pageParameters }) => {
             </Table>
           </div>
           <div className='mt-2'>
-            <TablePagination />
+            <TablePagination
+              pageParameters={pageParameters}
+              requestData={(pageParams) => requestUsers(pageParams)}
+            />
           </div>
         </CustomColumn>
       </CustomRow>

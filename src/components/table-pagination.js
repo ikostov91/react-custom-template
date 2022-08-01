@@ -2,25 +2,18 @@ import React from 'react';
 import classnames from 'classnames';
 import Pagination from 'react-bootstrap/Pagination';
 
-const TablePagination = ({ className = '' }) => {
-  const pageParameters = {
-    totalPages: 15,
-    page: 3,
-    hasNext: true,
-    hasPrevious: true
-  };
-
+const TablePagination = ({ pageParameters = {}, className = '', requestData = () => {} }) => {
   return (
     <Pagination size='sm' className='table-pagination'>
-      <Pagination.First onClick={() => alert(1)} />
-      <Pagination.Prev onClick={() => alert(pageParameters.page - 1)} />
+      {pageParameters.page > 1 && <Pagination.First onClick={() => requestData({ ...pageParameters, page: 1})} />}
+      {pageParameters.page > 1 && <Pagination.Prev onClick={() => requestData({ ...pageParameters, page: pageParameters.page - 1})} />}
 
-      <Pagination.Item onClick={() => alert(pageParameters.page - 1)}>{pageParameters.page - 1}</Pagination.Item>
+      {pageParameters.page > 1 && <Pagination.Item onClick={() => requestData({ ...pageParameters, page: pageParameters.page - 1})}>{pageParameters.page - 1}</Pagination.Item>}
       <Pagination.Item active>{pageParameters.page}</Pagination.Item>
-      <Pagination.Item onClick={() => alert(pageParameters.page + 1)}>{pageParameters.page + 1}</Pagination.Item>
+      {pageParameters.page < pageParameters.totalPages && <Pagination.Item onClick={() => requestData({ ...pageParameters, page: pageParameters.page + 1})}>{pageParameters.page + 1}</Pagination.Item>}
 
-      <Pagination.Next onClick={() => alert(pageParameters.page + 1)} />
-      <Pagination.Last onClick={() => alert(pageParameters.totalPages)} />
+      {pageParameters.page < pageParameters.totalPages && <Pagination.Next onClick={() => requestData({ ...pageParameters, page: pageParameters.page + 1})} />}
+      {pageParameters.page < pageParameters.totalPages && <Pagination.Last onClick={() => requestData({ ...pageParameters, page: pageParameters.totalPages })} />}
     </Pagination>
   );
 };

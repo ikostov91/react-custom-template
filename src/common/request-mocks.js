@@ -69,11 +69,11 @@ axiosMockAdapterInstance.onGet(`${apiUrl}/users`).reply((config) => {
   if (config.params) {
     const usersCopy = [...usersList];
     const { page, itemsPerPage, searchText, sortBy, order } = config.params;
-    const startIndex = (page * itemsPerPage) - 1;
+    const startIndex = (page - 1) * itemsPerPage;
     const result = usersCopy
-      .splice(startIndex, itemsPerPage)
-      .sort((a, b) => sortObjectsBy(a, b, sortBy.toLowerCase(), order));
-    return [200, { result, pageParameters: { page, itemsPerPage, searchText, sortBy, order }}]; 
+      .sort((a, b) => sortObjectsBy(a, b, sortBy, order))
+      .splice(startIndex, itemsPerPage);
+    return [200, { result, pageParameters: { page, itemsPerPage, searchText, sortBy, order, totalPages: Math.ceil(usersList.length / itemsPerPage) }}]; 
   }
   return [200, { result: usersList, pageParameters: DEFAULT_PAGE_PARAMETERS}];
 });

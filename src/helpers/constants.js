@@ -7,6 +7,6 @@ export const DEFAULT_PAGE_PARAMETERS = {
   page: 1,
   itemsPerPage: 10,
   searchText: '',
-  sortBy: 'Id',
+  sortBy: 'id',
   order: 'desc',
 };
