@@ -11,6 +11,7 @@
 
   "navigation.menu.dashboard.label": "Дашборд",
   "navigation.menu.custom.grid.label": "Персонализиран Грид",
+  "navigation.menu.users.label": "Потребители",
   "navigation.menu.about.label": "За нас",
 
   "pages.dashboard.title.text": "Дашборд",
@@ -20,6 +21,7 @@
   "pages.tabs.first.tab.title": "Първи таб",
   "pages.tabs.second.tab.title": "Втори таб",
   "pages.tabs.third.tab.title": "Трети таб",
+  "pages.users.title.text": "Потребители",
 
   "pages.about.description.text": "Това е персонализиран шаблонен проект на React",
 
@@ -29,10 +31,19 @@
   "notifications.successfully.registered": "Успешно регистриране! Можете вече да се впишете.",
   "notifications.password.link.sent.to.mail": "Линк за паролата ще ви бъде изпратен по имейл.",
   "notifications.password.reset.successfully": "Паролата е променена успешно!",
+  "notifications.user.deleted.successfully": "Потребителят е изтрит успешно!",
 
   "breadcrumbs.home": "Начална страница",
   "breadcrumbs.about": "За нас",
   "breadcrumbs.dashboard": "Дашборд",
   "breadcrumbs.custom.grid": "Персонализиран Грид",
-  "breadcrumbs.tabs": "Табове"
+  "breadcrumbs.tabs": "Табове",
+  "breadcrumbs.users": "Потребители",
+  "breadcrumbs.user.details": "Детайли на потребителя",
+
+  "delete.confirmation.modal.header": "Потвърждаване на изтриването",
+  "delete.confirmation.modal.body": "Сигурни ли сте, че искате да изтриете {{message}}?",
+
+  "buttons.delete.label": "Изтрий",
+  "buttons.cancel.label": "Отказ"
 }

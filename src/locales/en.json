@@ -11,6 +11,7 @@
 
   "navigation.menu.dashboard.label": "Dashboard",
   "navigation.menu.custom.grid.label": "Custom Grid",
+  "navigation.menu.users.label": "Users",
   "navigation.menu.about.label": "About",
 
   "pages.dashboard.title.text": "Dashboard",
@@ -19,7 +20,8 @@
   "pages.tabs.example.title.text": "Tabs",
   "pages.tabs.first.tab.title": "First tab",
   "pages.tabs.second.tab.title": "Second tab",
-  "pages.tabs.third.tab.title": "First tab",
+  "pages.tabs.third.tab.title": "Third tab",
+  "pages.users.title.text": "Users",
 
   "pages.about.description.text": "This is a custom React template project.",
 
@@ -29,11 +31,20 @@
   "notifications.successfully.registered": "Successfully registered! You can now login.",
   "notifications.password.link.sent.to.mail": "Password link will be sent to your email.",
   "notifications.password.reset.successfully": "Password is reset successfully.",
+  "notifications.user.deleted.successfully": "User is deleted successfully!",
 
   "breadcrumbs.home": "Home",
   "breadcrumbs.about": "About",
   "breadcrumbs.dashboard": "Dashboard",
   "breadcrumbs.custom.grid": "Custom Grid",
-  "breadcrumbs.tabs": "Tabs"
+  "breadcrumbs.tabs": "Tabs",
+  "breadcrumbs.users": "Users",
+  "breadcrumbs.user.details": "User Details",
+
+  "delete.confirmation.modal.header": "Delete confirmation",
+  "delete.confirmation.modal.body": "Are you sure you want to delete {{message}}?",
+
+  "buttons.delete.label": "Delete",
+  "buttons.cancel.label": "Cancel"
 }
 

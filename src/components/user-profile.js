@@ -28,13 +28,13 @@ const UserProfile = ({ currentUserInfo, requestCurrentUserInfo }) => {
         <Dropdown.Menu>
           <div className='user-details'>
             <div>
-              <Translate id="user.profile.dropdown.name.label" stringValues={{ name: userName }} />
+              <Translate id="user.profile.dropdown.name.label" name={userName} />
             </div>
             <div>
-              <Translate id="user.profile.dropdown.email.label" stringValues={{ email }} />
+              <Translate id="user.profile.dropdown.email.label" email={email} />
             </div>
             <div>
-              <Translate id="user.profile.dropdown.role.label" stringValues={{ role }} />
+              <Translate id="user.profile.dropdown.role.label" role={role} />
             </div>
           </div>
           <Dropdown.Item onClick={() => history.push('/user-settings')}>

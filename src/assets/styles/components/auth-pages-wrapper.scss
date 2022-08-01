@@ -1,7 +1,7 @@
 @import '../variables.scss';
 
 .auth-pages-wrapper {
-  background-color: $site-secondary-color;
+  background-color: $main-content-background-color;
   position: fixed;
   width: 100%;
   height: 100%;
@@ -17,6 +17,7 @@
   margin: auto;
   background-color: $color-white;
   border-radius: 1em;
+  box-shadow: var(--flag-icon-box-shadow);
 }
 
 .auth-pages-wrapper .inner-wrapper.wide {

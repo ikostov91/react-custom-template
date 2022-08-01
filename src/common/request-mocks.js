@@ -4,6 +4,9 @@ import { testUserLogin } from '../helpers/auth-utils';
 import AppError from './error';
 import jwtEncode from 'jwt-encode';
 import { v4 as uuidv4 } from 'uuid';
+import { createRandomUser } from "../helpers/faker-utils";
+import { sortObjectsBy } from "../helpers/sorting-utils";
+import { DEFAULT_PAGE_PARAMETERS } from "../helpers/constants";
 
 const jwtTokenSecret = 'JWT_TOKEN_MOCK_SECRET';
 
@@ -53,5 +56,31 @@ axiosMockAdapterInstance.onPut(`${apiUrl}/account/reset-password`).reply((config
   const { data } = config;
   const { email, token, newPassword, confirmPassword } = JSON.parse(data);
   console.log({ email, token, newPassword, confirmPassword });
+  return [200, {}]; 
+});
+
+
+
+let usersList = [];
+for (let index = 1; index <= 35; index++) {
+  usersList.push(createRandomUser(index))
+}
+axiosMockAdapterInstance.onGet(`${apiUrl}/users`).reply((config) => {
+  if (config.params) {
+    const usersCopy = [...usersList];
+    const { page, itemsPerPage, searchText, sortBy, order } = config.params;
+    const startIndex = (page - 1) * itemsPerPage;
+    const result = usersCopy
+      .sort((a, b) => sortObjectsBy(a, b, sortBy, order))
+      .splice(startIndex, itemsPerPage);
+    return [200, { result, pageParameters: { page, itemsPerPage, searchText, sortBy, order, totalPages: Math.ceil(usersList.length / itemsPerPage) }}]; 
+  }
+  return [200, { result: usersList, pageParameters: DEFAULT_PAGE_PARAMETERS}];
+});
+
+const deletePathRegex = new RegExp(`${apiUrl}\/users\/[0-9]{1,50}`);
+axiosMockAdapterInstance.onDelete(deletePathRegex).reply((config) => {
+  const id = config.url.split('/').at(-1);
+  usersList = usersList.filter(x => x.id != id);
   return [200, {}]; 
 });

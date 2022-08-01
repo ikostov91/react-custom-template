@@ -14,3 +14,7 @@ export const create_UUID = () => {
 export const translate = (id) => (
   i18n.t(id)
 );
+
+export const generateRandomNumber = (min = 1, max = Number.MAX_SAFE_INTEGER) => (
+  Math.floor(Math.random() * max) + min
+);
