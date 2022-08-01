@@ -27,6 +27,7 @@ div.custom-row::after {
   flex: 0 0 100%;
   padding-left: $column-side-padding;
   padding-right: $column-side-padding;
+  word-break: break-all;
 }
 
 .custom-column-1 { max-width: 8.3333% }

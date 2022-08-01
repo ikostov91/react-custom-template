@@ -29,8 +29,8 @@ axiosMockAdapterInstance.onPost(`${apiUrl}/account/login`).reply(config => {
 });
 
 axiosMockAdapterInstance.onPost(`${apiUrl}/account/register`).reply((config) => {
-  const { data } = config;
-  const { firstName, lastName, emailAddress, password } = JSON.parse(data);
+  // const { data } = config;
+  // const { firstName, lastName, emailAddress, password } = JSON.parse(data);
   return [200, {}]; 
 });
 
@@ -83,9 +83,15 @@ axiosMockAdapterInstance.onGet(`${apiUrl}/users`).reply((config) => {
   return [200, { result: usersList, pageParameters: DEFAULT_PAGE_PARAMETERS}];
 });
 
-const deletePathRegex = new RegExp(`${apiUrl}\/users\/[0-9]{1,50}`);
-axiosMockAdapterInstance.onDelete(deletePathRegex).reply((config) => {
+const userPathRegex = new RegExp(`${apiUrl}/users/[0-9]{1,50}`);
+axiosMockAdapterInstance.onDelete(userPathRegex).reply((config) => {
   const id = config.url.split('/').at(-1);
-  usersList = usersList.filter(x => x.id != id);
+  usersList = usersList.filter(x => x.id !== id);
   return [200, {}]; 
+});
+
+axiosMockAdapterInstance.onGet(userPathRegex).reply((config) => {
+  const id = config.url.split('/').at(-1);
+  const user = usersList.find(x => x.id == id);
+  return [200, user]; 
 });

@@ -1,7 +1,10 @@
 import {
   REQUEST_USERS,
   REQUEST_USERS_SUCCESS,
-  DELETE_USER
+  DELETE_USER,
+  REQUEST_USER_DETAILS,
+  REQUEST_USER_DETAILS_SUCCESS,
+  SAVE_USER_DETAILS
 } from "../types/users-types";
 
 export const requestUsers = (pageParameters) => ({
@@ -17,4 +20,18 @@ export const requestUsersSuccess = (payload) => ({
 export const deleteUser = (id) => ({
   type: DELETE_USER,
   id
+});
+
+export const requestUserDetails = (id) => ({
+  type: REQUEST_USER_DETAILS,
+  id
+});
+
+export const requestUserDetailsSuccess = (payload) => ({
+  type: REQUEST_USER_DETAILS_SUCCESS,
+  payload
+});
+
+export const saveUserDetails = () => ({
+  type: SAVE_USER_DETAILS
 });

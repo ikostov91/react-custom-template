@@ -7,9 +7,6 @@ import * as Actions from '../actions/authentication-actions';
 import history from "../../history";
 import NotificationManager from "react-notifications/lib/NotificationManager";
 import {
-  getLoggedInUser,
-  authenticateUser,
-  getResetPasswordUrl,
   setLoggedInUser
 } from "../../helpers/auth-utils";
 import withErrorHandler from '../with-error-handler';

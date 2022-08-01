@@ -3,7 +3,6 @@ import { Cookies } from 'react-cookie';
 import {
   USER_COOKIE_NAME,
 } from './constants';
-import { v4 as uuidv4 } from 'uuid';
 
 export const mockAccounts = [{
   id: '29539466-35e8-40b9-af0f-cfaf373b29b0',

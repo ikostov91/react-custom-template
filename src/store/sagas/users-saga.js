@@ -1,7 +1,10 @@
 import {
   DELETE_USER,
-  REQUEST_USERS
+  REQUEST_USERS,
+  REQUEST_USER_DETAILS,
+  SAVE_USER_DETAILS
 } from "../types/users-types";
+import history from "../../history";
 import { put, takeLatest, call } from 'redux-saga/effects';
 import * as Actions from '../actions/users-actions';
 import { translate } from "../../helpers/utils";
@@ -9,7 +12,8 @@ import NotificationManager from "react-notifications/lib/NotificationManager";
 import withErrorHandler from '../with-error-handler';
 import {
   requestUsers,
-  deleteUser
+  deleteUser,
+  requestUserDetails
 } from "../../common/requests";
 import { DEFAULT_PAGE_PARAMETERS } from "../../helpers/constants";
 
@@ -25,7 +29,20 @@ function* handleDeleteUser({ id }) {
   yield put(Actions.requestUsers());
 };
 
+function* handleRequestUserDetails({ id }) {
+  const result = yield call(requestUserDetails, id);
+  yield put(Actions.requestUserDetailsSuccess(result));
+}
+
+function* handleSaveUserDetails({ id }) {
+  // yield call(saveUserDetails, id);
+  NotificationManager.success(translate('notifications.user.saved.successfully'), null, 3000);
+  history.push('/users');
+}
+
 export default function* authenticationSaga() {
   yield takeLatest(REQUEST_USERS, withErrorHandler(handleRequestUsers));
   yield takeLatest(DELETE_USER, withErrorHandler(handleDeleteUser));
+  yield takeLatest(REQUEST_USER_DETAILS, withErrorHandler(handleRequestUserDetails));
+  yield takeLatest(SAVE_USER_DETAILS, withErrorHandler(handleSaveUserDetails));
 };

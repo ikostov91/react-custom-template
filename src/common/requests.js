@@ -65,6 +65,14 @@ export const deleteUser = (id) => (
   }).then(resultLambda)
 );
 
+export const requestUserDetails = (id) => (
+  axiosInstance.get(`${apiUrl}/users/${id}`, {
+    headers: {
+      Accept: 'application/json',
+    }
+  }).then(resultLambda)
+);
+
 const constructGetQueryPath = (mainPath, paramsObject) => {
   const queryString = qs.stringify(paramsObject);
   const fullPath = `${mainPath}?${queryString}`;

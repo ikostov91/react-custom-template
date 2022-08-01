@@ -32,6 +32,7 @@
   "notifications.password.link.sent.to.mail": "Линк за паролата ще ви бъде изпратен по имейл.",
   "notifications.password.reset.successfully": "Паролата е променена успешно!",
   "notifications.user.deleted.successfully": "Потребителят е изтрит успешно!",
+  "notifications.user.saved.successfully": "Потребителят е променен успешно!",
 
   "breadcrumbs.home": "Начална страница",
   "breadcrumbs.about": "За нас",

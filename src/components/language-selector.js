@@ -21,7 +21,7 @@ const LanguageSelector = ({ t }) => {
           src={require(`../assets/flag-icons/${language}.svg`)}
           alt={language}
           width="26"
-          className='flag-icon mr-2'
+          className='flag-icon me-2'
         />
       </Dropdown.Toggle>
 

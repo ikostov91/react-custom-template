@@ -32,6 +32,7 @@
   "notifications.password.link.sent.to.mail": "Password link will be sent to your email.",
   "notifications.password.reset.successfully": "Password is reset successfully.",
   "notifications.user.deleted.successfully": "User is deleted successfully!",
+  "notifications.user.saved.successfully": "User is changed successfully!",
 
   "breadcrumbs.home": "Home",
   "breadcrumbs.about": "About",
