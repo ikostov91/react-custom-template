@@ -12,7 +12,7 @@ import { requestUsers, deleteUser } from '../../store/actions/users-actions';
 import DeleteConfirmationModal from '../../components/delete-confirmation-modal';
 import TablePagination from '../../components/table-pagination';
 
-const Users = ({ usersList, requestUsers, deleteUser }) => {
+const Users = ({ usersList, requestUsers, deleteUser, pageParameters }) => {
   useEffect(() => {
     requestUsers();
   }, []);
@@ -35,6 +35,8 @@ const Users = ({ usersList, requestUsers, deleteUser }) => {
     deleteUser(id);
     setShowDeleteModal(false);
   };
+
+  const { page, itemsPerPage, searchText, order, sortBy } = pageParameters;
 
   return (
     <>
@@ -59,6 +61,9 @@ const Users = ({ usersList, requestUsers, deleteUser }) => {
               data={usersList}
               rowHeight={60}
               headerHeight={60}
+              sortColumn={sortBy.toLowerCase()}
+              sortType={order}
+              onSortColumn={(dataKey, sortType) => requestUsers({ ...pageParameters, sortBy: dataKey, order: sortType })}
             >
               <Column width={80} sortable fixed>
                 <HeaderCell>ID</HeaderCell>
@@ -120,7 +125,8 @@ const Users = ({ usersList, requestUsers, deleteUser }) => {
 };
 
 const mapStateToProps = (state) => ({
-  usersList: state.users.usersList
+  usersList: state.users.usersList,
+  pageParameters: state.users.pageParameters
 });
 
 const mapDispatchToProps = {

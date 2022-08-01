@@ -1,5 +1,6 @@
 import { getAuthorizationHeaders } from '../helpers/auth-utils';
 import axiosInstance from './axios-instance';
+import qs from 'qs';
 
 export const apiUrl = 'http://test.com';
 
@@ -45,13 +46,16 @@ export const currentUserInfo = () => (
   }).then(resultLambda)
 );
 
-export const requestUsers = () => (
-  axiosInstance.get(`${apiUrl}/users`, {
+export const requestUsers = async (queryParams = {}) => {
+  return axiosInstance.get(`${apiUrl}/users`, {
     headers: {
       Accept: 'application/json',
+    },
+    params: {
+      ...queryParams
     }
   }).then(resultLambda)
-);
+};
 
 export const deleteUser = (id) => (
   axiosInstance.delete(`${apiUrl}/users/${id}`, {
@@ -60,3 +64,9 @@ export const deleteUser = (id) => (
     }
   }).then(resultLambda)
 );
+
+const constructGetQueryPath = (mainPath, paramsObject) => {
+  const queryString = qs.stringify(paramsObject);
+  const fullPath = `${mainPath}?${queryString}`;
+  return fullPath;
+};

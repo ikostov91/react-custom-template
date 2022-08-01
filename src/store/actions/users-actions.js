@@ -4,8 +4,9 @@ import {
   DELETE_USER
 } from "../types/users-types";
 
-export const requestUsers = () => ({
-  type: REQUEST_USERS
+export const requestUsers = (pageParameters) => ({
+  type: REQUEST_USERS,
+  pageParameters
 });
 
 export const requestUsersSuccess = (payload) => ({

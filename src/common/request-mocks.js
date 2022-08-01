@@ -5,6 +5,8 @@ import AppError from './error';
 import jwtEncode from 'jwt-encode';
 import { v4 as uuidv4 } from 'uuid';
 import { createRandomUser } from "../helpers/faker-utils";
+import { sortObjectsBy } from "../helpers/sorting-utils";
+import { DEFAULT_PAGE_PARAMETERS } from "../helpers/constants";
 
 const jwtTokenSecret = 'JWT_TOKEN_MOCK_SECRET';
 
@@ -60,11 +62,20 @@ axiosMockAdapterInstance.onPut(`${apiUrl}/account/reset-password`).reply((config
 
 
 let usersList = [];
-for (let index = 1; index <= 30; index++) {
+for (let index = 1; index <= 35; index++) {
   usersList.push(createRandomUser(index))
 }
 axiosMockAdapterInstance.onGet(`${apiUrl}/users`).reply((config) => {
-  return [200, usersList]; 
+  if (config.params) {
+    const usersCopy = [...usersList];
+    const { page, itemsPerPage, searchText, sortBy, order } = config.params;
+    const startIndex = (page * itemsPerPage) - 1;
+    const result = usersCopy
+      .splice(startIndex, itemsPerPage)
+      .sort((a, b) => sortObjectsBy(a, b, sortBy.toLowerCase(), order));
+    return [200, { result, pageParameters: { page, itemsPerPage, searchText, sortBy, order }}]; 
+  }
+  return [200, { result: usersList, pageParameters: DEFAULT_PAGE_PARAMETERS}];
 });
 
 const deletePathRegex = new RegExp(`${apiUrl}\/users\/[0-9]{1,50}`);

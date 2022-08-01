@@ -11,9 +11,11 @@ import {
   requestUsers,
   deleteUser
 } from "../../common/requests";
+import { DEFAULT_PAGE_PARAMETERS } from "../../helpers/constants";
 
-function* handleRequestUsers() {
-  const result = yield call(requestUsers);
+function* handleRequestUsers({ pageParameters = null }) {
+  const paging = pageParameters || DEFAULT_PAGE_PARAMETERS;
+  const result = yield call(requestUsers, paging);
   yield put(Actions.requestUsersSuccess(result));
 };
 
