@@ -1,9 +1,8 @@
 import { axiosMockAdapterInstance } from "./axios-instance";
 import { apiUrl } from './requests';
-import { testUserLogin } from '../helpers/auth-utils';
+import { getLoggedInUser, mockAccounts } from '../helpers/auth-utils';
 import AppError from './error';
 import jwtEncode from 'jwt-encode';
-import { v4 as uuidv4 } from 'uuid';
 import { createRandomUser } from "../helpers/faker-utils";
 import { sortObjectsBy } from "../helpers/sorting-utils";
 import { DEFAULT_PAGE_PARAMETERS } from "../helpers/constants";
@@ -13,13 +12,14 @@ const jwtTokenSecret = 'JWT_TOKEN_MOCK_SECRET';
 axiosMockAdapterInstance.onPost(`${apiUrl}/account/login`).reply(config => {
   const { data } = config;
   const { email, password } = JSON.parse(data);
-  if (email === testUserLogin.email && password === testUserLogin.password) {
+  if (mockAccounts.some(x => x.email === email && x.password === password)) {
+    const account = mockAccounts.find(x => x.email === email);
     const tokenData = {
       exp: (Date.now() + 3600000) / 1000 // 1 hour
     };
     const response = {
-      userId: uuidv4(),
-      role: 'User',
+      userId: account.id,
+      role: account.role,
       token: jwtEncode(tokenData, jwtTokenSecret)
     };
     return [200, response];
@@ -31,16 +31,21 @@ axiosMockAdapterInstance.onPost(`${apiUrl}/account/login`).reply(config => {
 axiosMockAdapterInstance.onPost(`${apiUrl}/account/register`).reply((config) => {
   const { data } = config;
   const { firstName, lastName, emailAddress, password } = JSON.parse(data);
-  console.log({ firstName, lastName, emailAddress, password});
   return [200, {}]; 
 });
 
 axiosMockAdapterInstance.onGet(`${apiUrl}/account/current-user-info`).reply(() => {
+  const userCookie = getLoggedInUser();
+  if (!userCookie) {
+    return [200, {}];
+  }
+
+  const account = mockAccounts.find(x => x.id === userCookie.userId);
   const result = {
-    firstName: 'Ivaylo',
-    lastName: 'Kostov',
-    role: 'User',
-    email: 'test@abv.bg'
+    firstName: account?.firstName,
+    lastName: account?.lastName,
+    role: account?.role,
+    email: account?.email
   };
   return [200, result]; 
 });

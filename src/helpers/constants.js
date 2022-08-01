@@ -10,3 +10,9 @@ export const DEFAULT_PAGE_PARAMETERS = {
   sortBy: 'id',
   order: 'desc',
 };
+
+export const ROLES = {
+  ADMIN: 'Admin',
+  USER: 'User'
+};
+

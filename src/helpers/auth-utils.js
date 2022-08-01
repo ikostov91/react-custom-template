@@ -3,11 +3,23 @@ import { Cookies } from 'react-cookie';
 import {
   USER_COOKIE_NAME,
 } from './constants';
+import { v4 as uuidv4 } from 'uuid';
 
-export const testUserLogin = {
-  email: 'test@abv.bg',
-  password: 'test'
-}
+export const mockAccounts = [{
+  id: '29539466-35e8-40b9-af0f-cfaf373b29b0',
+  firstName: 'Ivaylo',
+  lastName: 'Kostov',
+  email: 'user@abv.bg',
+  password: 'user',
+  role: 'User'
+}, {
+  id: '035583e5-6c08-4469-8ecb-8944f3182690',
+  firstName: 'Admin',
+  lastName: 'Adminov',
+  email: 'admin@abv.bg',
+  password: 'admin',
+  role: 'Admin'
+}];
 
 export const isUserAuthenticated = () => {
   const user = getLoggedInUser();
