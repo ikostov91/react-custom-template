@@ -1,4 +1,4 @@
-import { FIELD_TYPES } from "../../components/form/types";
+import { EMAIL_ADDRESS_PATTERN, FIELD_TYPES } from "../../components/form/types";
 
 export const loginFormDefinition = [{
   id: 'loginFormRow',
@@ -21,7 +21,7 @@ export const loginFormDefinition = [{
           message: 'Email addres cannot be longer than 35 characters'
         },
         pattern: {
-          value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
+          value: EMAIL_ADDRESS_PATTERN,
           message: "Email address is invalid"
         }
       }

@@ -32,6 +32,8 @@ export const requestUserDetailsSuccess = (payload) => ({
   payload
 });
 
-export const saveUserDetails = () => ({
-  type: SAVE_USER_DETAILS
+export const saveUserDetails = (id, userDetails) => ({
+  type: SAVE_USER_DETAILS,
+  id,
+  userDetails
 });

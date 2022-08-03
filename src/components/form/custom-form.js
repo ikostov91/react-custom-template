@@ -1,18 +1,25 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Col, Row } from "react-bootstrap";
 import { useForm  } from "react-hook-form";
+import { isEmpty } from "../../helpers/utils";
 import FieldErrors from "./field-errors";
 import GeneralInputField from "./field-types/general-input-field";
 import { FIELD_TYPES } from "./types";
 
 const CustomForm = ({ fields = [], data = {}, renderSubmitChildren = null, onSubmit = () => {} }) => {
-  const { control, handleSubmit, formState: { errors }, getValues } = useForm({ defaultValues: data });
+  const { control, handleSubmit, formState: { errors }, getValues, reset } = useForm({ defaultValues: {} });
+
+  useEffect(() => {
+    if (!isEmpty(data)) {
+      reset(data);
+    }
+  }, [data]);
 
   const renderFields = (fields = []) => (
     fields.map((field, index) => {
       const { id, type, label, children = [], validations = null, className = '', ...props } = field;
 
-      if (type === FIELD_TYPES.EMAIL || type === FIELD_TYPES.PASSWORD || type === FIELD_TYPES.TEXT) {
+      if (type === FIELD_TYPES.EMAIL || type === FIELD_TYPES.PASSWORD || type === FIELD_TYPES.TEXT || type === FIELD_TYPES.NUMBER) {
         return (
           <div key={index} className="field-element">
             <GeneralInputField

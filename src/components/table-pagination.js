@@ -9,7 +9,7 @@ const TablePagination = ({ pageParameters = {}, className = '', requestData = ()
   const getFirstPage = () => requestData({ ...pageParameters, page: 1});
   const getPreviousPage = () => requestData({ ...pageParameters, page: previousPage});
   const getNextPage = () => requestData({ ...pageParameters, page: nextPage});
-  const getLastPage = () => () => requestData({ ...pageParameters, page: totalPages });
+  const getLastPage = () => requestData({ ...pageParameters, page: totalPages });
 
   return (
     <Pagination size='sm' className='table-pagination'>

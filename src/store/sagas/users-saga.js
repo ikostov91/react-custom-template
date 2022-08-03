@@ -13,7 +13,8 @@ import withErrorHandler from '../with-error-handler';
 import {
   requestUsers,
   deleteUser,
-  requestUserDetails
+  requestUserDetails,
+  saveUserDetails
 } from "../../common/requests";
 import { DEFAULT_PAGE_PARAMETERS } from "../../helpers/constants";
 
@@ -34,8 +35,9 @@ function* handleRequestUserDetails({ id }) {
   yield put(Actions.requestUserDetailsSuccess(result));
 }
 
-function* handleSaveUserDetails({ id }) {
-  // yield call(saveUserDetails, id);
+function* handleSaveUserDetails({ id, userDetails }) {
+  debugger;
+  yield call(saveUserDetails, id, userDetails);
   NotificationManager.success(translate('notifications.user.saved.successfully'), null, 3000);
   history.push('/users');
 }

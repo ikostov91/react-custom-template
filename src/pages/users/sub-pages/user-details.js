@@ -10,9 +10,12 @@ import {
   requestUserDetails,
   saveUserDetails
 } from '../../../store/actions/users-actions';
+import CustomForm from '../../../components/form/custom-form';
+import { userDetailsFormDefinition } from '../utils';
 
 const UserDetails = ({ userDetails, requestUserDetails, saveUserDetails }) => {
   const { id } = useParams();
+
   useEffect(() => {
     requestUserDetails(id);
   }, []);
@@ -21,7 +24,7 @@ const UserDetails = ({ userDetails, requestUserDetails, saveUserDetails }) => {
     return <></>;
   }
 
-  const { firstName, lastName, email, role } = userDetails;
+  const { firstName, lastName } = userDetails;
   
   return (
     <>
@@ -41,31 +44,33 @@ const UserDetails = ({ userDetails, requestUserDetails, saveUserDetails }) => {
       </CustomRow>
       <CustomRow>
         <CustomColumn width={12}>
-          <div>
-          <h1>{JSON.stringify(userDetails)}</h1>
-          </div>
-        </CustomColumn>
-      </CustomRow>
-      <CustomRow>
-        <CustomColumn width={12}>
-          <div>
-            <Button
-              size='sm'
-              className='float-end'
-              variant='secondary'
-              onClick={() => history.push('/users')}
-            >
-              Cancel
-            </Button>
-            <Button
-              size='sm'
-              className='float-end me-2'
-              variant='primary'
-              onClick={() => saveUserDetails()}
-            >
-              Save
-            </Button>
-          </div>
+          <CustomForm
+            fields={userDetailsFormDefinition}
+            data={userDetails}
+            onSubmit={(data) => {
+              saveUserDetails(id, data);
+            }}
+            renderSubmitChildren={(
+              <div className='mt-2'>
+                <Button
+                  size='sm'
+                  className='float-end'
+                  variant='secondary'
+                  onClick={() => history.push('/users')}
+                >
+                  Cancel
+                </Button>
+                <Button
+                  size='sm'
+                  type='submit'
+                  className='float-end me-2'
+                  variant='primary'
+                >
+                  Save
+                </Button>
+              </div>
+            )}
+          />
         </CustomColumn>
       </CustomRow>
     </>

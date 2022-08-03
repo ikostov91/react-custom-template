@@ -3,9 +3,10 @@ import { Controller  } from "react-hook-form";
 import Form from "react-bootstrap/Form";
 
 const GeneralInputField = ({ id, label = '', type = '', validations = {}, isInvalid = false, control }) => {
+  const isRequiredClassName = validations.hasOwnProperty('required') ? 'required' : '';
   return (
     <>
-      <Form.Label className="required">{label}</Form.Label>
+      <Form.Label className={isRequiredClassName}>{label}</Form.Label>
       <Controller
         name={id}
         control={control}

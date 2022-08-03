@@ -18,3 +18,5 @@ export const translate = (id) => (
 export const generateRandomNumber = (min = 1, max = Number.MAX_SAFE_INTEGER) => (
   Math.floor(Math.random() * max) + min
 );
+
+export const isEmpty = (object = {}) => object && Object.keys(object).length === 0 && object.constructor == Object;
