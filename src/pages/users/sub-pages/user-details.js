@@ -3,8 +3,6 @@ import { connect } from 'react-redux';
 import history from '../../../history';
 import Button from 'react-bootstrap/Button';
 import { useParams } from 'react-router-dom';
-import CustomColumn from '../../../components/custom-column';
-import CustomRow from '../../../components/custom-row';
 import PageTitle from '../../../components/page-title';
 import {
   requestUserDetails,
@@ -12,8 +10,9 @@ import {
 } from '../../../store/actions/users-actions';
 import CustomForm from '../../../components/form/custom-form';
 import { userDetailsFormDefinition } from '../utils';
+import { Col, Row } from 'react-bootstrap';
 
-const UserDetails = ({ userDetails, requestUserDetails, saveUserDetails }) => {
+const UserDetails = ({ userDetails, requestUserDetails, saveUserDetails, cleanUserDetails, noms }) => {
   const { id } = useParams();
 
   useEffect(() => {
@@ -25,11 +24,11 @@ const UserDetails = ({ userDetails, requestUserDetails, saveUserDetails }) => {
   }
 
   const { firstName, lastName } = userDetails;
-  
+
   return (
     <>
-      <CustomRow>
-        <CustomColumn width={12}>
+      <Row>
+        <Col md={12}>
           <PageTitle
             title={`${firstName} ${lastName}`}
             breadcrumbs={[{
@@ -40,12 +39,12 @@ const UserDetails = ({ userDetails, requestUserDetails, saveUserDetails }) => {
               label: 'breadcrumbs.user.details', path: `/users/${id}`, active: true
             }]}
           />
-        </CustomColumn>
-      </CustomRow>
-      <CustomRow>
-        <CustomColumn width={12}>
+        </Col>
+      </Row>
+      <Row>
+        <Col md={12}>
           <CustomForm
-            fields={userDetailsFormDefinition}
+            fields={userDetailsFormDefinition(noms)}
             data={userDetails}
             onSubmit={(data) => {
               saveUserDetails(id, data);
@@ -71,14 +70,15 @@ const UserDetails = ({ userDetails, requestUserDetails, saveUserDetails }) => {
               </div>
             )}
           />
-        </CustomColumn>
-      </CustomRow>
+        </Col>
+      </Row>
     </>
   )
 };
 
 const mapStateToProps = (state) => ({
-  userDetails: state.users.userDetails
+  userDetails: state.users.userDetails,
+  noms: state.app.noms
 });
 
 const mapDispatchToProps = {

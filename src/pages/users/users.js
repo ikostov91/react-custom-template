@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { connect } from 'react-redux';
 import { Table, Column, Cell, HeaderCell } from 'rsuite-table';
+import { Button } from 'react-bootstrap';
 import CustomColumn from '../../components/custom-column';
 import CustomRow from '../../components/custom-row';
 import PageTitle from '../../components/page-title';
@@ -54,13 +55,24 @@ const Users = ({ usersList, requestUsers, deleteUser, pageParameters }) => {
       </CustomRow>
       <CustomRow>
         <CustomColumn width={12}>
+          <Button
+            variant='primary'
+            size='sm'
+            onClick={() => history.push('/users/isNew')}
+          >
+            Add new user
+          </Button>
+        </CustomColumn>
+      </CustomRow>
+      <CustomRow>
+        <CustomColumn width={12}>
           <div>
             <Table
               autoHeight
               cellBordered
               data={usersList}
-              rowHeight={60}
-              headerHeight={60}
+              rowHeight={40}
+              headerHeight={40}
               sortColumn={sortBy}
               sortType={order}
               onSortColumn={(dataKey, sortType) => requestUsers({ ...pageParameters, sortBy: dataKey, order: sortType })}
@@ -96,13 +108,21 @@ const Users = ({ usersList, requestUsers, deleteUser, pageParameters }) => {
               </Column>
               
               <Column width={100}>
-                <HeaderCell>Action</HeaderCell>
+                <HeaderCell className='text-center'>Action</HeaderCell>
                 <Cell>
                   {(rowData) => (
-                    <>
-                      <FiEdit className='pointer-cursor' onClick={() => history.push(`/users/${rowData.id}`)} />
-                      <MdDelete className='pointer-cursor' onClick={() => showDeleteConfirmationModal(rowData)} />
-                    </>
+                    <div className='d-flex justify-content-around'>
+                      <FiEdit
+                        className='pointer-cursor'
+                        size={18}
+                        onClick={() => history.push(`/users/${rowData.id}`)}
+                      />
+                      <MdDelete
+                        className='pointer-cursor'
+                        size={18}
+                        onClick={() => showDeleteConfirmationModal(rowData)}
+                      />
+                    </div>
                   )}
                 </Cell>
               </Column>

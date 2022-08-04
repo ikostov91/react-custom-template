@@ -36,7 +36,6 @@ function* handleRequestUserDetails({ id }) {
 }
 
 function* handleSaveUserDetails({ id, userDetails }) {
-  debugger;
   yield call(saveUserDetails, id, userDetails);
   NotificationManager.success(translate('notifications.user.saved.successfully'), null, 3000);
   history.push('/users');

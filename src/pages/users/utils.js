@@ -1,6 +1,7 @@
 import { EMAIL_ADDRESS_PATTERN, FIELD_TYPES } from '../../components/form/types';
+import { mapToValueLabel } from '../../helpers/utils';
 
-export const userDetailsFormDefinition = [{
+export const userDetailsFormDefinition = (noms = {}) => [{
   id: 'userDetailsFormRow',
   type: FIELD_TYPES.ROW,
   children: [{
@@ -27,6 +28,11 @@ export const userDetailsFormDefinition = [{
           message: 'Last name is required'
         }
       }
+    }, {
+      id: 'role',
+      label: 'Role',
+      type: FIELD_TYPES.SINGLE_SELECT,
+      options: mapToValueLabel(noms.roles)
     }]
   }, {
     id: 'userDetailsFormColumn2',
@@ -56,10 +62,6 @@ export const userDetailsFormDefinition = [{
           message: "Email address is invalid"
         }
       }
-    }, {
-      id: 'role',
-      label: 'role',
-      type: FIELD_TYPES.SINGLE_SELECT,
     }]
   }]
 }];
