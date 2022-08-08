@@ -23,6 +23,12 @@
   "pages.tabs.third.tab.title": "Third tab",
   "pages.users.title.text": "Users",
 
+  "pages.user.details.first.name.label": "First name",
+  "pages.user.details.last.name.label": "Last name",
+  "pages.user.details.age.label": "Age",
+  "pages.user.details.email.label": "Email",
+  "pages.user.details.role.label": "Role",
+
   "pages.about.description.text": "This is a custom React template project.",
 
   "pages.error.not.found": "404 - Not Found",
@@ -45,7 +51,16 @@
   "delete.confirmation.modal.header": "Delete confirmation",
   "delete.confirmation.modal.body": "Are you sure you want to delete {{message}}?",
 
-  "buttons.delete.label": "Delete",
-  "buttons.cancel.label": "Cancel"
+  "buttons.delete": "Delete",
+  "buttons.cancel": "Cancel",
+  "buttons.save": "Save",
+  "buttons.add.new.user": "Add new user",
+
+  "validations.user.details.first.name.required": "First name is required",
+  "validations.user.details.last.name.required": "Last name is required",
+  "validations.user.details.email.required": "Email is required",
+  "validations.user.details.role.required": "Role is required",
+  "validations.user.details.email.invalid": "Email is invalid",
+  "validations.user.details.age.invalid": "Age cannot be negative or zero"
 }
 

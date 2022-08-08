@@ -23,6 +23,12 @@
   "pages.tabs.third.tab.title": "Трети таб",
   "pages.users.title.text": "Потребители",
 
+  "pages.user.details.first.name.label": "Име",
+  "pages.user.details.last.name.label": "Фамилия",
+  "pages.user.details.age.label": "Възраст",
+  "pages.user.details.email.label": "Имейл",
+  "pages.user.details.role.label": "Роля",
+
   "pages.about.description.text": "Това е персонализиран шаблонен проект на React",
 
   "pages.error.not.found": "404 - Не е намерена страницата",
@@ -45,6 +51,15 @@
   "delete.confirmation.modal.header": "Потвърждаване на изтриването",
   "delete.confirmation.modal.body": "Сигурни ли сте, че искате да изтриете {{message}}?",
 
-  "buttons.delete.label": "Изтрий",
-  "buttons.cancel.label": "Отказ"
+  "buttons.delete": "Изтрий",
+  "buttons.cancel": "Отказ",
+  "buttons.save": "Запази",
+  "buttons.add.new.user": "Добави нов потребител",
+
+  "validations.user.details.first.name.required": "Име е задължително",
+  "validations.user.details.last.name.required": "Фамилия е задължителна",
+  "validations.user.details.email.required": "Имейл е задължителен",
+  "validations.user.details.role.required": "Роля е задължителна",
+  "validations.user.details.email.invalid": "Имейл е невалиден",
+  "validations.user.details.age.invalid": "Възраст не може да е отрицателна или нула"
 }

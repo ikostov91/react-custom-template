@@ -11,33 +11,33 @@ export const userDetailsFormDefinition = (noms = {}) => [{
     md: 6,
     children: [{
       id: 'firstName',
-      label: 'First name',
+      label: 'pages.user.details.first.name.label',
       type: FIELD_TYPES.TEXT,
       validations: {
         required: {
           value: true,
-          message: 'First name is required'
+          message: 'validations.user.details.first.name.required'
         }
       }
     }, {
       id: 'age',
-      label: 'Age',
+      label: 'pages.user.details.age.label',
       type: FIELD_TYPES.NUMBER,
       validations: {
         min: {
           value: 0,
-          message: 'Age cannot be negative or zero'
+          message: 'validations.user.details.age.invalid'
         }
       }
     }, {
       id: 'role',
-      label: 'Role',
+      label: 'pages.user.details.role.label',
       type: FIELD_TYPES.SINGLE_SELECT,
       options: mapToValueLabel(noms.roles),
       validations: {
         required: {
           value: true,
-          message: 'Role is required'
+          message: 'validations.user.details.role.required'
         }
       }
     }]
@@ -47,26 +47,26 @@ export const userDetailsFormDefinition = (noms = {}) => [{
     md: 6,
     children: [{
       id: 'lastName',
-      label: 'Last name',
+      label: 'pages.user.details.last.name.label',
       type: FIELD_TYPES.TEXT,
       validations: {
         required: {
           value: true,
-          message: 'Last name is required'
+          message: 'validations.user.details.last.name.required'
         }
       }
     }, {
       id: 'email',
-      label: 'Email',
+      label: 'pages.user.details.email.label',
       type: FIELD_TYPES.EMAIL,
       validations: {
         required: {
           value: true,
-          message: 'Email address is required'
+          message: 'validations.user.details.email.required'
         },
         pattern: {
           value: EMAIL_ADDRESS_PATTERN,
-          message: "Email address is invalid"
+          message: 'validations.user.details.email.invalid'
         }
       }
     }]

@@ -1,12 +1,13 @@
 import React from "react";
+import Translate from "../translate";
 import { VALIDATIONS } from "./types";
 
-const FieldErrors = ({ fieldKey = '', errors = {} }) => {
+const FieldErrors = ({ field = '', errors = {} }) => {
   return (
     <>
-      {VALIDATIONS.includes(errors[fieldKey]?.type) && (
+      {VALIDATIONS.includes(errors[field]?.type) && (
         <div className="validation-error">
-          {errors[fieldKey].message}
+          <Translate id={errors[field].message} />
         </div>
       )}
     </>

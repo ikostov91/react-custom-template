@@ -60,7 +60,7 @@ const Users = ({ usersList, requestUsers, deleteUser, pageParameters, noms }) =>
             size='sm'
             onClick={() => history.push('/users/isNew')}
           >
-            Add new user
+            <Translate id="buttons.add.new.user" />
           </Button>
         </CustomColumn>
       </CustomRow>

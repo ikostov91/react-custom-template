@@ -6,6 +6,8 @@ import FieldErrors from "./field-errors";
 import GeneralInputField from "./field-types/general-input-field";
 import { FIELD_TYPES } from "./types";
 import DropdownField from "./field-types/dropdown-field";
+import Translate from "../translate";
+import Form from "react-bootstrap/Form";
 
 const CustomForm = ({ fields = [], data = {}, renderSubmitChildren = null, onSubmit = () => {} }) => {
   const { control, handleSubmit, formState: { errors }, getValues, reset } = useForm({ defaultValues: {} });
@@ -16,9 +18,18 @@ const CustomForm = ({ fields = [], data = {}, renderSubmitChildren = null, onSub
     }
   }, [data, reset]);
 
+  const renderLabel = (label, validations) => {
+    const isRequiredClassName = validations && validations.hasOwnProperty('required') ? 'required' : '';
+    return (
+      <Form.Label className={isRequiredClassName}>
+        <Translate id={label} />
+      </Form.Label>
+    );
+  };
+
   const renderErrors = (id, errors) => (
     <FieldErrors
-      fieldKey={id}
+      field={id}
       errors={errors}
     />
   );
@@ -33,6 +44,7 @@ const CustomForm = ({ fields = [], data = {}, renderSubmitChildren = null, onSub
       if ([FIELD_TYPES.EMAIL, FIELD_TYPES.PASSWORD, FIELD_TYPES.TEXT, FIELD_TYPES.NUMBER].find(x => x === type)) {
         return (
           <div key={index} className="field-element">
+            {renderLabel(label, validations)}
             <GeneralInputField
               key={id}
               label={label}
@@ -51,6 +63,7 @@ const CustomForm = ({ fields = [], data = {}, renderSubmitChildren = null, onSub
         const { options } = field;
         return (
           <div key={index} className="field-element">
+            {renderLabel(label, validations)}
             <DropdownField
               key={id}
               label={label}

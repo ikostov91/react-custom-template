@@ -13,6 +13,7 @@ import CustomForm from '../../../components/form/custom-form';
 import { displayUserNames, userDetailsFormDefinition } from '../utils';
 import { Col, Row } from 'react-bootstrap';
 import { IS_NEW_ID } from '../../../helpers/constants';
+import Translate from '../../../components/translate';
 
 const UserDetails = ({ userDetails, requestUserDetails, saveUserDetails, cleanUserDetails, noms }) => {
   const { id } = useParams();
@@ -62,7 +63,7 @@ const UserDetails = ({ userDetails, requestUserDetails, saveUserDetails, cleanUs
                   variant='secondary'
                   onClick={() => history.push('/users')}
                 >
-                  Cancel
+                  <Translate id="buttons.cancel" />
                 </Button>
                 <Button
                   size='sm'
@@ -70,7 +71,7 @@ const UserDetails = ({ userDetails, requestUserDetails, saveUserDetails, cleanUs
                   className='float-end me-2'
                   variant='primary'
                 >
-                  Save
+                  <Translate id="buttons.save" />
                 </Button>
               </div>
             )}
