@@ -33,7 +33,13 @@ export const userDetailsFormDefinition = (noms = {}) => [{
       id: 'role',
       label: 'Role',
       type: FIELD_TYPES.SINGLE_SELECT,
-      options: mapToValueLabel(noms.roles)
+      options: mapToValueLabel(noms.roles),
+      validations: {
+        required: {
+          value: true,
+          message: 'Role is required'
+        }
+      }
     }]
   }, {
     id: 'userDetailsFormColumn2',

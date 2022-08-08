@@ -11,12 +11,13 @@ const DropdownField = ({ id, label = '', options = [], validations = {}, isInval
         name={id}
         control={control}
         rules={validations}
-        render={({ field }) => 
+        render={({ field }) =>
           <Form.Select
             {...field}
             size='sm'
             isInvalid={isInvalid}
           >
+            <option value=''>Select...</option>
             {options.map(x => (
               <option value={x.value}>{x.label}</option>
             ))}
