@@ -22,6 +22,11 @@
   "pages.tabs.second.tab.title": "Second tab",
   "pages.tabs.third.tab.title": "Third tab",
   "pages.users.title.text": "Users",
+  "pages.users.table.header.firstName.label": "First name",
+  "pages.users.table.header.lastNameName.label": "Last name",
+  "pages.users.table.header.age.label": "Age",
+  "pages.users.table.header.role.label": "Role",
+  "pages.users.table.header.email.label": "Email",
 
   "pages.user.details.first.name.label": "First name",
   "pages.user.details.last.name.label": "Last name",
@@ -47,6 +52,8 @@
   "breadcrumbs.tabs": "Tabs",
   "breadcrumbs.users": "Users",
   "breadcrumbs.user.details": "User Details",
+
+  "components.table.generic.action.label": "Action",
 
   "delete.confirmation.modal.header": "Delete confirmation",
   "delete.confirmation.modal.body": "Are you sure you want to delete {{message}}?",

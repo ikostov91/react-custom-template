@@ -22,7 +22,12 @@
   "pages.tabs.second.tab.title": "Втори таб",
   "pages.tabs.third.tab.title": "Трети таб",
   "pages.users.title.text": "Потребители",
-
+  "pages.users.table.header.firstName.label": "Име",
+  "pages.users.table.header.lastName.label": "Фамилия",
+  "pages.users.table.header.age.label": "Възраст",
+  "pages.users.table.header.role.label": "Роля",
+  "pages.users.table.header.email.label": "Имейл",
+  
   "pages.user.details.first.name.label": "Име",
   "pages.user.details.last.name.label": "Фамилия",
   "pages.user.details.age.label": "Възраст",
@@ -47,6 +52,8 @@
   "breadcrumbs.tabs": "Табове",
   "breadcrumbs.users": "Потребители",
   "breadcrumbs.user.details": "Детайли на потребителя",
+
+  "components.table.generic.action.label": "Действие",
 
   "delete.confirmation.modal.header": "Потвърждаване на изтриването",
   "delete.confirmation.modal.body": "Сигурни ли сте, че искате да изтриете {{message}}?",

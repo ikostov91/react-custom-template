@@ -83,34 +83,46 @@ const Users = ({ usersList, requestUsers, deleteUser, pageParameters, noms }) =>
               </Column>
 
               <Column minWidth={150} flexGrow={1} sortable>
-                <HeaderCell>First Name</HeaderCell>
+                <HeaderCell>
+                  <Translate id={`pages.users.table.header.firstName.label`} />
+                </HeaderCell>
                 <Cell dataKey="firstName" />
               </Column>
 
               <Column width={150} flexGrow={1} sortable>
-                <HeaderCell>Last Name</HeaderCell>
+                <HeaderCell>
+                  <Translate id={`pages.users.table.header.lastName.label`} />
+                </HeaderCell>
                 <Cell dataKey="lastName" />
               </Column>
 
               <Column width={100} sortable>
-                <HeaderCell>Age</HeaderCell>
+                <HeaderCell>
+                  <Translate id={`pages.users.table.header.age.label`} />
+                </HeaderCell>
                 <Cell dataKey="age" />
               </Column>
 
               <Column minWidth={300} flexGrow={2} sortable>
-                <HeaderCell>Email</HeaderCell>
+                <HeaderCell>
+                  <Translate id={`pages.users.table.header.email.label`} />
+                </HeaderCell>
                 <Cell dataKey="email" />
               </Column>
 
               <Column width={100} sortable>
-                <HeaderCell>Role</HeaderCell>
+                <HeaderCell>
+                  <Translate id={`pages.users.table.header.role.label`} />
+                </HeaderCell>
                 <Cell>
                   {(rowData) => noms?.roles?.find(x => x.id == rowData.role)?.name}
                 </Cell>
               </Column>
               
               <Column width={100}>
-                <HeaderCell className='text-center'>Action</HeaderCell>
+                <HeaderCell className='text-center'>
+                  <Translate id="components.table.generic.action.label" />
+                </HeaderCell>
                 <Cell>
                   {(rowData) => (
                     <div className='d-flex justify-content-around'>
