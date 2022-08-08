@@ -1,6 +1,7 @@
 import React from "react";
 import { Controller  } from "react-hook-form";
 import Form from "react-bootstrap/Form";
+import Translate from "../../translate";
 
 const DropdownField = ({ id, label = '', options = [], validations = {}, isInvalid = false, control }) => {
   return (
@@ -14,7 +15,9 @@ const DropdownField = ({ id, label = '', options = [], validations = {}, isInval
           size='sm'
           isInvalid={isInvalid}
         >
-          <option value=''>Select...</option>
+          <option value=''>
+            <Translate id="generic.labels.select.options" />
+          </option>
           {options.map(x => (
             <option value={x.value}>{x.label}</option>
           ))}

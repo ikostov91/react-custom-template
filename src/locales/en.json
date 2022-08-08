@@ -68,6 +68,8 @@
   "validations.user.details.email.required": "Email is required",
   "validations.user.details.role.required": "Role is required",
   "validations.user.details.email.invalid": "Email is invalid",
-  "validations.user.details.age.invalid": "Age cannot be negative or zero"
+  "validations.user.details.age.invalid": "Age cannot be negative or zero",
+
+  "generic.labels.select.options": "Select..."
 }
 
