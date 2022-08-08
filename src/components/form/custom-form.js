@@ -1,35 +1,81 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Col, Row } from "react-bootstrap";
 import { useForm  } from "react-hook-form";
+import { isEmpty } from "../../helpers/utils";
 import FieldErrors from "./field-errors";
 import GeneralInputField from "./field-types/general-input-field";
 import { FIELD_TYPES } from "./types";
+import DropdownField from "./field-types/dropdown-field";
+import Translate from "../translate";
+import Form from "react-bootstrap/Form";
 
 const CustomForm = ({ fields = [], data = {}, renderSubmitChildren = null, onSubmit = () => {} }) => {
-  const { control, handleSubmit, formState: { errors }, getValues } = useForm({ defaultValues: data });
+  const { control, handleSubmit, formState: { errors }, getValues, reset } = useForm({ defaultValues: {} });
+
+  useEffect(() => {
+    if (!isEmpty(data)) {
+      reset(data);
+    }
+  }, [data, reset]);
+
+  const renderLabel = (label, validations) => {
+    const isRequiredClassName = validations && validations.hasOwnProperty('required') ? 'required' : '';
+    return (
+      <Form.Label className={isRequiredClassName}>
+        <Translate id={label} />
+      </Form.Label>
+    );
+  };
+
+  const renderErrors = (id, errors) => (
+    <FieldErrors
+      field={id}
+      errors={errors}
+    />
+  );
 
   const renderFields = (fields = []) => (
     fields.map((field, index) => {
       const { id, type, label, children = [], validations = null, className = '', ...props } = field;
+      
+      const validationsObject = validations instanceof Function ? validations(getValues) : validations;
+      const isInvalid = !!errors[id];
 
-      if (type === FIELD_TYPES.EMAIL || type === FIELD_TYPES.PASSWORD || type === FIELD_TYPES.TEXT) {
+      if ([FIELD_TYPES.EMAIL, FIELD_TYPES.PASSWORD, FIELD_TYPES.TEXT, FIELD_TYPES.NUMBER].find(x => x === type)) {
         return (
           <div key={index} className="field-element">
+            {renderLabel(label, validations)}
             <GeneralInputField
               key={id}
               label={label}
               id={id}
               type={type}
-              validations={validations instanceof Function ? validations(getValues) : validations}
-              isInvalid={!!errors[id]}
+              validations={validationsObject}
+              isInvalid={isInvalid}
               control={control}
             />
-            <FieldErrors
-              fieldKey={id}
-              errors={errors}
-            />
+            {renderErrors(id, errors)}
           </div>
         )
+      }
+
+      if (type === FIELD_TYPES.SINGLE_SELECT) {
+        const { options } = field;
+        return (
+          <div key={index} className="field-element">
+            {renderLabel(label, validations)}
+            <DropdownField
+              key={id}
+              label={label}
+              id={id}
+              options={options}
+              validations={validationsObject}
+              isInvalid={isInvalid}
+              control={control}
+            />
+            {renderErrors(id, errors)}
+          </div>
+        );
       }
 
       if (type === FIELD_TYPES.ROW) {

@@ -29,8 +29,8 @@ axiosMockAdapterInstance.onPost(`${apiUrl}/account/login`).reply(config => {
 });
 
 axiosMockAdapterInstance.onPost(`${apiUrl}/account/register`).reply((config) => {
-  const { data } = config;
-  const { firstName, lastName, emailAddress, password } = JSON.parse(data);
+  // const { data } = config;
+  // const { firstName, lastName, emailAddress, password } = JSON.parse(data);
   return [200, {}]; 
 });
 
@@ -64,8 +64,6 @@ axiosMockAdapterInstance.onPut(`${apiUrl}/account/reset-password`).reply((config
   return [200, {}]; 
 });
 
-
-
 let usersList = [];
 for (let index = 1; index <= 35; index++) {
   usersList.push(createRandomUser(index))
@@ -83,9 +81,34 @@ axiosMockAdapterInstance.onGet(`${apiUrl}/users`).reply((config) => {
   return [200, { result: usersList, pageParameters: DEFAULT_PAGE_PARAMETERS}];
 });
 
-const deletePathRegex = new RegExp(`${apiUrl}\/users\/[0-9]{1,50}`);
-axiosMockAdapterInstance.onDelete(deletePathRegex).reply((config) => {
-  const id = config.url.split('/').at(-1);
-  usersList = usersList.filter(x => x.id != id);
+const getIdFromUrl = (url) => Number(url.split('/').at(-1));
+
+const userPathRegex = new RegExp(`${apiUrl}/users/[0-9]{1,50}`);
+axiosMockAdapterInstance.onPut(userPathRegex).reply((config) => {
+  const id = getIdFromUrl(config.url);
+  const { firstName, lastName, age, email, role } = JSON.parse(config.data);
+  usersList = usersList.map(user => (
+    (user.id === id) ? ({
+      ...user,
+      firstName,
+      lastName,
+      age,
+      role,
+      email
+    }) : user
+  ));
+
   return [200, {}]; 
+});
+
+axiosMockAdapterInstance.onDelete(userPathRegex).reply((config) => {
+  const id = getIdFromUrl(config.url);
+  usersList = usersList.filter(x => x.id !== id);
+  return [200, {}]; 
+});
+
+axiosMockAdapterInstance.onGet(userPathRegex).reply((config) => {
+  const id = getIdFromUrl(config.url);
+  const user = usersList.find(x => x.id === id);
+  return [200, user]; 
 });

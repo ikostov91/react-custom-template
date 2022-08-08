@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { connect } from 'react-redux';
 import { Table, Column, Cell, HeaderCell } from 'rsuite-table';
+import { Button } from 'react-bootstrap';
 import CustomColumn from '../../components/custom-column';
 import CustomRow from '../../components/custom-row';
 import PageTitle from '../../components/page-title';
@@ -12,7 +13,7 @@ import { requestUsers, deleteUser } from '../../store/actions/users-actions';
 import DeleteConfirmationModal from '../../components/delete-confirmation-modal';
 import TablePagination from '../../components/table-pagination';
 
-const Users = ({ usersList, requestUsers, deleteUser, pageParameters }) => {
+const Users = ({ usersList, requestUsers, deleteUser, pageParameters, noms }) => {
   useEffect(() => {
     requestUsers();
   }, []);
@@ -54,13 +55,24 @@ const Users = ({ usersList, requestUsers, deleteUser, pageParameters }) => {
       </CustomRow>
       <CustomRow>
         <CustomColumn width={12}>
+          <Button
+            variant='primary'
+            size='sm'
+            onClick={() => history.push('/users/isNew')}
+          >
+            <Translate id="buttons.add.new.user" />
+          </Button>
+        </CustomColumn>
+      </CustomRow>
+      <CustomRow>
+        <CustomColumn width={12}>
           <div>
             <Table
               autoHeight
               cellBordered
               data={usersList}
-              rowHeight={60}
-              headerHeight={60}
+              rowHeight={40}
+              headerHeight={40}
               sortColumn={sortBy}
               sortType={order}
               onSortColumn={(dataKey, sortType) => requestUsers({ ...pageParameters, sortBy: dataKey, order: sortType })}
@@ -92,17 +104,27 @@ const Users = ({ usersList, requestUsers, deleteUser, pageParameters }) => {
 
               <Column width={100} sortable>
                 <HeaderCell>Role</HeaderCell>
-                <Cell dataKey="role" />
+                <Cell>
+                  {(rowData) => noms?.roles?.find(x => x.id == rowData.role)?.name}
+                </Cell>
               </Column>
               
               <Column width={100}>
-                <HeaderCell>Action</HeaderCell>
+                <HeaderCell className='text-center'>Action</HeaderCell>
                 <Cell>
                   {(rowData) => (
-                    <>
-                      <FiEdit className='pointer-cursor' onClick={() => history.push(`/users/${rowData.id}`)} />
-                      <MdDelete className='pointer-cursor' onClick={() => showDeleteConfirmationModal(rowData)} />
-                    </>
+                    <div className='d-flex justify-content-around'>
+                      <FiEdit
+                        className='pointer-cursor'
+                        size={18}
+                        onClick={() => history.push(`/users/${rowData.id}`)}
+                      />
+                      <MdDelete
+                        className='pointer-cursor'
+                        size={18}
+                        onClick={() => showDeleteConfirmationModal(rowData)}
+                      />
+                    </div>
                   )}
                 </Cell>
               </Column>
@@ -129,7 +151,8 @@ const Users = ({ usersList, requestUsers, deleteUser, pageParameters }) => {
 
 const mapStateToProps = (state) => ({
   usersList: state.users.usersList,
-  pageParameters: state.users.pageParameters
+  pageParameters: state.users.pageParameters,
+  noms: state.app.noms
 });
 
 const mapDispatchToProps = {

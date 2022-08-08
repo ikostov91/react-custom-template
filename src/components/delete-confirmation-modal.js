@@ -15,10 +15,10 @@ const DeleteConfirmationModal = ({ showModal, hideModal, confirmModal, message, 
       </Modal.Body>
       <Modal.Footer>
         <Button variant="danger" onClick={() => confirmModal(id)}>
-          <Translate id="buttons.delete.label" />
+          <Translate id="buttons.delete" />
         </Button>
         <Button variant="default" onClick={hideModal}>
-          <Translate id="buttons.cancel.label" />
+          <Translate id="buttons.cancel" />
         </Button>
       </Modal.Footer>
     </Modal>

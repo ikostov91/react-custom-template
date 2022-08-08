@@ -22,3 +22,7 @@ form.custom-form .validation-error {
 form.custom-form .field-element + .field-element {
   margin-top: 1em;
 }
+
+select.form-select {
+  margin-bottom: 0.25rem;
+}

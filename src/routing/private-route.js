@@ -1,5 +1,5 @@
 import React from "react";
-import { Navigate, Route } from 'react-router-dom';
+import { Navigate } from 'react-router-dom';
 import { isUserAuthenticated, getLoggedInUser } from "../helpers/auth-utils";
 
 const PrivateRoute = ({ children, roles }) => {
