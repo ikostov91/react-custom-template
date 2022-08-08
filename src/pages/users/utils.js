@@ -20,13 +20,13 @@ export const userDetailsFormDefinition = (noms = {}) => [{
         }
       }
     }, {
-      id: 'lastName',
-      label: 'Last name',
-      type: FIELD_TYPES.TEXT,
+      id: 'age',
+      label: 'Age',
+      type: FIELD_TYPES.NUMBER,
       validations: {
-        required: {
-          value: true,
-          message: 'Last name is required'
+        min: {
+          value: 0,
+          message: 'Age cannot be negative or zero'
         }
       }
     }, {
@@ -46,13 +46,13 @@ export const userDetailsFormDefinition = (noms = {}) => [{
     type: FIELD_TYPES.COLUMN,
     md: 6,
     children: [{
-      id: 'age',
-      label: 'Age',
-      type: FIELD_TYPES.NUMBER,
+      id: 'lastName',
+      label: 'Last name',
+      type: FIELD_TYPES.TEXT,
       validations: {
-        min: {
-          value: 0,
-          message: 'Age cannot be negative or zero'
+        required: {
+          value: true,
+          message: 'Last name is required'
         }
       }
     }, {

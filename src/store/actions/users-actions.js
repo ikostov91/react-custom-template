@@ -4,7 +4,8 @@ import {
   DELETE_USER,
   REQUEST_USER_DETAILS,
   REQUEST_USER_DETAILS_SUCCESS,
-  SAVE_USER_DETAILS
+  SAVE_USER_DETAILS,
+  CLEAN_USER_DETAILS
 } from "../types/users-types";
 
 export const requestUsers = (pageParameters) => ({
@@ -36,4 +37,8 @@ export const saveUserDetails = (id, userDetails) => ({
   type: SAVE_USER_DETAILS,
   id,
   userDetails
+});
+
+export const cleanUserDetails = () => ({
+  type: CLEAN_USER_DETAILS
 });

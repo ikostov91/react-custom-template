@@ -1,5 +1,6 @@
 import { DEFAULT_PAGE_PARAMETERS } from '../../helpers/constants';
 import {
+  CLEAN_USER_DETAILS,
   REQUEST_USERS_SUCCESS,
   REQUEST_USER_DETAILS_SUCCESS
 } from '../types/users-types';
@@ -24,6 +25,12 @@ const usersReducer = (state = DEFAULT_STATE, action) => {
       return {
         ...state,
         userDetails: action.payload
+      };
+    }
+    case CLEAN_USER_DETAILS: {
+      return {
+        ...state,
+        userDetails: DEFAULT_STATE.userDetails
       };
     }
     default: return { ...state };

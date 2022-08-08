@@ -6,18 +6,22 @@ import { useParams } from 'react-router-dom';
 import PageTitle from '../../../components/page-title';
 import {
   requestUserDetails,
-  saveUserDetails
+  saveUserDetails,
+  cleanUserDetails
 } from '../../../store/actions/users-actions';
 import CustomForm from '../../../components/form/custom-form';
 import { displayUserNames, userDetailsFormDefinition } from '../utils';
 import { Col, Row } from 'react-bootstrap';
 import { IS_NEW_ID } from '../../../helpers/constants';
 
-const UserDetails = ({ userDetails, requestUserDetails, saveUserDetails, noms }) => {
+const UserDetails = ({ userDetails, requestUserDetails, saveUserDetails, cleanUserDetails, noms }) => {
   const { id } = useParams();
 
   useEffect(() => {
     requestUserDetails(id);
+    return () => {
+      cleanUserDetails();
+    };
   }, []);
 
   if (!userDetails && id !== IS_NEW_ID) {
@@ -84,7 +88,8 @@ const mapStateToProps = (state) => ({
 
 const mapDispatchToProps = {
   requestUserDetails,
-  saveUserDetails
+  saveUserDetails,
+  cleanUserDetails
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(UserDetails);
