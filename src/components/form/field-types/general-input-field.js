@@ -2,7 +2,7 @@ import React from "react";
 import { Controller  } from "react-hook-form";
 import Form from "react-bootstrap/Form";
 
-const GeneralInputField = ({ id, label = '', type = '', validations = {}, isInvalid = false, control }) => {
+const GeneralInputField = ({ id, type = '', validations = {}, isInvalid = false, control }) => {
   return (
     <Controller
       name={id}

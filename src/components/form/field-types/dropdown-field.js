@@ -2,7 +2,7 @@ import React from "react";
 import { Controller  } from "react-hook-form";
 import Form from "react-bootstrap/Form";
 
-const DropdownField = ({ id, label = '', options = [], validations = {}, isInvalid = false, control }) => {
+const DropdownField = ({ id, options = [], validations = {}, isInvalid = false, control }) => {
   return (
     <Controller
       name={id}

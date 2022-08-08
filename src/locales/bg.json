@@ -68,5 +68,8 @@
   "validations.user.details.email.required": "Имейл е задължителен",
   "validations.user.details.role.required": "Роля е задължителна",
   "validations.user.details.email.invalid": "Имейл е невалиден",
-  "validations.user.details.age.invalid": "Възраст не може да е отрицателна или нула"
+  "validations.user.details.age.invalid": "Възраст не може да е отрицателна или нула",
+
+  "theme.mode.light": "Светъл",
+  "theme.mode.dark": "Тъмен"
 }
