@@ -9,28 +9,29 @@ import {
   saveUserDetails
 } from '../../../store/actions/users-actions';
 import CustomForm from '../../../components/form/custom-form';
-import { userDetailsFormDefinition } from '../utils';
+import { displayUserNames, userDetailsFormDefinition } from '../utils';
 import { Col, Row } from 'react-bootstrap';
+import { IS_NEW_ID } from '../../../helpers/constants';
 
-const UserDetails = ({ userDetails, requestUserDetails, saveUserDetails, cleanUserDetails, noms }) => {
+const UserDetails = ({ userDetails, requestUserDetails, saveUserDetails, noms }) => {
   const { id } = useParams();
 
   useEffect(() => {
     requestUserDetails(id);
   }, []);
 
-  if (!userDetails) {
+  if (!userDetails && id !== IS_NEW_ID) {
     return <></>;
   }
-
-  const { firstName, lastName } = userDetails;
+  
+  const pageTitle = displayUserNames(id, userDetails);
 
   return (
     <>
       <Row>
         <Col md={12}>
           <PageTitle
-            title={`${firstName} ${lastName}`}
+            title={pageTitle}
             breadcrumbs={[{
               label: 'breadcrumbs.home', path: '/'
             }, {

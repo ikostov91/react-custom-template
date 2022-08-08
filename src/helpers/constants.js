@@ -16,3 +16,5 @@ export const ROLES = {
   USER: 'User'
 };
 
+export const IS_NEW_ID = 'isNew';
+

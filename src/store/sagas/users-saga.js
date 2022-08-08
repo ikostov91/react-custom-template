@@ -16,7 +16,7 @@ import {
   requestUserDetails,
   saveUserDetails
 } from "../../common/requests";
-import { DEFAULT_PAGE_PARAMETERS } from "../../helpers/constants";
+import { DEFAULT_PAGE_PARAMETERS, IS_NEW_ID } from "../../helpers/constants";
 
 function* handleRequestUsers({ pageParameters = null }) {
   const paging = pageParameters || DEFAULT_PAGE_PARAMETERS;
@@ -31,6 +31,10 @@ function* handleDeleteUser({ id }) {
 };
 
 function* handleRequestUserDetails({ id }) {
+  if (id === IS_NEW_ID) {
+    return;
+  }
+
   const result = yield call(requestUserDetails, id);
   yield put(Actions.requestUserDetailsSuccess(result));
 }

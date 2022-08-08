@@ -1,4 +1,5 @@
 import { EMAIL_ADDRESS_PATTERN, FIELD_TYPES } from '../../components/form/types';
+import { IS_NEW_ID } from '../../helpers/constants';
 import { mapToValueLabel } from '../../helpers/utils';
 
 export const userDetailsFormDefinition = (noms = {}) => [{
@@ -65,3 +66,12 @@ export const userDetailsFormDefinition = (noms = {}) => [{
     }]
   }]
 }];
+
+export const displayUserNames = (id, userDetails) => {
+  if (id === IS_NEW_ID) {
+    return 'New user';
+  }
+
+  const { firstName = '', lastName = '' } = userDetails;
+  return `${firstName} ${lastName}`;
+};

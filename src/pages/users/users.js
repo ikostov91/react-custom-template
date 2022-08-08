@@ -13,7 +13,7 @@ import { requestUsers, deleteUser } from '../../store/actions/users-actions';
 import DeleteConfirmationModal from '../../components/delete-confirmation-modal';
 import TablePagination from '../../components/table-pagination';
 
-const Users = ({ usersList, requestUsers, deleteUser, pageParameters }) => {
+const Users = ({ usersList, requestUsers, deleteUser, pageParameters, noms }) => {
   useEffect(() => {
     requestUsers();
   }, []);
@@ -104,7 +104,9 @@ const Users = ({ usersList, requestUsers, deleteUser, pageParameters }) => {
 
               <Column width={100} sortable>
                 <HeaderCell>Role</HeaderCell>
-                <Cell dataKey="role" />
+                <Cell>
+                  {(rowData) => noms?.roles?.find(x => x.id == rowData.role)?.name}
+                </Cell>
               </Column>
               
               <Column width={100}>
@@ -149,7 +151,8 @@ const Users = ({ usersList, requestUsers, deleteUser, pageParameters }) => {
 
 const mapStateToProps = (state) => ({
   usersList: state.users.usersList,
-  pageParameters: state.users.pageParameters
+  pageParameters: state.users.pageParameters,
+  noms: state.app.noms
 });
 
 const mapDispatchToProps = {
