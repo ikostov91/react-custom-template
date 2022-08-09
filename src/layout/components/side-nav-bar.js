@@ -1,4 +1,4 @@
-import React, { useState} from 'react';
+import React, { useContext, useState} from 'react';
 import history from '../../history';
 import Translate from '../../components/translate';
 import SiteLogo from '../../components/side-nav-bar/site-logo';

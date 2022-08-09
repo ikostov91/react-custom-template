@@ -23,7 +23,7 @@
   "pages.tabs.third.tab.title": "Third tab",
   "pages.users.title.text": "Users",
   "pages.users.table.header.firstName.label": "First name",
-  "pages.users.table.header.lastNameName.label": "Last name",
+  "pages.users.table.header.lastName.label": "Last name",
   "pages.users.table.header.age.label": "Age",
   "pages.users.table.header.role.label": "Role",
   "pages.users.table.header.email.label": "Email",

@@ -5,7 +5,8 @@
   z-index: $top-nav-bar-z-index;
   display: flex;
   padding: 0.7em 1em;
-  background-color: $color-white;
+  background-color: var(--background-primary);
+  color: var(--text-primary);
   box-shadow: 0 1px 10px -1px rgba(0,0,0,.2);
 }
 

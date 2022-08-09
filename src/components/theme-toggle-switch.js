@@ -1,22 +1,22 @@
-import React, { useState } from "react";
+import React, { useContext } from "react";
 import Form from 'react-bootstrap/Form';
 import Translate from "./translate";
+import { ThemeContext } from "../context/theme-provider";
 
-const ThemeToggler = () => {
-  const [isDarkMode, setIsDarkMode] = useState(false);
+const ThemeToggleSwitch = () => {
+  const { isDarkMode, toggleThemeMode } = useContext(ThemeContext);
 
   return (
       <Form.Check 
         type="switch"
         id="custom-switch"
-        size="lg"
         className="theme-toggle-switch"
         label={<Translate id={isDarkMode ? 'theme.mode.dark' : 'theme.mode.light'} />}
         onChange={(e) => {
-          setIsDarkMode(e.target.checked);
+          toggleThemeMode();
         }}
       />
   );
 };
 
-export default ThemeToggler;
+export default ThemeToggleSwitch;

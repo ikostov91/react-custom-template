@@ -12,11 +12,6 @@ span.site-logo {
   font-family: 'Brush Script MT', cursive;
   padding: 0.1em 0.3em;
   border-radius: 0.4em;
-  color: $site-secondary-color;
-  text-shadow: 0.1em 0.1em rgba(0, 0, 0, 0.2);
-}
-
-span.site-logo.dark {
-  color: $color-white;
-  text-shadow: 0.1em 0.1em rgba(0, 0, 0, 0.2);
+  color: var(--logo-color);
+  text-shadow: 0.1em 0.1em var(--logo-shadow);
 }
