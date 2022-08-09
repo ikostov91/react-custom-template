@@ -10,12 +10,14 @@
   box-sizing: border-box;
   --side-menu-width: 12em;
   --flag-icon-box-shadow: 0 0 0.5em 0.05em rgb(0 0 0 / 50%);
+  
   --text-primary: black;
   --background-primary: white;
   --background-secondary: #f3f3f3;
   --logo-color: #707a8e;
   --logo-shadow: rgba(0, 0, 0, 0.2);
 }
+
 [data-theme='dark'] {
   --text-primary: white;
   --background-primary: #003399;

@@ -18,7 +18,7 @@ const Login = ({ loginUser }) => {
     <div className="auth-pages-wrapper">
       <div className="inner-wrapper">
           <div className="text-center mb-3">
-            <Logo />
+            <Logo className="auth-page" />
           </div>
           <div className="text-center mb-3">
             <h5>Login</h5>

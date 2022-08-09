@@ -1,8 +1,11 @@
 import React from "react";
+import classnames from "classnames";
 
-const Logo = () => {
+const Logo = ({ className = '' }) => {
   return (
-    <span className="site-logo">RCT</span>
+    <span className={classnames('site-logo', className)}>
+      RCT
+    </span>
   );
 };
 

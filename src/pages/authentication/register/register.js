@@ -18,7 +18,7 @@ const Register = ({ registerUser }) => {
     <div className="auth-pages-wrapper">
       <div className="inner-wrapper wide">
           <div className="text-center mb-3">
-            <Logo />
+            <Logo className="auth-page" />
           </div>
           <div className="text-center mb-3">
             <h5>Register</h5>
