@@ -16,21 +16,25 @@ import ForgotPassword from './pages/authentication/forgot-password';
 import ResetPassword from './pages/authentication/reset-password';
 import Register from './pages/authentication/register/register';
 
+import ThemeProvider from './context/theme-provider';
+
 function App() {
   return (
-    <Provider store={store}>
-      <CustomRouter history={history}>
-        <Routes>
-          <Route path="/login" element={<Login />} />
-          <Route path="/register" element={<Register />} />
-          <Route path="/forgot-password" element={<ForgotPassword />} />
-          <Route path="/reset-password" element={<ResetPassword />} />
-          <Route path="/*" element={<Layout />} />
-          <Route path="*" element={<NotFound />} />
-        </Routes>
-      </CustomRouter>
-      <NotificationContainer />
-    </Provider>
+    <ThemeProvider>
+      <Provider store={store}>
+        <CustomRouter history={history}>
+          <Routes>
+            <Route path="/login" element={<Login />} />
+            <Route path="/register" element={<Register />} />
+            <Route path="/forgot-password" element={<ForgotPassword />} />
+            <Route path="/reset-password" element={<ResetPassword />} />
+            <Route path="/*" element={<Layout />} />
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+        </CustomRouter>
+        <NotificationContainer />
+      </Provider>
+    </ThemeProvider>
   );
 }
 

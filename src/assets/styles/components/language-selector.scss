@@ -1,6 +1,8 @@
+@import '../variables.scss';
+
 .language-selector {
   font-size: 0.8em;
-  margin-left: auto;
+  margin-left: 2em;
 }
 
 .language-selector.dropdown .dropdown-toggle {
@@ -9,7 +11,7 @@
 }
 
 .language-selector.dropdown .dropdown-toggle.btn {
-  background-color: $color-white;
+  background-color: var(--background-secondary);
   box-shadow: var(--flag-icon-box-shadow);
 }
 
@@ -20,24 +22,26 @@
 
 .language-selector.dropdown .dropdown-toggle::after {
   vertical-align: 0.1em;
-  color: $color-black;
+  color: var(--text-primary);
 }
 
 .language-selector.dropdown .dropdown-menu {
   min-width: 6em;
   padding: 0;
   font-size: inherit;
+  background-color: var(--background-primary);
 }
 
 .language-selector.dropdown .dropdown-item {
   padding: 0.3em;
-  background-color: #e6e6e6;
+  background-color: var(--background-secondary); // #e6e6e6;
 }
 
 .language-selector.dropdown .dropdown-item div {
   padding: 1em;
-  background-color: $color-white;
+  background-color: var(--background-primary);
   border-radius: 0.1em;
+  color: var(--text-primary);
 }
 
 .language-selector.dropdown .dropdown-item .flag-icon {

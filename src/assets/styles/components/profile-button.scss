@@ -2,13 +2,14 @@
 
 .profile-button {
   font-size: 0.8em;
-  margin-left: 1em;
+  margin-left: 2em;
 }
 
 .profile-button.dropdown .dropdown-toggle {
 	padding: 0 0.2em;
   font-size: 1.2em;
   font-weight: 600;
+  color: var(--text-primary);
 }
 
 .profile-button.dropdown .dropdown-toggle::after {
@@ -23,11 +24,19 @@
   min-width: 12rem;
   padding-top: 0;
   font-size: inherit;
+  background-color: var(--background-primary);
 }
 
-.profile-button.dropdown .dropdown-item:hover,
-.profile-button.dropdown .dropdown-item:active {
-  background-color: rgb(233, 233, 233);
+.profile-button.dropdown .dropdown-menu .dropdown-item {
+  background-color: var(--background-secondary);
+  &:hover, &:active {
+    background-color: var(--background-secondary);
+  }
+}
+
+.profile-button.dropdown .dropdown-menu .dropdown-item div {
+  color: var(--text-primary);
+  background-color: var(--background-primary);
 }
 
 .profile-button.dropdown .dropdown-menu .user-details {

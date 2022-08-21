@@ -70,5 +70,8 @@
   "validations.user.details.email.invalid": "Имейл е невалиден",
   "validations.user.details.age.invalid": "Възраст не може да е отрицателна или нула",
 
+  "theme.mode.light": "Светъл",
+  "theme.mode.dark": "Тъмен",
+  
   "generic.labels.select.options": "Избери..."
 }

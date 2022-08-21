@@ -7,7 +7,8 @@
   flex-flow: column;
   padding-left: var(--side-menu-width);
   height: 100vh;
-  background-color: $main-content-background-color;
+  background-color: var(--background-secondary);
+  color: var(--text-primary);
 }
 
 .main-content .page-content {

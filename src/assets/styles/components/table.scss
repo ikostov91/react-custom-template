@@ -1,3 +1,26 @@
+.custom-table.rs-table {
+  & .rs-table-body-row-wrapper,
+  & .rs-table-header-row-wrapper {
+    & .rs-table-cell {
+      color: var(--text-primary);
+      background-color: var(--background-primary);
+      background: var(--background-primary);
+    }
+  }
+}
+
 ul.table-pagination {
   justify-content: end;
+}
+
+ul.table-pagination li {
+  & a, & span {
+    color: var(--text-primary);
+    background-color: var(--background-secondary);
+    &:hover, &:focus {
+      color: var(--text-primary);
+      background-color: var(--background-secondary);
+      outline: none;
+    }
+  }
 }

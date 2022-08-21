@@ -3,7 +3,7 @@ import { Controller  } from "react-hook-form";
 import Form from "react-bootstrap/Form";
 import Translate from "../../translate";
 
-const DropdownField = ({ id, label = '', options = [], validations = {}, isInvalid = false, control }) => {
+const DropdownField = ({ id, options = [], validations = {}, isInvalid = false, control }) => {
   return (
     <Controller
       name={id}

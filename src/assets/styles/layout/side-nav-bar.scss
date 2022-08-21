@@ -1,13 +1,13 @@
 @import '../variables.scss';
 
 .side-nav-bar {
-  background-color: $color-white;
   position: absolute;
   z-index: $side-nav-bar-z-index;
   height: 100%;
   width: var(--side-menu-width);
   box-shadow: 1px 0px 10px rgb(0 0 0 / 20%);
   padding-top: 1rem;
+  background-color: var(--background-primary);
 }
 
 .side-nav-bar ul {
@@ -18,7 +18,7 @@
 .side-nav-bar ul li {
   display: flex;
   cursor: pointer;
-  color: black;
+  color: var(--text-primary);
   padding: 0.4em 0.5em 0.4em 1em;
 }
 

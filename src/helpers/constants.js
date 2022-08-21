@@ -18,3 +18,7 @@ export const ROLES = {
 
 export const IS_NEW_ID = 'isNew';
 
+export const THEME = {
+  LIGHT: 'light',
+  DARK: 'dark'
+};

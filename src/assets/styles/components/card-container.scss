@@ -7,4 +7,6 @@ div.card-container {
   box-shadow: $box-shadow;
   word-wrap: break-word;
   height: 100%;
+  background-color: var(--background-primary);
+  color: var(--text-primary);
 }

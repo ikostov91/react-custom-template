@@ -73,7 +73,9 @@ const Users = ({ usersList, requestUsers, deleteUser, pageParameters, noms }) =>
               data={usersList}
               rowHeight={40}
               headerHeight={40}
+              className="custom-table"
               sortColumn={sortBy}
+              hover={false}
               sortType={order}
               onSortColumn={(dataKey, sortType) => requestUsers({ ...pageParameters, sortBy: dataKey, order: sortType })}
             >
