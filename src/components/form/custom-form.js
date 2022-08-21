@@ -94,7 +94,7 @@ const CustomForm = ({ fields = [], data = {}, renderSubmitChildren = null, onSub
         )
       }
 
-      return null;
+      return <></>;
     })
   );
 

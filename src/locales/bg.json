@@ -71,5 +71,7 @@
   "validations.user.details.age.invalid": "Възраст не може да е отрицателна или нула",
 
   "theme.mode.light": "Светъл",
-  "theme.mode.dark": "Тъмен"
+  "theme.mode.dark": "Тъмен",
+  
+  "generic.labels.select.options": "Избери..."
 }
