@@ -4,7 +4,7 @@ import Translate from './translate';
 
 const DeleteConfirmationModal = ({ showModal, hideModal, confirmModal, message, id }) => {
   return (
-    <Modal show={showModal} onHide={hideModal}>
+    <Modal className='delete-modal' show={showModal} onHide={hideModal}>
       <Modal.Header closeButton>
         <Translate id="delete.confirmation.modal.header" />
       </Modal.Header>

@@ -7,6 +7,10 @@
       background: var(--background-primary);
     }
   }
+
+  & .rs-table-scrollbar-handle {
+    background-color: var(--text-primary);
+  }
 }
 
 ul.table-pagination {
