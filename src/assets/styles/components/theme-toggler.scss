@@ -1,4 +1,14 @@
+@import '../variables.scss';
+
 .theme-toggle-switch {
   margin-left: auto;
   cursor: pointer;
+}
+
+.theme-toggle-switch:hover {
+  color: $color-light-blue;
+}
+
+.theme-toggle-switch * {
+  cursor: inherit;
 }

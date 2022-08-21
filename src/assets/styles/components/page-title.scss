@@ -11,3 +11,11 @@ div.page-title h2 {
   text-transform: capitalize;
   margin: 0 auto 0 0;
 }
+
+.page-title li.breadcrumb-item {
+  color: var(--text-primary);
+}
+
+.page-title li.breadcrumb-item a {
+  color: $color-light-blue;
+}

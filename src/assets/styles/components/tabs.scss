@@ -1,3 +1,9 @@
+@import '../variables.scss';
+
 .nav.page-navs {
   justify-content: center;
+}
+
+.nav.page-navs .nav-item a {
+  color: $color-light-blue;
 }

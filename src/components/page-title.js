@@ -7,7 +7,7 @@ const PageTitle = ({ title, breadcrumbs = [] }) => {
   return (
     <div className='page-title'>
       <h2>{title}</h2>
-      <span className='breadcrumbs-span'>
+      <span className='breadcrumbs'>
         <Breadcrumb>
           {breadcrumbs.map(item => (
             <Breadcrumb.Item

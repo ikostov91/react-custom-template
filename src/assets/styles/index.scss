@@ -20,8 +20,8 @@
 
 [data-theme='dark'] {
   --text-primary: white;
-  --background-primary: #003399;
-  --background-secondary: #0044cc;
+  --background-primary: #2d2d2d;
+  --background-secondary: #3c3c3c;
   --logo-color: white;
   --logo-shadow: rgba(0, 0, 0, 0.8);
 }
@@ -52,4 +52,8 @@ body {
 .App-logo {
   height: 40vmin;
   pointer-events: none;
+}
+
+.react-icons {
+  vertical-align: middle;
 }
