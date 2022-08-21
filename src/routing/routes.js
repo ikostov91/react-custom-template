@@ -9,11 +9,6 @@ const routes = [{
   path: '/dashboard',
   icon: FaChartBar
 }, {
-  id: 'grid-demo',
-  name: 'navigation.menu.custom.grid.label',
-  path: '/custom-grid-demo',
-  icon: FaTh
-}, {
   id: 'users',
   name: 'navigation.menu.users.label',
   path: '/users',
@@ -28,10 +23,10 @@ const routes = [{
     path: '/tabs',
     icon: TiTabsOutline
   }, {
-    id: 'empty-menu-item',
-    name: 'Empty',
-    path: '/empty',
-    icon: FaSistrix
+    id: 'grid-demo',
+    name: 'navigation.menu.custom.grid.label',
+    path: '/custom-grid-demo',
+    icon: FaTh
   }]
 }, {
   id: 'about',

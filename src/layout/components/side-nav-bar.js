@@ -1,9 +1,11 @@
-import React, { useContext, useState} from 'react';
+import React, { useState} from 'react';
 import history from '../../history';
 import Translate from '../../components/translate';
 import SiteLogo from '../../components/side-nav-bar/site-logo';
 import routes from '../../routing/routes';
 import Collapse from 'react-bootstrap/Collapse';
+import { AiOutlineArrowRight } from 'react-icons/ai';
+import classNames from 'classnames';
 
 const SideNavBar = () => {
   const [menuOpen, setMenuOpen] = useState(null);
@@ -18,9 +20,7 @@ const SideNavBar = () => {
   };
 
   const onMenuOpened = (index) => {
-    if (menuOpen === null) {
-      setMenuOpen(index);
-    } else if (menuOpen !== index) {
+    if (menuOpen === null || menuOpen !== index) {
       setMenuOpen(index);
     } else {
       setMenuOpen(null);
@@ -46,6 +46,11 @@ const SideNavBar = () => {
               <span className='nav-label'>
                 <Translate id={route.name} />
               </span>
+              {route.children && (
+                <span className={classNames(index === menuOpen ? 'opened' : '', 'item-children-arrow')}>
+                  <AiOutlineArrowRight />
+                </span>
+              )}
             </li>
             {route.children && (
               <Collapse in={index === menuOpen}>

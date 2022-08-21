@@ -40,3 +40,14 @@
   background-color: $site-secondary-color;
   color: $color-white;
 }
+
+.side-nav-bar .nav-menu .item-children-arrow {
+  line-height: 0;
+  margin: auto 0 auto auto;
+  transform: rotate(0deg);
+  transition: transform 0.3s;
+}
+
+.side-nav-bar .nav-menu .item-children-arrow.opened {
+  transform: rotate(90deg);
+}
