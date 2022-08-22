@@ -1,12 +1,12 @@
 import React, { useContext } from "react";
-import Translate from "./translate";
-import { ThemeContext } from "../context/theme-provider";
+import Translate from "../translate";
+import { ThemeContext } from "../../context/theme-provider";
 import { MdOutlineLightMode, MdOutlineDarkMode } from 'react-icons/md';
 
-const ThemeToggleSwitch = () => {
+const ThemeToggle = () => {
   const { isDarkMode, toggleTheme } = useContext(ThemeContext);
   return (
-    <span className="theme-toggle-switch" onClick={() => toggleTheme()}>
+    <span className="theme-toggle" onClick={() => toggleTheme()}>
       <span className="me-1 theme-mode-icon">
         {isDarkMode ? <MdOutlineLightMode size={20} /> : <MdOutlineDarkMode size={20} />}
       </span>
@@ -17,4 +17,4 @@ const ThemeToggleSwitch = () => {
   );
 };
 
-export default ThemeToggleSwitch;
+export default ThemeToggle;

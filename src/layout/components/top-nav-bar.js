@@ -1,12 +1,12 @@
 import React from 'react';
-import LanguageSelector from '../../components/language-selector';
-import UserProfile from '../../components/user-profile';
-import ThemeToggleSwitch from '../../components/theme-toggle-switch';
+import LanguageSelector from '../../components/top-nav-bar/language-selector';
+import UserProfile from '../../components/top-nav-bar/user-profile';
+import ThemeToggle from '../../components/top-nav-bar/theme-toggle';
 
 const TopNavBar = () => {
   return (
     <div className='top-nav-bar'>
-      <ThemeToggleSwitch />
+      <ThemeToggle />
       <LanguageSelector />
       <UserProfile />
     </div>

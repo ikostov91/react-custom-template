@@ -2,7 +2,7 @@ import React, { useState} from 'react';
 import history from '../../history';
 import Translate from '../../components/translate';
 import SiteLogo from '../../components/side-nav-bar/site-logo';
-import routes from '../../routing/routes';
+import routes from '../../routing/menu-routes';
 import Collapse from 'react-bootstrap/Collapse';
 import { AiOutlineArrowRight } from 'react-icons/ai';
 import classNames from 'classnames';

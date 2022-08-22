@@ -1,10 +1,10 @@
 import React, { useEffect } from 'react';
 import Dropdown from 'react-bootstrap/Dropdown';
-import { logoutUser } from '../helpers/auth-utils';
-import history from '../history';
-import Translate from './translate';
+import { logoutUser } from '../../helpers/auth-utils';
+import history from '../../history';
+import Translate from '../translate';
 import { connect } from 'react-redux';
-import { requestCurrentUserInfo } from '../store/actions/authentication-actions';
+import { requestCurrentUserInfo } from '../../store/actions/authentication-actions';
 
 const UserProfile = ({ currentUserInfo, requestCurrentUserInfo }) => {
   useEffect(() => {

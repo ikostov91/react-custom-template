@@ -17,17 +17,21 @@ export const SMALL_DROPDOWN_STYLES = {
     ...provided,
     margin: '0px',
   }),
+
   indicatorSeparator: state => ({
     display: 'none',
   }),
+
   indicatorsContainer: (provided, state) => ({
     ...provided,
     minHeight: '28px'
   }),
+
   clearIndicator: (provided, state) => ({
     ...provided,
     padding: '0px'
   }),
+  
   dropdownIndicator: (provided, state) => ({
     ...provided,
     padding: '0px'

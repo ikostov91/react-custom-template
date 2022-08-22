@@ -1,4 +1,4 @@
-import { EMAIL_ADDRESS_PATTERN, FIELD_TYPES } from '../../components/form/types';
+import { EMAIL_ADDRESS_PATTERN, FIELD_TYPES } from '../../form/types';
 import { IS_NEW_ID } from '../../helpers/constants';
 import { mapToValueLabel } from '../../helpers/utils';
 

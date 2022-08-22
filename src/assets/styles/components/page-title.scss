@@ -19,3 +19,7 @@ div.page-title h2 {
 .page-title li.breadcrumb-item a {
   color: $color-light-blue;
 }
+
+.breadcrumb .breadcrumb-item a {
+  text-decoration: none;
+}

@@ -5,7 +5,7 @@ import { Navigate } from "react-router-dom";
 import Logo from "../../../components/logo";
 import Button from 'react-bootstrap/Button';
 import { Link } from "react-router-dom";
-import CustomForm from "../../../components/form/custom-form";
+import CustomForm from "../../../form/custom-form";
 import { forgotPasswordFormDefinition } from "../utils";
 import { requestPasswordResetLink } from "../../../store/actions/authentication-actions";
 

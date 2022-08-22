@@ -2,7 +2,7 @@ import React from 'react';
 import Layout from './layout/layout';
 import { Route, Routes } from 'react-router-dom';
 import history from './history';
-import NotFound from './pages/not-found/not-found';
+import NotFound from './pages/not-found/index';
 import CustomRouter from './routing/custom-router';
 import { Provider } from 'react-redux';
 import store from './store/index';
@@ -14,7 +14,7 @@ import 'rsuite-table/dist/css/rsuite-table.min.css';
 import Login from './pages/authentication/login/index';
 import ForgotPassword from './pages/authentication/forgot-password';
 import ResetPassword from './pages/authentication/reset-password';
-import Register from './pages/authentication/register/register';
+import Register from './pages/authentication/register';
 
 import ThemeProvider from './context/theme-provider';
 

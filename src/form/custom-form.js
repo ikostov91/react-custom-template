@@ -1,12 +1,12 @@
 import React, { useEffect } from "react";
 import { Col, Row } from "react-bootstrap";
 import { useForm  } from "react-hook-form";
-import { isEmpty } from "../../helpers/utils";
+import { isEmpty } from '../helpers/utils';
 import FieldErrors from "./field-errors";
 import GeneralInputField from "./field-types/general-input-field";
 import { FIELD_TYPES } from "./types";
 import DropdownField from "./field-types/dropdown-field";
-import Translate from "../translate";
+import Translate from '../components/translate';
 import Form from "react-bootstrap/Form";
 
 const CustomForm = ({ fields = [], data = {}, renderSubmitChildren = null, onSubmit = () => {} }) => {

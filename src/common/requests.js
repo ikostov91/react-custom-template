@@ -6,51 +6,44 @@ export const apiUrl = 'http://test.com';
 
 const resultLambda = (res) => res?.data ?? {};
 
+const getHeaders = (authorization = true) => ({
+  Accept: 'application/json',
+  ...(authorization ? getAuthorizationHeaders() : {})
+});
+
 export const login = (body) => (
   axiosInstance.post(`${apiUrl}/account/login`, body, {
-    headers: {
-      Accept: 'application/json',
-    }
+    headers: getHeaders(false)
   }).then(resultLambda)
 );
 
 export const register = (body) => (
   axiosInstance.post(`${apiUrl}/account/register`, body, {
-    headers: {
-      Accept: 'application/json',
-    }
+    headers: getHeaders(false)
   }).then(resultLambda)
 );
 
 export const forgotPassword = (body) => (
   axiosInstance.put(`${apiUrl}/account/forgot-password`, body, {
-    headers: {
-      Accept: 'application/json',
-    }
+    headers: getHeaders(false)
   }).then(resultLambda)
 );
 
 export const resetPassword = (body) => (
   axiosInstance.put(`${apiUrl}/account/reset-password`, body, {
-    headers: {
-      Accept: 'application/json',
-    }
+    headers: getHeaders(false)
   }).then(resultLambda)
 );
 
 export const currentUserInfo = () => (
   axiosInstance.get(`${apiUrl}/account/current-user-info`, {
-    headers: {
-      Accept: 'application/json',
-    }
+    headers: getHeaders()
   }).then(resultLambda)
 );
 
 export const requestUsers = async (queryParams = {}) => {
   return axiosInstance.get(`${apiUrl}/users`, {
-    headers: {
-      Accept: 'application/json',
-    },
+    headers: getHeaders(),
     params: {
       ...queryParams
     }
@@ -59,25 +52,19 @@ export const requestUsers = async (queryParams = {}) => {
 
 export const deleteUser = (id) => (
   axiosInstance.delete(`${apiUrl}/users/${id}`, {
-    headers: {
-      Accept: 'application/json',
-    }
+    headers: getHeaders()
   }).then(resultLambda)
 );
 
 export const requestUserDetails = (id) => (
   axiosInstance.get(`${apiUrl}/users/${id}`, {
-    headers: {
-      Accept: 'application/json',
-    }
+    headers: getHeaders()
   }).then(resultLambda)
 );
 
 export const saveUserDetails = (id, data) => (
   axiosInstance.put(`${apiUrl}/users/${id}`, data, {
-    headers: {
-      Accept: 'application/json',
-    }
+    headers: getHeaders()
   }).then(resultLambda)
 );
 

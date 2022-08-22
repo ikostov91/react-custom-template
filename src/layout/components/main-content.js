@@ -1,14 +1,14 @@
 import React from 'react';
 import { Route, Routes, Navigate } from 'react-router-dom';
 
-import Dashboard from '../../pages/dashboard/dashboard';
-import About from '../../pages/about/about';
-import NotFound from '../../pages/not-found/not-found';
+import Dashboard from '../../pages/dashboard/index';
+import About from '../../pages/about/index';
+import NotFound from '../../pages/not-found/index';
 import TopNavBar from './top-nav-bar';
-import CustomGridDemo from '../../pages/custom-grid-demo/custom-grid-demo';
+import CustomGridDemo from '../../pages/custom-grid-demo/index';
 import PrivateRoute from '../../routing/private-route';
-import TabsExample from '../../pages/tabs-example/tabs-example';
-import Users from '../../pages/users/users';
+import TabsExample from '../../pages/tabs-example/index';
+import Users from '../../pages/users/index';
 import UserDetails from '../../pages/users/sub-pages/user-details';
 
 const MainContent = () => {

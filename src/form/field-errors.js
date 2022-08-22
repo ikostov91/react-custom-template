@@ -1,5 +1,5 @@
 import React from "react";
-import Translate from "../translate";
+import Translate from '../components/translate';
 import { VALIDATIONS } from "./types";
 
 const FieldErrors = ({ field = '', errors = {} }) => {

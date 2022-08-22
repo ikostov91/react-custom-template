@@ -1,5 +1,6 @@
 import React from 'react';
 import Pagination from 'react-bootstrap/Pagination';
+import classnames from 'classnames';
 
 const TablePagination = ({ pageParameters = {}, className = '', requestData = () => {} }) => {
   const { page, totalPages } = pageParameters;
@@ -12,7 +13,7 @@ const TablePagination = ({ pageParameters = {}, className = '', requestData = ()
   const getLastPage = () => requestData({ ...pageParameters, page: totalPages });
 
   return (
-    <Pagination size='sm' className='table-pagination'>
+    <Pagination size='sm' className={classnames('table-pagination', className)}>
       {page > 1 && (
         <>
           <Pagination.First onClick={getFirstPage} />

@@ -9,7 +9,7 @@ import {
   saveUserDetails,
   cleanUserDetails
 } from '../../../store/actions/users-actions';
-import CustomForm from '../../../components/form/custom-form';
+import CustomForm from '../../../form/custom-form';
 import { displayUserNames, userDetailsFormDefinition } from '../utils';
 import { Col, Row } from 'react-bootstrap';
 import { IS_NEW_ID } from '../../../helpers/constants';

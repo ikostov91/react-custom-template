@@ -69,6 +69,8 @@ for (let index = 1; index <= 35; index++) {
   usersList.push(createRandomUser(index))
 }
 axiosMockAdapterInstance.onGet(`${apiUrl}/users`).reply((config) => {
+  checkIsAuthenticated(config);
+
   if (config.params) {
     const usersCopy = [...usersList];
     const { page, itemsPerPage, searchText, sortBy, order } = config.params;
@@ -112,3 +114,7 @@ axiosMockAdapterInstance.onGet(userPathRegex).reply((config) => {
   const user = usersList.find(x => x.id === id);
   return [200, user]; 
 });
+
+const checkIsAuthenticated = (config) => {
+  console.log(config);
+};
