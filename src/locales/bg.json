@@ -36,6 +36,8 @@
 
   "pages.about.description.text": "Това е персонализиран шаблонен проект на React",
 
+  "pages.grid.column.description": "Колона с ширина {{width}}",
+
   "pages.error.not.found": "404 - Не е намерена страницата",
 
   "notifications.successfully.logged.in": "Успешно вписване!",

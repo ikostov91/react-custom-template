@@ -36,6 +36,8 @@
 
   "pages.about.description.text": "This is a custom React template project.",
 
+  "pages.grid.column.description": "Column with width {{width}}",
+
   "pages.error.not.found": "404 - Not Found",
 
   "notifications.successfully.logged.in": "Successfully logged in!",

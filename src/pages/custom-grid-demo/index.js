@@ -6,13 +6,23 @@ import Translate from '../../components/translate';
 import PageTitle from '../../components/page-title';
 
 const CustomGridDemo = () => {
+  const getCardContent = (width = 0) => (
+    <div className="text-center py-4">
+      <Translate id="pages.grid.column.description" width={width} />
+    </div>
+  );
+
   return (
     <>
       <CustomRow>
         <CustomColumn width={12}>
           <PageTitle
             title={<Translate id="pages.custom.grid.title.text" />}
-            breadcrumbs={[{ label: 'breadcrumbs.home', path: '/' }, { label: 'breadcrumbs.custom.grid', path: '/custom-grid', active: true }]}
+            breadcrumbs={[{
+              label: 'breadcrumbs.home', path: '/'
+            }, {
+              label: 'breadcrumbs.custom.grid', path: '/custom-grid', active: true
+            }]}
           />
         </CustomColumn>
       </CustomRow>
@@ -20,16 +30,12 @@ const CustomGridDemo = () => {
       <CustomRow>
         <CustomColumn xs={6} width={6}>
           <CardContainer>
-            <div className="text-center">
-              <Translate id="pages.about.description.text" />
-            </div>
+            {getCardContent(6)}
           </CardContainer>
         </CustomColumn>
         <CustomColumn xs={6} width={6}>
           <CardContainer>
-            <div className="text-center">
-              <Translate id="pages.about.description.text" />
-            </div>
+            {getCardContent(6)}
           </CardContainer>
         </CustomColumn>
       </CustomRow>
@@ -37,16 +43,12 @@ const CustomGridDemo = () => {
       <CustomRow>
         <CustomColumn width={10}>
           <CardContainer>
-            <div className="text-center">
-              <Translate id="pages.about.description.text" />
-            </div>
+            {getCardContent(10)}
           </CardContainer>
         </CustomColumn>
         <CustomColumn width={2}>
           <CardContainer>
-            <div className="text-center">
-              <Translate id="pages.about.description.text" />
-            </div>
+            {getCardContent(2)}
           </CardContainer>
         </CustomColumn>
       </CustomRow>
@@ -54,16 +56,12 @@ const CustomGridDemo = () => {
      <CustomRow>
         <CustomColumn width={9}>
           <CardContainer>
-            <div className="text-center">
-              <Translate id="pages.about.description.text" />
-            </div>
+            {getCardContent(9)}
           </CardContainer>
         </CustomColumn>
         <CustomColumn width={3}>
           <CardContainer>
-            <div className="text-center">
-              <Translate id="pages.about.description.text" />
-            </div>
+            {getCardContent(3)}
           </CardContainer>
         </CustomColumn>
       </CustomRow>
@@ -71,16 +69,12 @@ const CustomGridDemo = () => {
       <CustomRow>
         <CustomColumn width={8}>
           <CardContainer>
-            <div className="text-center">
-              <Translate id="pages.about.description.text" />
-            </div>
+            {getCardContent(8)}
           </CardContainer>
         </CustomColumn>
         <CustomColumn width={4}>
           <CardContainer>
-            <div className="text-center">
-              <Translate id="pages.about.description.text" />
-            </div>
+            {getCardContent(4)}
           </CardContainer>
         </CustomColumn>
       </CustomRow>
@@ -88,16 +82,12 @@ const CustomGridDemo = () => {
       <CustomRow>
         <CustomColumn width={7}>
           <CardContainer>
-            <div className="text-center">
-              <Translate id="pages.about.description.text" />
-            </div>
+            {getCardContent(7)}
           </CardContainer>
         </CustomColumn>
         <CustomColumn width={5}>
           <CardContainer>
-            <div className="text-center">
-              <Translate id="pages.about.description.text" />
-            </div>
+            {getCardContent(5)}
           </CardContainer>
         </CustomColumn>
       </CustomRow>
@@ -105,16 +95,12 @@ const CustomGridDemo = () => {
       <CustomRow>
         <CustomColumn width={6}>
           <CardContainer>
-            <div className="text-center">
-              <Translate id="pages.about.description.text" />
-            </div>
+            {getCardContent(6)}
           </CardContainer>
         </CustomColumn>
         <CustomColumn width={6}>
           <CardContainer>
-            <div className="text-center">
-              <Translate id="pages.about.description.text" />
-            </div>
+            {getCardContent(6)}
           </CardContainer>
         </CustomColumn>
       </CustomRow>
@@ -122,23 +108,17 @@ const CustomGridDemo = () => {
       <CustomRow>
         <CustomColumn width={5}>
           <CardContainer>
-            <div className="text-center">
-              <Translate id="pages.about.description.text" />
-            </div>
+            {getCardContent(5)}
           </CardContainer>
         </CustomColumn>
         <CustomColumn width={5}>
           <CardContainer>
-            <div className="text-center">
-              <Translate id="pages.about.description.text" />
-            </div>
+            {getCardContent(5)}
           </CardContainer>
         </CustomColumn>
         <CustomColumn width={2}>
           <CardContainer>
-            <div className="text-center">
-              <Translate id="pages.about.description.text" />
-            </div>
+            {getCardContent(2)}
           </CardContainer>
         </CustomColumn>
       </CustomRow>
@@ -146,23 +126,17 @@ const CustomGridDemo = () => {
       <CustomRow>
         <CustomColumn width={4}>
           <CardContainer>
-            <div className="text-center">
-              <Translate id="pages.about.description.text" />
-            </div>
+            {getCardContent(4)}
           </CardContainer>
         </CustomColumn>
         <CustomColumn width={4}>
           <CardContainer>
-            <div className="text-center">
-              <Translate id="pages.about.description.text" />
-            </div>
+            {getCardContent(4)}
           </CardContainer>
         </CustomColumn>
         <CustomColumn width={4}>
           <CardContainer>
-            <div className="text-center">
-              <Translate id="pages.about.description.text" />
-            </div>
+            {getCardContent(4)}
           </CardContainer>
         </CustomColumn>
       </CustomRow>
