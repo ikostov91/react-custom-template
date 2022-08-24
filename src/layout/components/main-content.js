@@ -1,7 +1,6 @@
 import React from 'react';
 import { Route, Routes, Navigate } from 'react-router-dom';
 
-import Dashboard from '../../pages/dashboard/index';
 import About from '../../pages/about/index';
 import NotFound from '../../pages/not-found/index';
 import TopNavBar from './top-nav-bar';
@@ -22,7 +21,6 @@ const MainContent = () => {
               path="/"
               element={<Navigate to="dashboard" replace />}
             />
-            <Route path="dashboard" element={<PrivateRoute><Dashboard /></PrivateRoute>} />
             <Route path="custom-grid-demo" element={<PrivateRoute><CustomGridDemo /></PrivateRoute>} />
             <Route path="users" element={<PrivateRoute><Users /></PrivateRoute>} />
             <Route path="users/:id" element={<PrivateRoute><UserDetails /></PrivateRoute>} />

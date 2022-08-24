@@ -4,11 +4,6 @@ import { RiPagesFill } from 'react-icons/ri';
 import { FiUsers } from 'react-icons/fi';
 
 const routes = [{
-  id: 'dashboard',
-  name: 'navigation.menu.dashboard.label',
-  path: '/dashboard',
-  icon: FaChartBar
-}, {
   id: 'users',
   name: 'navigation.menu.users.label',
   path: '/users',
