@@ -25,7 +25,7 @@ export const userDetailsFormDefinition = (noms = {}) => [{
       type: FIELD_TYPES.NUMBER,
       validations: {
         min: {
-          value: 0,
+          value: 1,
           message: 'validations.user.details.age.invalid'
         }
       }
