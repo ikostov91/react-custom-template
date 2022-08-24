@@ -1,10 +1,11 @@
-import React, { useContext } from "react";
+import React from "react";
 import Translate from "../translate";
-import { ThemeContext } from "../../context/theme-provider";
 import { MdOutlineLightMode, MdOutlineDarkMode } from 'react-icons/md';
+import { useTheme } from "../../hooks/use-theme";
 
 const ThemeToggle = () => {
-  const { isDarkMode, toggleTheme } = useContext(ThemeContext);
+  const { isDarkMode, toggleTheme } = useTheme();
+
   return (
     <span className="theme-toggle" onClick={() => toggleTheme()}>
       <span className="me-1 theme-mode-icon">

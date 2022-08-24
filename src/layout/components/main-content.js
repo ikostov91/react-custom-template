@@ -19,7 +19,7 @@ const MainContent = () => {
           <Routes>
             <Route
               path="/"
-              element={<Navigate to="dashboard" replace />}
+              element={<Navigate to="users" replace />}
             />
             <Route path="custom-grid-demo" element={<PrivateRoute><CustomGridDemo /></PrivateRoute>} />
             <Route path="users" element={<PrivateRoute><Users /></PrivateRoute>} />
