@@ -1,0 +1,26 @@
+.virtualized-list {
+  height: 500px;
+  overflow: auto;
+  border-radius: 0.5em;
+  box-shadow: $box-shadow;
+}
+
+.virtualized-list div.user {
+  height: 100px;
+  padding: 0.5em;
+  border-top: 0.1em solid rgb(212, 212, 212);
+}
+
+.virtualized-list div.user .user-details {
+  overflow: hidden;
+  padding: 2em;
+}
+
+.virtualized-list div.user .avatar {
+  float: left;
+  height: 100%;
+}
+
+.virtualized-list div.user .avatar img {
+  height:100%;
+}

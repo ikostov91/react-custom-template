@@ -9,6 +9,7 @@ import PrivateRoute from '../../routing/private-route';
 import TabsExample from '../../pages/tabs-example/index';
 import Users from '../../pages/users/index';
 import UserDetails from '../../pages/users/sub-pages/user-details';
+import VirtualizedList from '../../pages/virtualized-list';
 
 const MainContent = () => {
   return (
@@ -27,6 +28,7 @@ const MainContent = () => {
             <Route path="about" element={<PrivateRoute><About /></PrivateRoute>} />
             <Route path="tabs/*" element={<PrivateRoute><TabsExample /></PrivateRoute>} />
             <Route path="tabs" element={<PrivateRoute><TabsExample /></PrivateRoute>} />
+            <Route path="virtualized-list" element={<PrivateRoute><VirtualizedList /></PrivateRoute>} />
             <Route path="*" element={<PrivateRoute><NotFound /></PrivateRoute>} />
           </Routes>
         </div>

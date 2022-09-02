@@ -2,7 +2,7 @@ import { FaChartBar, FaQuestionCircle, FaTh, FaSistrix } from "react-icons/fa";
 import { TiTabsOutline } from "react-icons/ti";
 import { RiPagesFill } from 'react-icons/ri';
 import { FiUsers } from 'react-icons/fi';
-import { AiOutlineMenu } from 'react-icons/ai';
+import { AiOutlineMenu, AiOutlineOrderedList } from 'react-icons/ai';
 import { MdOutlineNavigateNext } from 'react-icons/md';
 
 const routes = [{
@@ -15,6 +15,11 @@ const routes = [{
   name: 'Tabs',
   path: '/tabs',
   icon: TiTabsOutline
+}, {
+  id: 'virtualized-list',
+  name: 'Virtualized list',
+  path: '/virtualized-list',
+  icon: AiOutlineOrderedList
 }, {
   id: 'grid-demo',
   name: 'navigation.menu.custom.grid.label',

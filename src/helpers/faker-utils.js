@@ -9,3 +9,9 @@ export const createRandomUser = (id) => ({
   email: faker.internet.email(),
   role: generateRandomNumber(1, 2)
 });
+
+export const createListUser = () => ({
+  name: faker.name.findName(),
+  email: faker.internet.email(),
+  avatar: faker.internet.avatar()
+});
